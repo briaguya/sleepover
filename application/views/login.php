@@ -2,7 +2,7 @@
 	
 	<div class="content clearfix">
 		
-		<form action="/login" method="post">
+		<form action="/sleepover/login" method="post">
 		
 			<h1>Member Login</h1>		
 			
@@ -48,5 +48,5 @@
 
 
 <div class="login-extra">
-	<a href="/forget">Reset Password</a>
+	<a href="/sleepover/forget">Reset Password</a>
 </div> <!-- /login-extra -->

@@ -21,8 +21,8 @@ class Welcome extends CI_Controller {
 
 	public function check_login()
 	{
-		//if(!UID)
-			//redirect("login");
+		if(!UID)
+			redirect("login");
 	} 
 
 	public function index()

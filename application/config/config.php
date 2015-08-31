@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-//$config['base_url']	= 'http://hotel.cihadoge.com/';
+$config['base_url']	= 'localhost';
 
 /*
 |--------------------------------------------------------------------------

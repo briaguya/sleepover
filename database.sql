@@ -1,18 +1,7 @@
--- phpMyAdmin SQL Dump
--- version 3.4.10.1deb1
--- http://www.phpmyadmin.net
---
--- Host: localhost
--- Generation Time: Mar 26, 2014 at 10:47 PM
--- Server version: 5.5.28
--- PHP Version: 5.3.10-1ubuntu3.4
+USE sleepover;
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
-
---
--- Database: `hotel`
---
 
 DELIMITER $$
 --

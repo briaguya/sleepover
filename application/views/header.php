@@ -65,20 +65,20 @@
         <div class="subnavbar-inner">
           <div class="container">
             <ul class="mainnav">
-              <li <? if($page == "dashboard"){ echo 'class="active"'; } ?>><a href="/"><i class="icon-dashboard"></i><span>Dashboard</span> </a> </li>
-              <li <? if($page == "employee"){ echo 'class="active"'; } ?>><a href="/employee"><i class="icon-user"></i><span>Employees</span> </a> </li>
-              <li <? if($page == "reservation"){ echo 'class="active"'; } ?>><a href="/reservation"><i class="icon-list-alt"></i><span>Reservation</span> </a> </li>
+              <li <? if($page == "dashboard"){ echo 'class="active"'; } ?>><a href="/sleepover/"><i class="icon-dashboard"></i><span>Dashboard</span> </a> </li>
+              <li <? if($page == "employee"){ echo 'class="active"'; } ?>><a href="/sleepover/employee"><i class="icon-user"></i><span>Employees</span> </a> </li>
+              <li <? if($page == "reservation"){ echo 'class="active"'; } ?>><a href="/sleepover/reservation"><i class="icon-list-alt"></i><span>Reservation</span> </a> </li>
               <li class="dropdown <? if($page == "room" || $page == "room_type"){ echo 'active'; } ?>"><a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"> <i class="icon-home"></i><span>Rooms</span> <b class="caret"></b></a>
                 <ul class="dropdown-menu">
-                  <li><a href="/room">Rooms</a></li>
-                  <li><a href="/room-type">Room Types</a></li>
+                  <li><a href="/sleepover/room">Rooms</a></li>
+                  <li><a href="/sleepover/room-type">Room Types</a></li>
                 </ul>
               </li>
-              <li <? if($page == "departments"){ echo 'class="active"'; } ?>><a href="/departments"><i class="icon-file"></i><span>Depatments</span> </a> </li>
-              <li <? if($page == "restaurant"){ echo 'class="active"'; } ?>><a href="/restaurant"><i class="icon-fire"></i><span>Restaurants</span> </a> </li>
-              <li <? if($page == "medical_service"){ echo 'class="active"'; } ?>><a href="/medical_service"><i class="icon-user-md"></i><span>Medical Service</span> </a> </li>
-              <li <? if($page == "sport_facility"){ echo 'class="active"'; } ?>><a href="/sport_facility"><i class="icon-trophy "></i><span>Sport Facility</span> </a> </li>
-              <li <? if($page == "massage_room"){ echo 'class="active"'; } ?>><a href="/massage_room"><i class="icon-retweet "></i><span>Massage Room</span> </a> </li>
+              <li <? if($page == "departments"){ echo 'class="active"'; } ?>><a href="/sleepover/departments"><i class="icon-file"></i><span>Depatments</span> </a> </li>
+              <li <? if($page == "restaurant"){ echo 'class="active"'; } ?>><a href="/sleepover/restaurant"><i class="icon-fire"></i><span>Restaurants</span> </a> </li>
+              <li <? if($page == "medical_service"){ echo 'class="active"'; } ?>><a href="/sleepover/medical_service"><i class="icon-user-md"></i><span>Medical Service</span> </a> </li>
+              <li <? if($page == "sport_facility"){ echo 'class="active"'; } ?>><a href="/sleepover/sport_facility"><i class="icon-trophy "></i><span>Sport Facility</span> </a> </li>
+              <li <? if($page == "massage_room"){ echo 'class="active"'; } ?>><a href="/sleepover/massage_room"><i class="icon-retweet "></i><span>Massage Room</span> </a> </li>
             </ul>
           </div>
           <!-- /container --> 

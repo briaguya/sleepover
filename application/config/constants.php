@@ -1,10 +1,5 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-
-
-define('HOTEL_NAME', "DedeBan Hotel");
-
-
 /*
 |--------------------------------------------------------------------------
 | File and Directory Modes

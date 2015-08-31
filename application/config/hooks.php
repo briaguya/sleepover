@@ -13,7 +13,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 
 
-$hook['pre_controller'] = array(
+$hook['post_controller_constructor'] = array(
 	'class' => 'check_login',
 	'function' => 'login_check',
 	'filename' => 'Check_login.php',

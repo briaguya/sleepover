@@ -2,7 +2,156 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fe3e6790-11c6-4696-af97-da5a4483dbd0" name="Default" comment="">
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/.htaccess" afterPath="$PROJECT_DIR$/system-old/.htaccess" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/core/Benchmark.php" afterPath="$PROJECT_DIR$/system-old/core/Benchmark.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/core/CodeIgniter.php" afterPath="$PROJECT_DIR$/system-old/core/CodeIgniter.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/core/Common.php" afterPath="$PROJECT_DIR$/system-old/core/Common.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/core/Config.php" afterPath="$PROJECT_DIR$/system-old/core/Config.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/core/Controller.php" afterPath="$PROJECT_DIR$/system-old/core/Controller.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/core/Exceptions.php" afterPath="$PROJECT_DIR$/system-old/core/Exceptions.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/core/Hooks.php" afterPath="$PROJECT_DIR$/system-old/core/Hooks.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/core/Input.php" afterPath="$PROJECT_DIR$/system-old/core/Input.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/core/Lang.php" afterPath="$PROJECT_DIR$/system-old/core/Lang.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/core/Loader.php" afterPath="$PROJECT_DIR$/system-old/core/Loader.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/core/Model.php" afterPath="$PROJECT_DIR$/system-old/core/Model.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/core/Output.php" afterPath="$PROJECT_DIR$/system-old/core/Output.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/core/Router.php" afterPath="$PROJECT_DIR$/system-old/core/Router.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/core/Security.php" afterPath="$PROJECT_DIR$/system-old/core/Security.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/core/URI.php" afterPath="$PROJECT_DIR$/system-old/core/URI.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/core/Utf8.php" afterPath="$PROJECT_DIR$/system-old/core/Utf8.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/core/index.html" afterPath="$PROJECT_DIR$/system-old/libraries/index.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/database/DB.php" afterPath="$PROJECT_DIR$/system-old/database/DB.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/database/DB_active_rec.php" afterPath="$PROJECT_DIR$/system-old/database/DB_active_rec.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/database/DB_cache.php" afterPath="$PROJECT_DIR$/system-old/database/DB_cache.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/database/DB_driver.php" afterPath="$PROJECT_DIR$/system-old/database/DB_driver.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/database/DB_forge.php" afterPath="$PROJECT_DIR$/system-old/database/DB_forge.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/database/DB_result.php" afterPath="$PROJECT_DIR$/system-old/database/DB_result.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/database/DB_utility.php" afterPath="$PROJECT_DIR$/system-old/database/DB_utility.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/database/drivers/cubrid/cubrid_driver.php" afterPath="$PROJECT_DIR$/system-old/database/drivers/cubrid/cubrid_driver.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/database/drivers/cubrid/cubrid_forge.php" afterPath="$PROJECT_DIR$/system-old/database/drivers/cubrid/cubrid_forge.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/database/drivers/cubrid/cubrid_result.php" afterPath="$PROJECT_DIR$/system-old/database/drivers/cubrid/cubrid_result.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/database/drivers/cubrid/cubrid_utility.php" afterPath="$PROJECT_DIR$/system-old/database/drivers/cubrid/cubrid_utility.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/database/drivers/cubrid/index.html" afterPath="$PROJECT_DIR$/system-old/language/index.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/database/drivers/index.html" afterPath="$PROJECT_DIR$/system-old/language/english/index.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/database/drivers/mssql/index.html" afterPath="$PROJECT_DIR$/system-old/index.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/database/drivers/mssql/mssql_driver.php" afterPath="$PROJECT_DIR$/system-old/database/drivers/mssql/mssql_driver.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/database/drivers/mssql/mssql_forge.php" afterPath="$PROJECT_DIR$/system-old/database/drivers/mssql/mssql_forge.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/database/drivers/mssql/mssql_result.php" afterPath="$PROJECT_DIR$/system-old/database/drivers/mssql/mssql_result.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/database/drivers/mssql/mssql_utility.php" afterPath="$PROJECT_DIR$/system-old/database/drivers/mssql/mssql_utility.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/database/drivers/mysql/index.html" afterPath="$PROJECT_DIR$/system-old/helpers/index.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/database/drivers/mysql/mysql_driver.php" afterPath="$PROJECT_DIR$/system-old/database/drivers/mysql/mysql_driver.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/database/drivers/mysql/mysql_forge.php" afterPath="$PROJECT_DIR$/system-old/database/drivers/mysql/mysql_forge.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/database/drivers/mysql/mysql_result.php" afterPath="$PROJECT_DIR$/system-old/database/drivers/mysql/mysql_result.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/database/drivers/mysql/mysql_utility.php" afterPath="$PROJECT_DIR$/system-old/database/drivers/mysql/mysql_utility.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/database/drivers/mysqli/index.html" afterPath="$PROJECT_DIR$/system-old/fonts/index.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/database/drivers/mysqli/mysqli_driver.php" afterPath="$PROJECT_DIR$/system-old/database/drivers/mysqli/mysqli_driver.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/database/drivers/mysqli/mysqli_forge.php" afterPath="$PROJECT_DIR$/system-old/database/drivers/mysqli/mysqli_forge.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/database/drivers/mysqli/mysqli_result.php" afterPath="$PROJECT_DIR$/system-old/database/drivers/mysqli/mysqli_result.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/database/drivers/mysqli/mysqli_utility.php" afterPath="$PROJECT_DIR$/system-old/database/drivers/mysqli/mysqli_utility.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/database/drivers/oci8/index.html" afterPath="$PROJECT_DIR$/system-old/database/index.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/database/drivers/oci8/oci8_driver.php" afterPath="$PROJECT_DIR$/system-old/database/drivers/oci8/oci8_driver.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/database/drivers/oci8/oci8_forge.php" afterPath="$PROJECT_DIR$/system-old/database/drivers/oci8/oci8_forge.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/database/drivers/oci8/oci8_result.php" afterPath="$PROJECT_DIR$/system-old/database/drivers/oci8/oci8_result.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/database/drivers/oci8/oci8_utility.php" afterPath="$PROJECT_DIR$/system-old/database/drivers/oci8/oci8_utility.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/database/drivers/odbc/index.html" afterPath="$PROJECT_DIR$/system-old/database/drivers/sqlsrv/index.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/database/drivers/odbc/odbc_driver.php" afterPath="$PROJECT_DIR$/system-old/database/drivers/odbc/odbc_driver.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/database/drivers/odbc/odbc_forge.php" afterPath="$PROJECT_DIR$/system-old/database/drivers/odbc/odbc_forge.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/database/drivers/odbc/odbc_result.php" afterPath="$PROJECT_DIR$/system-old/database/drivers/odbc/odbc_result.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/database/drivers/odbc/odbc_utility.php" afterPath="$PROJECT_DIR$/system-old/database/drivers/odbc/odbc_utility.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/database/drivers/pdo/index.html" afterPath="$PROJECT_DIR$/system-old/database/drivers/sqlite/index.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/database/drivers/pdo/pdo_driver.php" afterPath="$PROJECT_DIR$/system-old/database/drivers/pdo/pdo_driver.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/database/drivers/pdo/pdo_forge.php" afterPath="$PROJECT_DIR$/system-old/database/drivers/pdo/pdo_forge.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/database/drivers/pdo/pdo_result.php" afterPath="$PROJECT_DIR$/system-old/database/drivers/pdo/pdo_result.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/database/drivers/pdo/pdo_utility.php" afterPath="$PROJECT_DIR$/system-old/database/drivers/pdo/pdo_utility.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/database/drivers/postgre/index.html" afterPath="$PROJECT_DIR$/system-old/database/drivers/postgre/index.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/database/drivers/postgre/postgre_driver.php" afterPath="$PROJECT_DIR$/system-old/database/drivers/postgre/postgre_driver.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/database/drivers/postgre/postgre_forge.php" afterPath="$PROJECT_DIR$/system-old/database/drivers/postgre/postgre_forge.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/database/drivers/postgre/postgre_result.php" afterPath="$PROJECT_DIR$/system-old/database/drivers/postgre/postgre_result.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/database/drivers/postgre/postgre_utility.php" afterPath="$PROJECT_DIR$/system-old/database/drivers/postgre/postgre_utility.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/database/drivers/sqlite/index.html" afterPath="$PROJECT_DIR$/system-old/database/drivers/pdo/index.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/database/drivers/sqlite/sqlite_driver.php" afterPath="$PROJECT_DIR$/system-old/database/drivers/sqlite/sqlite_driver.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/database/drivers/sqlite/sqlite_forge.php" afterPath="$PROJECT_DIR$/system-old/database/drivers/sqlite/sqlite_forge.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/database/drivers/sqlite/sqlite_result.php" afterPath="$PROJECT_DIR$/system-old/database/drivers/sqlite/sqlite_result.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/database/drivers/sqlite/sqlite_utility.php" afterPath="$PROJECT_DIR$/system-old/database/drivers/sqlite/sqlite_utility.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/database/drivers/sqlsrv/index.html" afterPath="$PROJECT_DIR$/system-old/database/drivers/odbc/index.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/database/drivers/sqlsrv/sqlsrv_driver.php" afterPath="$PROJECT_DIR$/system-old/database/drivers/sqlsrv/sqlsrv_driver.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/database/drivers/sqlsrv/sqlsrv_forge.php" afterPath="$PROJECT_DIR$/system-old/database/drivers/sqlsrv/sqlsrv_forge.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/database/drivers/sqlsrv/sqlsrv_result.php" afterPath="$PROJECT_DIR$/system-old/database/drivers/sqlsrv/sqlsrv_result.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/database/drivers/sqlsrv/sqlsrv_utility.php" afterPath="$PROJECT_DIR$/system-old/database/drivers/sqlsrv/sqlsrv_utility.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/database/index.html" afterPath="$PROJECT_DIR$/system-old/database/drivers/oci8/index.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/fonts/index.html" afterPath="$PROJECT_DIR$/system-old/database/drivers/mysqli/index.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/fonts/texb.ttf" afterPath="$PROJECT_DIR$/system-old/fonts/texb.ttf" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/helpers/array_helper.php" afterPath="$PROJECT_DIR$/system-old/helpers/array_helper.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/helpers/captcha_helper.php" afterPath="$PROJECT_DIR$/system-old/helpers/captcha_helper.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/helpers/cookie_helper.php" afterPath="$PROJECT_DIR$/system-old/helpers/cookie_helper.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/helpers/date_helper.php" afterPath="$PROJECT_DIR$/system-old/helpers/date_helper.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/helpers/directory_helper.php" afterPath="$PROJECT_DIR$/system-old/helpers/directory_helper.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/helpers/download_helper.php" afterPath="$PROJECT_DIR$/system-old/helpers/download_helper.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/helpers/email_helper.php" afterPath="$PROJECT_DIR$/system-old/helpers/email_helper.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/helpers/file_helper.php" afterPath="$PROJECT_DIR$/system-old/helpers/file_helper.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/helpers/form_helper.php" afterPath="$PROJECT_DIR$/system-old/helpers/form_helper.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/helpers/html_helper.php" afterPath="$PROJECT_DIR$/system-old/helpers/html_helper.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/helpers/index.html" afterPath="$PROJECT_DIR$/system-old/database/drivers/mysql/index.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/helpers/inflector_helper.php" afterPath="$PROJECT_DIR$/system-old/helpers/inflector_helper.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/helpers/language_helper.php" afterPath="$PROJECT_DIR$/system-old/helpers/language_helper.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/helpers/number_helper.php" afterPath="$PROJECT_DIR$/system-old/helpers/number_helper.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/helpers/path_helper.php" afterPath="$PROJECT_DIR$/system-old/helpers/path_helper.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/helpers/security_helper.php" afterPath="$PROJECT_DIR$/system-old/helpers/security_helper.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/helpers/smiley_helper.php" afterPath="$PROJECT_DIR$/system-old/helpers/smiley_helper.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/helpers/string_helper.php" afterPath="$PROJECT_DIR$/system-old/helpers/string_helper.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/helpers/text_helper.php" afterPath="$PROJECT_DIR$/system-old/helpers/text_helper.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/helpers/typography_helper.php" afterPath="$PROJECT_DIR$/system-old/helpers/typography_helper.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/helpers/url_helper.php" afterPath="$PROJECT_DIR$/system-old/helpers/url_helper.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/helpers/xml_helper.php" afterPath="$PROJECT_DIR$/system-old/helpers/xml_helper.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/index.html" afterPath="$PROJECT_DIR$/system-old/database/drivers/mssql/index.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/language/english/calendar_lang.php" afterPath="$PROJECT_DIR$/system-old/language/english/calendar_lang.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/language/english/date_lang.php" afterPath="$PROJECT_DIR$/system-old/language/english/date_lang.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/language/english/db_lang.php" afterPath="$PROJECT_DIR$/system-old/language/english/db_lang.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/language/english/email_lang.php" afterPath="$PROJECT_DIR$/system-old/language/english/email_lang.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/language/english/form_validation_lang.php" afterPath="$PROJECT_DIR$/system-old/language/english/form_validation_lang.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/language/english/ftp_lang.php" afterPath="$PROJECT_DIR$/system-old/language/english/ftp_lang.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/language/english/imglib_lang.php" afterPath="$PROJECT_DIR$/system-old/language/english/imglib_lang.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/language/english/index.html" afterPath="$PROJECT_DIR$/system-old/database/drivers/index.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/language/english/migration_lang.php" afterPath="$PROJECT_DIR$/system-old/language/english/migration_lang.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/language/english/number_lang.php" afterPath="$PROJECT_DIR$/system-old/language/english/number_lang.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/language/english/profiler_lang.php" afterPath="$PROJECT_DIR$/system-old/language/english/profiler_lang.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/language/english/unit_test_lang.php" afterPath="$PROJECT_DIR$/system-old/language/english/unit_test_lang.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/language/english/upload_lang.php" afterPath="$PROJECT_DIR$/system-old/language/english/upload_lang.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/language/index.html" afterPath="$PROJECT_DIR$/system-old/database/drivers/cubrid/index.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/libraries/Cache/Cache.php" afterPath="$PROJECT_DIR$/system-old/libraries/Cache/Cache.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/libraries/Cache/drivers/Cache_apc.php" afterPath="$PROJECT_DIR$/system-old/libraries/Cache/drivers/Cache_apc.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/libraries/Cache/drivers/Cache_dummy.php" afterPath="$PROJECT_DIR$/system-old/libraries/Cache/drivers/Cache_dummy.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/libraries/Cache/drivers/Cache_file.php" afterPath="$PROJECT_DIR$/system-old/libraries/Cache/drivers/Cache_file.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/libraries/Cache/drivers/Cache_memcached.php" afterPath="$PROJECT_DIR$/system-old/libraries/Cache/drivers/Cache_memcached.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/libraries/Calendar.php" afterPath="$PROJECT_DIR$/system-old/libraries/Calendar.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/libraries/Cart.php" afterPath="$PROJECT_DIR$/system-old/libraries/Cart.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/libraries/Driver.php" afterPath="$PROJECT_DIR$/system-old/libraries/Driver.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/libraries/Email.php" afterPath="$PROJECT_DIR$/system-old/libraries/Email.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/libraries/Encrypt.php" afterPath="$PROJECT_DIR$/system-old/libraries/Encrypt.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/libraries/Form_validation.php" afterPath="$PROJECT_DIR$/system-old/libraries/Form_validation.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/libraries/Ftp.php" afterPath="$PROJECT_DIR$/system-old/libraries/Ftp.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/libraries/Image_lib.php" afterPath="$PROJECT_DIR$/system-old/libraries/Image_lib.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/libraries/Javascript.php" afterPath="$PROJECT_DIR$/system-old/libraries/Javascript.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/libraries/Log.php" afterPath="$PROJECT_DIR$/system-old/libraries/Log.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/libraries/Migration.php" afterPath="$PROJECT_DIR$/system-old/libraries/Migration.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/libraries/Pagination.php" afterPath="$PROJECT_DIR$/system-old/libraries/Pagination.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/libraries/Parser.php" afterPath="$PROJECT_DIR$/system-old/libraries/Parser.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/libraries/Profiler.php" afterPath="$PROJECT_DIR$/system-old/libraries/Profiler.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/libraries/Session.php" afterPath="$PROJECT_DIR$/system-old/libraries/Session.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/libraries/Sha1.php" afterPath="$PROJECT_DIR$/system-old/libraries/Sha1.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/libraries/Table.php" afterPath="$PROJECT_DIR$/system-old/libraries/Table.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/libraries/Trackback.php" afterPath="$PROJECT_DIR$/system-old/libraries/Trackback.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/libraries/Typography.php" afterPath="$PROJECT_DIR$/system-old/libraries/Typography.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/libraries/Unit_test.php" afterPath="$PROJECT_DIR$/system-old/libraries/Unit_test.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/libraries/Upload.php" afterPath="$PROJECT_DIR$/system-old/libraries/Upload.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/libraries/User_agent.php" afterPath="$PROJECT_DIR$/system-old/libraries/User_agent.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/libraries/Xmlrpc.php" afterPath="$PROJECT_DIR$/system-old/libraries/Xmlrpc.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/libraries/Xmlrpcs.php" afterPath="$PROJECT_DIR$/system-old/libraries/Xmlrpcs.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/libraries/Zip.php" afterPath="$PROJECT_DIR$/system-old/libraries/Zip.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/libraries/index.html" afterPath="$PROJECT_DIR$/system-old/core/index.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/system/libraries/javascript/Jquery.php" afterPath="$PROJECT_DIR$/system-old/libraries/javascript/Jquery.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/config/database.php" afterPath="$PROJECT_DIR$/application/config/database.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="sleepover.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -24,16 +173,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="5.0416665">
-              <caret line="74" column="40" selection-start-line="74" selection-start-column="40" selection-end-line="74" selection-end-column="40" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="login.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/login.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -107,19 +246,34 @@
       <file leaf-file-name="tugbadeneme.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/controllers/tugbadeneme.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="6.875">
+            <state vertical-scroll-proportion="2.1666667">
               <caret line="2" column="17" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="17" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="database.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="database.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/config/database.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.44285715">
+            <state vertical-scroll-proportion="-10.958333">
               <caret line="56" column="34" selection-start-line="56" selection-start-column="34" selection-end-line="56" selection-end-column="34" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mysqli_driver.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/system-old/database/drivers/mysqli/mysqli_driver.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.12857144">
+              <caret line="3" column="2" selection-start-line="3" selection-start-column="2" selection-end-line="3" selection-end-column="2" />
+              <folding>
+                <marker date="1440979110000" expanded="true" signature="5060:5085" placeholder="DELETE FROM ..." />
+                <marker date="1440979110000" expanded="true" signature="12378:12463" placeholder="INSERT INTO ..." />
+                <marker date="1440979110000" expanded="true" signature="12860:12917" placeholder="INSERT INTO ..." />
+                <marker date="1440979110000" expanded="true" signature="16550:16562" placeholder="DELETE FROM ..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -201,70 +355,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sleepover" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sleepover" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="system" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sleepover" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sleepover" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sleepover" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sleepover" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sleepover" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sleepover" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -272,6 +362,12 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/system-old" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
@@ -338,7 +434,7 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/system/core/CodeIgniter.php">
+    <entry file="file://$PROJECT_DIR$/system-old/core/CodeIgniter.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="30.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -378,7 +474,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/system/index.html">
+    <entry file="file://$PROJECT_DIR$/system-old/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -386,7 +482,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/system/database/index.html">
+    <entry file="file://$PROJECT_DIR$/system-old/database/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -394,7 +490,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/system/database/DB.php">
+    <entry file="file://$PROJECT_DIR$/system-old/database/DB.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="6.25">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -487,7 +583,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/system/.htaccess">
+    <entry file="file://$PROJECT_DIR$/system-old/.htaccess">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -609,7 +705,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/tugbadeneme.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="6.875">
+        <state vertical-scroll-proportion="2.1666667">
           <caret line="2" column="17" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="17" />
           <folding />
         </state>
@@ -617,9 +713,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/config/database.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.44285715">
+        <state vertical-scroll-proportion="-10.958333">
           <caret line="56" column="34" selection-start-line="56" selection-start-column="34" selection-end-line="56" selection-end-column="34" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/system-old/database/drivers/mysqli/mysqli_driver.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.12857144">
+          <caret line="3" column="2" selection-start-line="3" selection-start-column="2" selection-end-line="3" selection-end-column="2" />
+          <folding>
+            <marker date="1440979110000" expanded="true" signature="5060:5085" placeholder="DELETE FROM ..." />
+            <marker date="1440979110000" expanded="true" signature="12378:12463" placeholder="INSERT INTO ..." />
+            <marker date="1440979110000" expanded="true" signature="12860:12917" placeholder="INSERT INTO ..." />
+            <marker date="1440979110000" expanded="true" signature="16550:16562" placeholder="DELETE FROM ..." />
+          </folding>
         </state>
       </provider>
     </entry>

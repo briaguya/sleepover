@@ -14,7 +14,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
 $hook['post_controller_constructor'] = array(
-	'class' => 'postControllerHook',
+	'class' => '',
 	'function' => 'check_login',
 	'filename' => 'check_login.php',
 	'filepath' => 'hooks'

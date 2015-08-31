@@ -7,7 +7,7 @@ DELIMITER $$
 --
 -- Procedures
 --
-CREATE DEFINER=`hotel`@`localhost` PROCEDURE `get_available_rooms`(IN o_room_type varchar(50), IN o_checkin_date varchar(50), IN o_checkout_date varchar(50))
+CREATE DEFINER=`sleepover`@`localhost` PROCEDURE `get_available_rooms`(IN o_room_type varchar(50), IN o_checkin_date varchar(50), IN o_checkout_date varchar(50))
 BEGIN
 SELECT * FROM `room` WHERE room_type=o_room_type AND NOT EXISTS (
 SELECT room_id FROM reservation WHERE reservation.room_id=room.room_id AND checkout_date >= o_checkin_date AND checkin_date <= o_checkout_date
@@ -16,12 +16,12 @@ SELECT room_id FROM room_sales WHERE room_sales.room_id=room.room_id AND checkou
 );
 END$$
 
-CREATE DEFINER=`hotel`@`localhost` PROCEDURE `get_customers`(IN today_date varchar(50))
+CREATE DEFINER=`sleepover`@`localhost` PROCEDURE `get_customers`(IN today_date varchar(50))
 BEGIN
 SELECT * FROM `room_sales` NATURAL JOIN `customer` WHERE checkout_date >= today_date AND checkin_date <= today_date;
 END$$
 
-CREATE DEFINER=`hotel`@`localhost` PROCEDURE `todays_service_count`(IN today_date varchar(50))
+CREATE DEFINER=`sleepover`@`localhost` PROCEDURE `todays_service_count`(IN today_date varchar(50))
 BEGIN
 SELECT count(*) as amount, "laundry" as type FROM laundry_service WHERE laundry_date=today_date UNION ALL SELECT count(*) as amount, "massage" as type FROM massage_service WHERE massage_date=today_date UNION ALL SELECT count(*) as amount, "roomservice" as type FROM get_roomservice WHERE roomservice_date=today_date UNION ALL SELECT count(*) as amount, "medicalservice" as type FROM get_medicalservice WHERE medicalservice_date=today_date UNION ALL SELECT count(*) as amount, "sport" as type FROM do_sport WHERE dosport_date=today_date
 UNION ALL SELECT count(*) as amount, "restaurant" as type FROM restaurant_booking WHERE book_date=today_date;

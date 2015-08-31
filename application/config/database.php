@@ -49,10 +49,10 @@ $active_group = 'default';
 $active_record = TRUE;
 
 $db['default']['hostname'] = 'localhost';
-$db['default']['username'] = '';
-$db['default']['password'] = '';
-$db['default']['database'] = 'hotel';
-$db['default']['dbdriver'] = 'mysqli';
+$db['default']['username'] = 'sleepover';
+$db['default']['password'] = 'bed';
+$db['default']['database'] = 'sleepover';
+$db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;
 $db['default']['db_debug'] = FALSE;

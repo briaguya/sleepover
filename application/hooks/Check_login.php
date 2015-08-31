@@ -1,8 +1,8 @@
 <?php if (!defined('BASEPATH')) exit('No direct script access allowed');
 
-class postControllerHook{
+class Check_login{
 
-	function check_login()
+	function login_check()
 	{
 		$CI =& get_instance();
 

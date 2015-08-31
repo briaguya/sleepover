@@ -148,7 +148,7 @@ if($page == "reservation" ) {
 
         } */
 
-        var myLine = new Chart(document.getElementById("area-chart").getContext("2d")).Line(lineChartData);
+        //var myLine = new Chart(document.getElementById("area-chart").getContext("2d")).Line(lineChartData);
 
 
         var barChartData = {

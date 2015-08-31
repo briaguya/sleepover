@@ -16,7 +16,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $hook['pre_controller'] = array(
 	'class' => 'check_login',
 	'function' => 'login_check',
-	'filename' => 'heck_login.php',
+	'filename' => 'Check_login.php',
 	'filepath' => 'hooks'
 );
 

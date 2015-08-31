@@ -134,16 +134,9 @@ if($page == "reservation" ) {
     $('#calendar').find('.fc-other-month').css('background-color','transparent');*/
   });
 
-        var lineChartData = {
+/*        var lineChartData = {
             labels: <? echo json_encode($next_week_freq['dates']);?>,
             datasets: [
-        /*{
-            fillColor: "rgba(220,220,220,0.5)",
-            strokeColor: "rgba(220,220,220,1)",
-            pointColor: "rgba(220,220,220,1)",
-            pointStrokeColor: "#fff",
-            data: [65, 59, 90, 81, 56, 55, 40]
-        },*/
         {
             fillColor: "rgba(151,187,205,0.5)",
             strokeColor: "rgba(151,187,205,1)",
@@ -153,7 +146,7 @@ if($page == "reservation" ) {
         }
       ]
 
-        }
+        } */
 
         var myLine = new Chart(document.getElementById("area-chart").getContext("2d")).Line(lineChartData);
 

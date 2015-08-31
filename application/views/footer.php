@@ -180,7 +180,7 @@ if($page == "reservation" ) {
     <?
     if(SHOW_GUIDE) {
     ?>
-    <script src="js/guidely/guidely.min.js"></script>
+    <script src="sleepover/js/guidely/guidely.min.js"></script>
 
     <script>
     $(function () {

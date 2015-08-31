@@ -40,7 +40,7 @@
                 <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i
                                   class="icon-user"></i> <?=FULLNAME?> (<?=USERNAME?>) <b class="caret"></b></a>
                   <ul class="dropdown-menu">
-                    <li><a href="/login/logout">Logout</a></li>
+                    <li><a href="/sleepover/login/logout">Logout</a></li>
                   </ul>
                 </li>
                 <li><a href="#" class="dropdown-toggle" data-toggle="dropdown"><?=DEPARTMENT_NAME?></a>

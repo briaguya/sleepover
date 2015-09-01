@@ -91,7 +91,7 @@ class Podestrian extends CI_Controller {
 
 	public function index()
 	{
-		$podestrians = $this->podestrian_m->get_team_members();
+		$podestrians = $this->podestrian_m->get_podestrians();
 
 		$data = array('title' => 'sleepover - Podestrians', 'page' => 'podestrian');
 		$this->load->view('header', $data);

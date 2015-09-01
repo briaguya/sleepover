@@ -18,7 +18,7 @@
 							<th> Twitter </th>
 							<th> Instagram </th>
 							<th> Birthday </th>
-							<th> How they found Podshare </th>
+							<th> How they found us </th>
 							<th class="td-actions"> Actions </th>
 						</tr>
 						</thead>

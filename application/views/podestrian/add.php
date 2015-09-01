@@ -8,74 +8,82 @@
 			
 			<div class="add-fields">
 
-				<div class="field">
-					<label for="username">Username:</label>
-					<input type="text" id="username" name="username" required value="" placeholder="Username"/>
-				</div> <!-- /field -->
-				
-				<div class="field">
-					<label for="password">Password:</label>
-					<input type="text" id="password" name="password" required value="" placeholder="Password"/>
-				</div> <!-- /password -->
+				<div>todo:pic</div>
 
 				<div class="field">
-					<label for="employee_firstname">First name:</label>
-					<input type="text" id="firstname" name="firstname" required value="" placeholder="Firstname"/>
-				</div> <!-- /field -->
+					<label for="first_name">First Name:</label>
+					<input type="text" id="first_name" name="first_name" required value=""/>
+				</div>
 
 				<div class="field">
-					<label for="employee_lastname">Last name:</label>
-					<input type="text" id="lastname" name="lastname" required value="" placeholder="Lastname"/>
-				</div> <!-- /field -->
+					<label for="last_name">Last Name:</label>
+					<input type="text" id="last_name" name="last_name" required value=""/>
+				</div>
 
 				<div class="field">
-					<label for="employee_telephone">Telephone:</label>
-					<input type="text" id="telephone" name="telephone" value="" placeholder="Telephone"/>
-				</div> <!-- /field -->
+					<label for="email">Email Address:</label>
+					<input type="text" id="email" name="email" required value=""/>
+				</div>
 
 				<div class="field">
-					<label for="employee_email">Email:</label>
-					<input type="email" id="email" name="email" required value="" placeholder="Email"/>
-				</div> <!-- /field -->
-
-				<div class="field">
-					<label for="department_id">Department:</label>
-					<select id="department_id" name="department_id">
-					<?php
-						foreach ($departments as $dept)
-						{
-							echo "<option value=";
-							echo $dept->department_id;
-							echo ">";
-							echo $dept->department_name;
-							echo "</option>";
-						}
-					?>
+					<label for="podestrian_type_id">Podestrian Type:</label>
+					<select id="podestrian_type_id" name="podestrian_type_id">
+						<? foreach ($podestrian_types as $type) { ?>
+							<option value="<?=$type->podestrian_type_id?>"><?=$type->podestrian_type_id?></option>
+						<? } ?>
 					</select>
-				</div> <!-- /field -->
+				</div>
 
 				<div class="field">
-					<label for="employee_type">Employee Type:</label>
-					<input type="text" id="type" name="type" value="" placeholder="Employee Type"/>
-				</div> <!-- /field -->
+					<label for="address_id">Address:</label>
+					<select id="address_id" name="address_id">
+						<? foreach ($addresses as $address) { ?>
+							<option value="<?=$address->address_id?>"><?=$address->address_id?></option>
+						<? } ?>
+					</select>
+				</div>
 
-				<div class="field">
-					<label for="employee_salary">Employee Salary:</label>
-					<input type="text" id="salary" name="salary" value="" placeholder="Employee Salary"/>
-				</div> <!-- /field -->
+                <div class="field">
+                    <label for="sex">Sex:</label>
+                    <select id="sex" name="sex">
+                        <option value ="Female">Female</option>
+                        <option value ="Male">Male</option>
+                        <option value ="Not Applicable">Not Applicable</option>
+                    </select>
+                </div>
 
-				<div class="field">
-					<label for="employee_hiring_date">Employee Hiring Date:</label>
-					<input type="date" id="hiring_date" name="hiring_date" value="" placeholder="Employee Hiring Date"/>
-				</div> <!-- /field -->
+                <div class="field">
+                    <label for="facebook">Facebook:</label>
+                    <input type="text" id="facebook" name="facebook" value=""/>
+                </div>
 
-			</div> <!-- /login-fields -->
+                <div class="field">
+                    <label for="twitter">Twitter:</label>
+                    <input type="text" id="twitter" name="twitter" value=""/>
+                </div>
+
+                <div class="field">
+                    <label for="instagram">Instagram:</label>
+                    <input type="text" id="instagram" name="instagram" value=""/>
+                </div>
+
+                <div class="field">
+                    <label for="birthday">Birthday:</label>
+                    <input type="date" id="birthday" name="birthday" value=""/>
+                </div>
+
+                <div class="field">
+                    <label for="how_found">How they found us:</label>
+                    <input type="text" id="how_found" name="how_found" value=""/>
+                </div>
+
+			</div>
 			
 			<div class="login-actions">
 				
 				<button class="button btn btn-success btn-large">Add</button>
 				
-			</div> <!-- .actions -->
+			</div>
 			
 			
 			

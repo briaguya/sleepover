@@ -10,7 +10,7 @@ class Team_member_m extends CI_Model {
     
     function get_team_members()
     {
-        $query = $this->db->from('employee')->join('department', 'department.department_id=employee.department_id')->get();
+        $query = $this->db->from('team_member')->get();
         $data = array();
 
         foreach (@$query->result() as $row)

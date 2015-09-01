@@ -142,9 +142,7 @@ CREATE TABLE IF NOT EXISTS `podestrian` (
 --
 
 INSERT INTO `podestrian` (`podestrian_id`, `podestrian_number`, `first_name`, `last_name`, `email`, `address_id`, `sex`, `facebook`, `twitter`, `instagram`, `podestrian_type_id`, `birthday`, `pic`, `how_found`) VALUES
-(1, NULL, 'Sleepover', 'Admin', 'pod@pod.pod', 1, 'None', '', '', '', 1, '1990-01-01', '', ''),
-(2, NULL, 'New', 'Podestrian', 'h@h.h', 1, 'Female', '', '', '', 1, '2000-01-01', NULL, 'Internet'),
-(3, NULL, 'Elvina', 'Beck', 'fake@email.address', 1, 'Female', '', '', '', 1, '2015-12-31', NULL, 'Started it all');
+(1, NULL, 'Sleepover', 'Admin', 'pod@pod.pod', 1, 'None', '', '', '', 1, '1990-01-01', '', '');
 
 -- --------------------------------------------------------
 

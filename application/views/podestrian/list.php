@@ -29,7 +29,7 @@
 							?>
 							<tr>
 								<td> Pic Here? </td>
-								<td> <?=$podestrian->firstname ." ".$podestrian->lastname?> </td>
+								<td> <?=$podestrian->first_name ." ".$podestrian->last_name?> </td>
 								<td> <?=$podestrian->email ?> </td>
 								<td> todo: Type </td>
 								<td> todo: Address </td>

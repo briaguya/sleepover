@@ -2,14 +2,14 @@
 	
 	<div class="content clearfix">
 		
-		<form action="/sleepover/employee/add" method="post">
+		<form action="/sleepover/team_member/add" method="post">
 		
 			<h1>Add Employee</h1>		
 			
 			<div class="add-fields">
 
 				<div class="field">
-					<label for="employee_username">Username:</label>
+					<label for="username">Username:</label>
 					<input type="text" id="username" name="username" required value="" placeholder="Username"/>
 				</div> <!-- /field -->
 				

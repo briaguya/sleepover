@@ -31,13 +31,13 @@
 								<td> Pic Here? </td>
 								<td> <?=$podestrian->first_name ." ".$podestrian->last_name?> </td>
 								<td> <?=$podestrian->email ?> </td>
-								<td> todo: Type </td>
-								<td> todo: Address </td>
+								<td> <?=$podestrian->podestrian_type ?> </td>
+								<td> <?=$podestrian->city .", ".$podestrian->country?> </td>
 								<td> <?=$podestrian->sex ?> </td>
 								<td> <?=$podestrian->facebook ?> </td>
 								<td> <?=$podestrian->twitter ?> </td>
 								<td> <?=$podestrian->instagram ?> </td>
-								<td> todo: Birthday </td>
+								<td> <?=$podestrian->birthday ?> </td>
 								<td> <?=$podestrian->how_found ?> </td>
 								<td class="td-actions"><a href="/podestrian/edit/<?=$podestrian->podestrian_id?>" class="btn btn-small btn-primary"><i class="btn-icon-only icon-edit"> </i></a><a href="/podestrian/delete/<?=$podestrian->podestrian_id?>" onclick="return confirm('Are you sure ?')" class="btn btn-danger btn-small"><i class="btn-icon-only icon-remove"> </i></a></td>
 							</tr>

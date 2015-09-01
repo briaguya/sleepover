@@ -28,23 +28,12 @@ class Welcome extends CI_Controller {
 	public function index()
 	{
 		$this->check_login();
-
-		$today_stats = $this->report_m->today_stats();
-		$customer_pay_list = $this->report_m->get_customer_freq_list();
-		$customer_most_paid = $this->report_m->get_customer_most_paid();
-		$next_week_freq = $this->report_m->get_next_week_freq();
 		
-		$data = array('title' => 'DB Hotel Management System', 'page' => 'dashboard');
+		$data = array('title' => 'sleepover', 'page' => 'dashboard');
 		$this->load->view('header', $data);
 
-		$viewdata = array(
-			'today_stats' => $today_stats,
-			'customer_pay_list' => $customer_pay_list,
-			'customer_most_paid' => $customer_most_paid,
-			'next_week_freq' => $next_week_freq
-		);
-		$this->load->view('welcome_message', $viewdata);
-		$this->load->view('footer', array("next_week_freq"=>$next_week_freq));
+		$this->load->view('welcome_message');
+		$this->load->view('footer');
 		$this->session->set_userdata('show_guide',true);
 	}
 }

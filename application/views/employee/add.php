@@ -2,7 +2,7 @@
 	
 	<div class="content clearfix">
 		
-		<form action="/employee/add" method="post">
+		<form action="/sleepover/employee/add" method="post">
 		
 			<h1>Add Employee</h1>		
 			
@@ -41,13 +41,17 @@
 				<div class="field">
 					<label for="department_id">Department:</label>
 					<select id="department_id" name="department_id">
-					<?
-						foreach ($departments as $dept) {
-							?>
-							<option value="<?=$dept->department_id?>"><?=$dept->department_name?></option>
-							<?
+					<?php
+						foreach ($departments as $dept)
+						{
+							echo "<option value=";
+							echo $dept->department_id;
+							if($dept->department_id==$employee->department_id) { echo "selected"; }
+							echo ">";
+							echo $dept->department_name;
+							echo "</option>";
 						}
-					?>
+						?>
 					</select>
 				</div> <!-- /field -->
 

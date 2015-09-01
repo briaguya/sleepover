@@ -17,8 +17,7 @@
 				</thead>
 				<tbody>
 				<?
-					foreach ($room_types as $rt) {
-						// $emp->username
+					foreach ($pod_types as $rt) {
 				?>
 				  <tr>
 				    <td> <?=$rt->room_type ?> </td>

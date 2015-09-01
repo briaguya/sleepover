@@ -4,7 +4,7 @@
 		
 		<form action="/sleepover/room/add" method="post">
 		
-			<h1>Add Rooms</h1>		
+			<h1>Add Pods</h1>
 <? if(isset($error)) {?>
 			<div class="alert alert-danger">
               <button type="button" class="close" data-dismiss="alert">×</button>
@@ -15,7 +15,7 @@
 			<div class="add-fields">
 
 				<div class="field">
-					<label for="room_range">Room Type:</label>
+					<label for="room_range">Pod Type:</label>
 					<select id="room_type" name="room_type">
 					<?
 						foreach ($room_types as $k=>$rt) {

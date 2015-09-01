@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class user_l{
+class Team_member_l{
 
 	public function __construct() {
 		
@@ -9,10 +9,9 @@ class user_l{
 	{
 		// var_dump($user);
 		$data = array(
-			'uid' => $user[0]->employee_id,
-			'username' => $user[0]->employee_username,
-			'fullname' => $user[0]->employee_firstname." ".$user[0]->employee_lastname,
-			'department_name' => $user[0]->department_name
+			'uid' => $user[0]->team_member_id,
+			'username' => $user[0]->username,
+			'fullname' => $user[0]->firstname." ".$user[0]->lastname
 		);
 		$CI = &get_instance();
 		$CI->session->set_userdata($data);

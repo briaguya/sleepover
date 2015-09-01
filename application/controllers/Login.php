@@ -19,8 +19,8 @@ class Login extends CI_Controller {
 		{
 			$username = $this->input->post("username");
 			$password = $this->input->post("password");
-			if($user=$this->user_m->check_login($username, $password)) {
-				$this->user_l->login($user);
+			if($user=$this->team_member_m->check_login($username, $password)) {
+				$this->team_member_l->login($user);
 				redirect("/");
 			}
 			else {
@@ -35,7 +35,7 @@ class Login extends CI_Controller {
 
 	public function logout()
 	{
-		$this->user_l->logout();
+		$this->team_member_l->logout();
 		redirect("/");
 	}
 }

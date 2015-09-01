@@ -68,10 +68,6 @@
                 </ul>
               </li>
               <li <? if($page == "departments"){ echo 'class="active"'; } ?>><a href="/sleepover/departments"><i class="icon-file"></i><span>Depatments</span> </a> </li>
-              <li <? if($page == "restaurant"){ echo 'class="active"'; } ?>><a href="/sleepover/restaurant"><i class="icon-fire"></i><span>Restaurants</span> </a> </li>
-              <li <? if($page == "medical_service"){ echo 'class="active"'; } ?>><a href="/sleepover/medical_service"><i class="icon-user-md"></i><span>Medical Service</span> </a> </li>
-              <li <? if($page == "sport_facility"){ echo 'class="active"'; } ?>><a href="/sleepover/sport_facility"><i class="icon-trophy "></i><span>Sport Facility</span> </a> </li>
-              <li <? if($page == "massage_room"){ echo 'class="active"'; } ?>><a href="/sleepover/massage_room"><i class="icon-retweet "></i><span>Massage Room</span> </a> </li>
             </ul>
           </div>
           <!-- /container --> 

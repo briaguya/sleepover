@@ -32,6 +32,7 @@ class Room_m extends CI_Model {
         {
             if($i==-1 || $data[$i]->room_type != $row->room_type || $data[$i]->max_id+1!=$row->room_id) {
                 $i++;
+                $data[i] = new stdClass();
                 $data[$i]->room_type = $row->room_type;
                 $data[$i]->min_id = intval($row->room_id);
                 $data[$i]->max_id = intval($row->room_id);

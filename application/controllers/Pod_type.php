@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Room_type extends CI_Controller {
+class Pod_type extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.

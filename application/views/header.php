@@ -67,7 +67,7 @@
                   <li><a href="/sleepover/pod_type">Pod Types</a></li>
                 </ul>
               </li>
-              <li <? if($page == "departments"){ echo 'class="active"'; } ?>><a href="/sleepover/departments"><i class="icon-file"></i><span>Depatments</span> </a> </li>
+              <li <? if($page == "calendar"){ echo 'class="active"'; } ?>><a href="/sleepover/calendar"><i class="icon-calendar"></i><span>Calendar</span> </a> </li>
             </ul>
           </div>
           <!-- /container --> 

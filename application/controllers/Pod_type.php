@@ -39,7 +39,7 @@ class Pod_type extends CI_Controller {
 
 			if(count($this->room_m->getRoomType($type))==0) {
 				$this->room_m->addRoomType($type, $price, $details, $quantity);
-				redirect("/pod-type");
+				redirect("/pod_type");
 			}
 			else {
 				$viewdata['error'] = "Room type alread exists";
@@ -48,14 +48,14 @@ class Pod_type extends CI_Controller {
 
 		$data = array('title' => 'Add Room Type - DB Hotel Management System', 'page' => 'room_type');
 		$this->load->view('header', $data);
-		$this->load->view('pod-type/add', $viewdata);
+		$this->load->view('pod_type/add', $viewdata);
 		$this->load->view('footer');
 	}
 
 	function delete($room_type)
 	{
 		$this->room_m->deleteRoomType($room_type);
-		redirect("/pod-type");
+		redirect("/pod_type");
 	}
 
 	public function edit($room_type)
@@ -69,7 +69,7 @@ class Pod_type extends CI_Controller {
 			$quantity = $this->input->post("quantity");
 
 			$this->room_m->editRoomType($type, $price, $details, $quantity);
-			redirect("/pod-type");
+			redirect("/pod_type");
 		}
 		
 		$data = array('title' => 'Edit Room Type - DB Hotel Management System', 'page' => 'room_type');
@@ -78,7 +78,7 @@ class Pod_type extends CI_Controller {
 		$room_type = $this->room_m->getRoomType($room_type);
 		
 		$viewdata = array('pod_type'  => $room_type[0]);
-		$this->load->view('pod-type/edit',$viewdata);
+		$this->load->view('pod_type/edit',$viewdata);
 
 		$this->load->view('footer');
 	}
@@ -91,7 +91,7 @@ class Pod_type extends CI_Controller {
 
 		$data = array('title' => 'sleepover - Pods', 'page' => 'room_type');
 		$this->load->view('header', $data);
-		$this->load->view('pod-type/list',$viewdata);
+		$this->load->view('pod_type/list',$viewdata);
 		$this->load->view('footer');
 	}
 }

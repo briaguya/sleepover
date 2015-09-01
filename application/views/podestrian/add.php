@@ -38,7 +38,7 @@
 					<label for="address_id">Address:</label>
 					<select id="address_id" name="address_id">
 						<? foreach ($addresses as $address) { ?>
-							<option value="<?=$address->address_id?>"><?=$address->address_id?></option>
+							<option value="<?=$address->address_id?>"><?=$address->city?>, <?=$address->country?></option>
 						<? } ?>
 					</select>
 				</div>

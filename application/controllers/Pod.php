@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Room extends CI_Controller {
+class Pod extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -44,7 +44,7 @@ class Room extends CI_Controller {
 				redirect("/room");
 			}
 		}
-		$data = array('title' => 'Add Rooms - DB Hotel Management System', 'page' => 'room');
+		$data = array('title' => 'sleepover - Add Pods', 'page' => 'room');
 		$this->load->view('header', $data);
 
 		$room_types = $this->room_m->get_room_types();

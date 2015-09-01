@@ -44,9 +44,12 @@
 					<?php
 						foreach ($departments as $dept)
 						{
-							echo "<option value=$dept->department_id";
+							echo "<option value=";
+							echo $dept->department_id;
 							if($dept->department_id==$employee->department_id) { echo "selected"; }
-							echo ">$dept->department_name</option>";
+							echo ">";
+							echo $dept->department_name;
+							echo "</option>";
 						}
 					?>
 					</select>

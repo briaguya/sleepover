@@ -3,12 +3,12 @@
     <div class="container">
       <div class="row">
         <div class="span12">
-			<a href="/sleepover/room/add" class="btn btn-small btn-primary"><i class="btn-icon-only icon-ok"></i>Add Rooms</a>
+			<a href="/sleepover/pod/add" class="btn btn-small btn-primary"><i class="btn-icon-only icon-ok"></i>Add Pods</a>
 			<br><br>
 			<table class="table table-striped table-bordered">
 				<thead>
 				  <tr>
-				    <th> Room Type </th>
+				    <th> Pod Type </th>
 				    <th> Min ID </th>
 				    <th> Max ID </th>
 				    <th> Quantity </th>

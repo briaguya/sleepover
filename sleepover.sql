@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Sep 01, 2015 at 02:12 AM
+-- Generation Time: Sep 01, 2015 at 11:04 AM
 -- Server version: 5.5.44-0ubuntu0.14.04.1
 -- PHP Version: 5.5.9-1ubuntu4.11
 
@@ -31,7 +31,14 @@ CREATE TABLE IF NOT EXISTS `address` (
   `city` varchar(100) NOT NULL,
   `country` varchar(100) NOT NULL,
   PRIMARY KEY (`address_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `address`
+--
+
+INSERT INTO `address` (`address_id`, `city`, `country`) VALUES
+(1, 'Los Angeles', 'United States');
 
 -- --------------------------------------------------------
 
@@ -95,6 +102,7 @@ INSERT INTO `pod` (`pod_id`, `pod_name`, `pod_type`) VALUES
 
 CREATE TABLE IF NOT EXISTS `podestrian` (
   `podestrian_id` int(11) NOT NULL AUTO_INCREMENT,
+  `podestrian_number` int(11) DEFAULT NULL,
   `first_name` varchar(50) NOT NULL,
   `last_name` varchar(50) NOT NULL,
   `email` varchar(500) NOT NULL,
@@ -108,9 +116,17 @@ CREATE TABLE IF NOT EXISTS `podestrian` (
   `pic` varchar(50) NOT NULL,
   `how_found` varchar(500) NOT NULL,
   PRIMARY KEY (`podestrian_id`),
+  UNIQUE KEY `podestrian_number` (`podestrian_number`),
   KEY `address` (`address_id`),
   KEY `podestrian type` (`podestrian_type_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `podestrian`
+--
+
+INSERT INTO `podestrian` (`podestrian_id`, `podestrian_number`, `first_name`, `last_name`, `email`, `address_id`, `sex`, `facebook`, `twitter`, `instagram`, `podestrian_type_id`, `birthday`, `pic`, `how_found`) VALUES
+(1, NULL, 'Sleepover', 'Admin', 'pod@pod.pod', 1, 'None', '', '', '', 1, '1990-01-01', '', '');
 
 -- --------------------------------------------------------
 
@@ -123,7 +139,14 @@ CREATE TABLE IF NOT EXISTS `podestrian_type` (
   `podestrian_type` varchar(50) NOT NULL,
   PRIMARY KEY (`podestrian_type_id`),
   UNIQUE KEY `podestrian_type` (`podestrian_type`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `podestrian_type`
+--
+
+INSERT INTO `podestrian_type` (`podestrian_type_id`, `podestrian_type`) VALUES
+(1, 'Default');
 
 -- --------------------------------------------------------
 
@@ -164,7 +187,14 @@ CREATE TABLE IF NOT EXISTS `team_member` (
   PRIMARY KEY (`team_id`),
   UNIQUE KEY `podestrian` (`podestrian`),
   KEY `role` (`role`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `team_member`
+--
+
+INSERT INTO `team_member` (`team_id`, `podestrian`, `username`, `password`, `role`, `startdate`) VALUES
+(1, 1, 'sleepover', 'pod', 1, '2015-09-01');
 
 -- --------------------------------------------------------
 
@@ -177,7 +207,14 @@ CREATE TABLE IF NOT EXISTS `team_member_role` (
   `role` varchar(50) NOT NULL,
   `description` varchar(200) NOT NULL,
   PRIMARY KEY (`role_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `team_member_role`
+--
+
+INSERT INTO `team_member_role` (`role_id`, `role`, `description`) VALUES
+(1, 'DB Admin', 'Superuser');
 
 --
 -- Constraints for dumped tables
@@ -200,15 +237,15 @@ ALTER TABLE `pod`
 -- Constraints for table `podestrian`
 --
 ALTER TABLE `podestrian`
-  ADD CONSTRAINT `podestrian must have type` FOREIGN KEY (`podestrian_type_id`) REFERENCES `podestrian_type` (`podestrian_type_id`),
-  ADD CONSTRAINT `podestrian must have address` FOREIGN KEY (`address_id`) REFERENCES `address` (`address_id`);
+  ADD CONSTRAINT `podestrian must have address` FOREIGN KEY (`address_id`) REFERENCES `address` (`address_id`),
+  ADD CONSTRAINT `podestrian must have type` FOREIGN KEY (`podestrian_type_id`) REFERENCES `podestrian_type` (`podestrian_type_id`);
 
 --
 -- Constraints for table `team_member`
 --
 ALTER TABLE `team_member`
-  ADD CONSTRAINT `team member must have role` FOREIGN KEY (`role`) REFERENCES `team_member_role` (`role_id`),
-  ADD CONSTRAINT `team member must have podestrian` FOREIGN KEY (`podestrian`) REFERENCES `podestrian` (`podestrian_id`);
+  ADD CONSTRAINT `team member must have podestrian` FOREIGN KEY (`podestrian`) REFERENCES `podestrian` (`podestrian_id`),
+  ADD CONSTRAINT `team member must have role` FOREIGN KEY (`role`) REFERENCES `team_member_role` (`role_id`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

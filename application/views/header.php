@@ -30,13 +30,6 @@
         if(UID){?>
           <div class="nav-collapse">
             <ul class="nav pull-right">
-              <!-- <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i
-                                class="icon-cog"></i> Account <b class="caret"></b></a>
-                <ul class="dropdown-menu">
-                  <li><a href="javascript:;">Settings</a></li>
-                  <li><a href="javascript:;">Help</a></li>
-                </ul>
-              </li> -->
                 <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i
                                   class="icon-user"></i> <?=FULLNAME?> (<?=USERNAME?>) <b class="caret"></b></a>
                   <ul class="dropdown-menu">
@@ -46,7 +39,7 @@
                 <li><a href="#" class="dropdown-toggle" data-toggle="dropdown"><?=DEPARTMENT_NAME?></a>
                 </li>
               </ul>
-              <form class="navbar-search pull-right" action="/search" method="POST">
+              <form class="navbar-search pull-right" action="/sleepover/search" method="POST">
                 <input type="text" name="customer" class="search-query" placeholder="Search Customer">
               </form>
           </div>
@@ -58,7 +51,7 @@
   <!-- /navbar-inner --> 
 </div>
 <!-- /navbar -->
-<?
+<?php
   if(UID)
 {?>
       <div class="subnavbar">

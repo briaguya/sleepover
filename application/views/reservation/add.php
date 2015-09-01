@@ -2,13 +2,13 @@
   <div class="main-inner">
     <div class="container">
       <div class="span4">
-        <a href="/customer/add/reservation" class="btn btn-success btn-large">Add Customer</a>
+        <a href="/sleepover/customer/add/reservation" class="btn btn-success btn-large">Add Customer</a>
 
         <div class="account-container">
           
           <div class="content">
             
-            <form action="/reservation/check" method="post">
+            <form action="/sleepover/reservation/check" method="post">
             
               <h1>Search for Rooms</h1>    
 <? if(isset($error)) {?>

@@ -50,20 +50,31 @@ class Podestrian_m extends CI_Model {
         return $query->result();
     }
 
-    function getDepartments()
+    function getPodestrianTypes()
     {
-        $query = $this->db->from('department')->get();
+        $query = $this->db->from('podestrian_type')->get();
         $data = array();
 
         foreach ($query->result() as $row)
         {
             $data[] = $row;
-            // $row->customer_id
-            // $row->customer_username
-            // $data[0]->customer_id
         }
         if(count($data))
             return $data;
         return false;
-    }   
+    }
+
+    function getAddresses()
+    {
+        $query = $this->db->from('address')->get();
+        $data = array();
+
+        foreach ($query->result() as $row)
+        {
+            $data[] = $row;
+        }
+        if(count($data))
+            return $data;
+        return false;
+    }
 }

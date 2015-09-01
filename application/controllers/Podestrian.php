@@ -26,7 +26,6 @@ class Podestrian extends CI_Controller {
 
 	public function add()
 	{
-		
 		if($this->input->post("first_name") && $this->input->post("last_name") && $this->input->post("email"))
 		{
 			$first_name = $this->input->post("first_name");
@@ -47,9 +46,10 @@ class Podestrian extends CI_Controller {
 
 		$data = array('title' => 'sleepover - Add Podestrian', 'page' => 'podestrian');
 		$this->load->view('header', $data);
-		$departments = $this->podestrian_m->getDepartments();
-		$viewdata = array('departments' => $departments);
-		$this->load->view('team_member/add',$viewdata);
+		$podestrian_types = $this->podestrian_m->getPodestrianTypes();
+        $addresses = $this->podestrian_m->getAddresses();
+		$viewdata = array('podestrian_types' => $podestrian_types, 'addresses' => $addresses);
+		$this->load->view('podestrian/add',$viewdata);
 		$this->load->view('footer');
 	}
 

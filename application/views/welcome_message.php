@@ -3,41 +3,6 @@
     <div class="container">
       <div class="row">
         <div class="span6">
-          <div class="widget widget-nopad" id="target-1">
-            <div class="widget-header"> <i class="icon-list-alt"></i>
-              <h3> Today's Stats</h3>
-            </div>
-            <!-- /widget-header -->
-            <div class="widget-content">
-              <div class="widget big-stats-container">
-                <div class="widget-content">
-                  <h6 class="bigstats"> What happened today on DB Hotel? </h6>
-                  <div id="big_stats" class="cf">
-                    <!-- <div class="stat"> <i class="icon-anchor"></i> <span class="value"><?=@$today_stats["roomservice"]?></span> <br>Room Service </div> -->
-                    <!-- .stat -->
-                    
-                    <div class="stat"> <i class="icon-fire"></i> <span class="value"><?=@$today_stats["restaurant"]?></span> <br>Restaurant</div>
-                    <!-- .stat -->
-                    
-                    <div class="stat"> <i class="icon-trophy"></i> <span class="value"><?=@$today_stats["sport"]?></span> <br>Sport </div>
-                    <!-- .stat -->
-                    
-                    <div class="stat"> <i class="icon-user-md"></i> <span class="value"><?=@$today_stats["medicalservice"]?></span> <br>Medical Service </div>
-                    <!-- .stat --> 
-                  <!-- </div>
-                  <div id="big_stats" class="cf">
-                    <div class="stat"> <i class="icon-truck"></i> <span class="value"><?=@$today_stats["laundry"]?></span> <br>Laundry Service </div> -->
-                    <!-- .stat --> 
-
-                    <div class="stat"> <i class="icon-retweet"></i> <span class="value"><?=@$today_stats["massage"]?></span> <br>Massage Service </div>
-                    <!-- .stat --> 
-                  </div>
-                </div>
-                <!-- /widget-content --> 
-                
-              </div>
-            </div>
-          </div>
           <div class="widget widget-table action-table" id="target-3">
             <div class="widget-header"> <i class="icon-th-list"></i>
               <h3>Most Favorite Customer</h3>

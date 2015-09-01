@@ -17,7 +17,7 @@
 				  </tr>
 				</thead>
 				<tbody>
-				<?php
+				<?
 						foreach ($employees as $emp)
 						{?>
 						<tr>

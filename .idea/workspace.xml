@@ -27,8 +27,8 @@
       <file leaf-file-name="list.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/views/employee/list.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7077922">
-              <caret line="30" column="18" selection-start-line="30" selection-start-column="18" selection-end-line="30" selection-end-column="18" />
+            <state vertical-scroll-proportion="0.41558442">
+              <caret line="24" column="35" selection-start-line="24" selection-start-column="35" selection-end-line="24" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -728,14 +728,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/Employee.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.3333335">
-          <caret line="97" column="0" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/system/core/Loader.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-4.5833335">
@@ -744,10 +736,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/Employee.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.3333335">
+          <caret line="97" column="0" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/employee/list.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7077922">
-          <caret line="30" column="18" selection-start-line="30" selection-start-column="18" selection-end-line="30" selection-end-column="18" />
+        <state vertical-scroll-proportion="0.41558442">
+          <caret line="24" column="35" selection-start-line="24" selection-start-column="35" selection-end-line="24" selection-end-column="35" />
           <folding />
         </state>
       </provider>

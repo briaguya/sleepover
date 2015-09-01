@@ -42,10 +42,11 @@
 					<label for="department_id">Department:</label>
 					<select id="department_id" name="department_id">
 					<?php
-						foreach ($departments as $dept) {
-							?>
-							<option value="<?=$dept->department_id?>" <? if($dept->department_id==$employee->department_id) { echo "selected"; } ?>><?=$dept->department_name?></option>
-							<?
+						foreach ($departments as $dept)
+						{
+							echo "<option value=$dept->department_id";
+							if($dept->department_id==$employee->department_id) { echo "selected"; }
+							echo ">$dept->department_name</option>";
 						}
 					?>
 					</select>

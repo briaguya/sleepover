@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Team_member_l{
+class User_l{
 
 	public function __construct() {
 		

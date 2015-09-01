@@ -58,7 +58,7 @@ $autoload['packages'] = array();
 |
 |	$autoload['libraries'] = array('user_agent' => 'ua');
 */
-$autoload['libraries'] = array('database', 'session', 'team_member_l');
+$autoload['libraries'] = array('database', 'session', 'user_l');
 
 /*
 | -------------------------------------------------------------------
@@ -129,4 +129,4 @@ $autoload['language'] = array();
 |	$autoload['model'] = array('first_model' => 'first');
 */
 
-$autoload['model'] = array('user_m','employee_m','room_m', 'departments_m', 'restaurant_m','medical_service_m', 'report_m', 'reservation_m', 'customer_m',"sport_facility_m",'massage_room_m');
+$autoload['model'] = array('team_member_m','employee_m','room_m', 'departments_m', 'restaurant_m','medical_service_m', 'report_m', 'reservation_m', 'customer_m',"sport_facility_m",'massage_room_m');

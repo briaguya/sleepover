@@ -1,6 +1,6 @@
 <?php
 
-class Team_member_m extends CI_Model {
+class User_m extends CI_Model {
 
     function __construct()
     {

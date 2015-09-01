@@ -93,11 +93,9 @@ class Employee extends CI_Controller {
 	{
 		$employees = $this->employee_m->get_employees();
 
-		$viewdata = array('employees' => $employees);
-
 		$data = array('title' => 'Employees - DB Hotel Management System', 'page' => 'employee');
 		$this->load->view('header', $data);
-		$this->load->view('employee/list',$viewdata);
+		$this->load->view('employee/list', array('employees' => $employees));
 		$this->load->view('footer');
 	}
 }

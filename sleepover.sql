@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Sep 01, 2015 at 02:20 PM
+-- Generation Time: Sep 01, 2015 at 03:07 PM
 -- Server version: 5.5.44-0ubuntu0.14.04.1
 -- PHP Version: 5.5.9-1ubuntu4.11
 
@@ -122,27 +122,29 @@ CREATE TABLE IF NOT EXISTS `podestrian` (
   `first_name` varchar(50) NOT NULL,
   `last_name` varchar(50) NOT NULL,
   `email` varchar(500) NOT NULL,
-  `address_id` int(11) NOT NULL,
-  `sex` varchar(7) NOT NULL,
-  `facebook` varchar(50) NOT NULL,
-  `twitter` varchar(50) NOT NULL,
-  `instagram` varchar(50) NOT NULL,
+  `address_id` int(11) DEFAULT NULL,
+  `sex` varchar(20) NOT NULL,
+  `facebook` varchar(50) DEFAULT NULL,
+  `twitter` varchar(50) DEFAULT NULL,
+  `instagram` varchar(50) DEFAULT NULL,
   `podestrian_type_id` int(11) NOT NULL,
-  `birthday` date NOT NULL,
-  `pic` varchar(50) NOT NULL,
+  `birthday` date DEFAULT NULL,
+  `pic` varchar(50) DEFAULT NULL,
   `how_found` varchar(500) NOT NULL,
   PRIMARY KEY (`podestrian_id`),
   UNIQUE KEY `podestrian_number` (`podestrian_number`),
   KEY `address` (`address_id`),
   KEY `podestrian type` (`podestrian_type_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
 -- Dumping data for table `podestrian`
 --
 
 INSERT INTO `podestrian` (`podestrian_id`, `podestrian_number`, `first_name`, `last_name`, `email`, `address_id`, `sex`, `facebook`, `twitter`, `instagram`, `podestrian_type_id`, `birthday`, `pic`, `how_found`) VALUES
-(1, NULL, 'Sleepover', 'Admin', 'pod@pod.pod', 1, 'None', '', '', '', 1, '1990-01-01', '', '');
+(1, NULL, 'Sleepover', 'Admin', 'pod@pod.pod', 1, 'None', '', '', '', 1, '1990-01-01', '', ''),
+(2, NULL, 'New', 'Podestrian', 'h@h.h', 1, 'Female', '', '', '', 1, '2000-01-01', NULL, 'Internet'),
+(3, NULL, 'Elvina', 'Beck', 'fake@email.address', 1, 'Female', '', '', '', 1, '2015-12-31', NULL, 'Started it all');
 
 -- --------------------------------------------------------
 

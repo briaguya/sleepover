@@ -57,7 +57,7 @@ class Pod extends CI_Controller {
 	function delete($min_id, $max_id)
 	{
 		$this->room_m->deleteRoomRange($min_id, $max_id);
-		redirect("/room");
+		redirect("/pod");
 	}
 
 	public function edit($room_type, $min_id, $max_id)
@@ -78,7 +78,7 @@ class Pod extends CI_Controller {
 			} else {
 				$this->room_m->deleteRoomRange($min_id, $max_id);
 				$this->room_m->addRoomRange($new_room_type, $new_min_id, $new_max_id);
-				redirect("/room");
+				redirect("/pod");
 			}
 		}
 		$data = array('title' => 'Edit Rooms - DB Hotel Management System', 'page' => 'room');

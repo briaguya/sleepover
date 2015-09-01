@@ -2,7 +2,7 @@
 	
 	<div class="content clearfix">
 
-		<form action="/sleepover/room/edit/<?=$room_range->room_type?>/<?=$room_range->min_id?>/<?=$room_range->max_id?>" method="post">
+		<form action="/sleepover/pod/edit/<?=$room_range->room_type?>/<?=$room_range->min_id?>/<?=$room_range->max_id?>" method="post">
 		
 			<h1>Update Pods</h1>
 <? if(isset($error)) {?>

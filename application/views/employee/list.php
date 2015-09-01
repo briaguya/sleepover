@@ -18,18 +18,32 @@
 						</thead>
 						<tbody>
 						<?
-                        $emp = null;
 						foreach ($employees as $emp)
-						{?>
-								<tr>
-								<td> <?=$emp->employee_firstname ." ".$emp->employee_lastname?> </td>
-								<td> <?=$emp->employee_username ?> </td>
-								<td> <?=$emp->department_name ?> </td>
-								<td> <?=$emp->employee_type ?> </td>
-								<td> <?=$emp->employee_email ?> </td>
-								<td class="td-actions"><a href="/sleepover/employee/edit/<?=$emp->employee_id?>" class="btn btn-small btn-primary"><i class="btn-icon-only icon-edit"> </i></a><a href="/employee/delete/<?=$emp->employee_id?>" onclick="return confirm('Are you sure ?')" class="btn btn-danger btn-small"><i class="btn-icon-only icon-remove"> </i></a></td>
-								</tr>
-						<? } ?>
+						{
+						echo "<tr>";
+                        echo "<td>";
+                        echo $emp->employee_firstname;
+                        echo " ";
+                        echo $emp->employee_lastname;
+                        echo "</td><td>";
+                        echo $emp->employee_username;
+                        echo "</td><td>";
+                        echo $emp->department_name;
+                        echo "</td><td>";
+                        echo $emp->employee_type;
+                        echo "</td><td>";
+                        echo $emp->employee_email;
+                        echo "</td>";
+                        echo "<td class=\"td-actions\">";
+                        echo "<a href=\"/sleepover/employee/edit/";
+                        echo $emp->employee_id;
+                        echo "\"";
+                        echo "class=\"btn btn-small btn-primary\"><i class=\"btn-icon-only icon-edit\"></i></a>";
+                        echo "<a href=\"/employee/delete/";
+                        echo $emp->employee_id;
+                        echo "\"onclick=\"return confirm('Are you sure ?')\" class=\"btn btn-danger btn-small\"><i class=\"btn-icon-only icon-remove\"></i></a></td>";
+                        echo "</tr>";
+						} ?>
 						</tbody>
 					</table>
 				</div>

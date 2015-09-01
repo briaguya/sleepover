@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fe3e6790-11c6-4696-af97-da5a4483dbd0" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/Employee.php" afterPath="$PROJECT_DIR$/application/controllers/Employee.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/employee/list.php" afterPath="$PROJECT_DIR$/application/views/employee/list.php" />
     </list>
     <ignored path="sleepover.iws" />
@@ -25,21 +24,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="list.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="list.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/views/employee/list.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.375">
-              <caret line="7" column="67" selection-start-line="7" selection-start-column="67" selection-end-line="7" selection-end-column="67" />
+            <state vertical-scroll-proportion="0.58441556">
+              <caret line="12" column="39" selection-start-line="12" selection-start-column="39" selection-end-line="12" selection-end-column="39" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Employee.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Employee.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/controllers/Employee.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4642857">
-              <caret line="98" column="36" selection-start-line="98" selection-start-column="36" selection-end-line="98" selection-end-column="36" />
+            <state vertical-scroll-proportion="-5.3333335">
+              <caret line="97" column="0" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -72,8 +71,8 @@
         <option value="$PROJECT_DIR$/application/hooks/Check_login.php" />
         <option value="$PROJECT_DIR$/application/config/hooks.php" />
         <option value="$PROJECT_DIR$/application/models/User_m.php" />
-        <option value="$PROJECT_DIR$/application/views/employee/list.php" />
         <option value="$PROJECT_DIR$/application/controllers/Employee.php" />
+        <option value="$PROJECT_DIR$/application/views/employee/list.php" />
       </list>
     </option>
   </component>
@@ -737,18 +736,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/employee/list.php">
+    <entry file="file://$PROJECT_DIR$/application/controllers/Employee.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.375">
-          <caret line="7" column="67" selection-start-line="7" selection-start-column="67" selection-end-line="7" selection-end-column="67" />
+        <state vertical-scroll-proportion="-5.3333335">
+          <caret line="97" column="0" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/Employee.php">
+    <entry file="file://$PROJECT_DIR$/application/views/employee/list.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4642857">
-          <caret line="98" column="36" selection-start-line="98" selection-start-column="36" selection-end-line="98" selection-end-column="36" />
+        <state vertical-scroll-proportion="0.58441556">
+          <caret line="12" column="39" selection-start-line="12" selection-start-column="39" selection-end-line="12" selection-end-column="39" />
           <folding />
         </state>
       </provider>

@@ -5,7 +5,7 @@
         <div class="span12">
 			<a href="/sleepover/employee/add" class="btn btn-small btn-primary"><i class="btn-icon-only icon-ok"></i>Add Employee</a>
 			<br><br>
-            <? if(isset($employees)) echo "WE HAVE A VARIABLE" ; ?>
+            <? if(isset($employees)) echo "WE HAVE A VARIABLE" ; else echo "NOPE" ?>
 <!--			<table class="table table-striped table-bordered">
 				<thead>
 				  <tr>

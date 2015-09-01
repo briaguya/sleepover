@@ -39,7 +39,7 @@ class Pod_type extends CI_Controller {
 
 			if(count($this->room_m->getRoomType($type))==0) {
 				$this->room_m->addRoomType($type, $price, $details, $quantity);
-				redirect("/room-type");
+				redirect("/pod-type");
 			}
 			else {
 				$viewdata['error'] = "Room type alread exists";
@@ -48,14 +48,14 @@ class Pod_type extends CI_Controller {
 
 		$data = array('title' => 'Add Room Type - DB Hotel Management System', 'page' => 'room_type');
 		$this->load->view('header', $data);
-		$this->load->view('room-type/add', $viewdata);
+		$this->load->view('pod-type/add', $viewdata);
 		$this->load->view('footer');
 	}
 
 	function delete($room_type)
 	{
 		$this->room_m->deleteRoomType($room_type);
-		redirect("/room-type");
+		redirect("/pod-type");
 	}
 
 	public function edit($room_type)
@@ -69,7 +69,7 @@ class Pod_type extends CI_Controller {
 			$quantity = $this->input->post("quantity");
 
 			$this->room_m->editRoomType($type, $price, $details, $quantity);
-			redirect("/room-type");
+			redirect("/pod-type");
 		}
 		
 		$data = array('title' => 'Edit Room Type - DB Hotel Management System', 'page' => 'room_type');
@@ -77,8 +77,8 @@ class Pod_type extends CI_Controller {
 
 		$room_type = $this->room_m->getRoomType($room_type);
 		
-		$viewdata = array('room_type'  => $room_type[0]);
-		$this->load->view('room-type/edit',$viewdata);
+		$viewdata = array('pod_type'  => $room_type[0]);
+		$this->load->view('pod-type/edit',$viewdata);
 
 		$this->load->view('footer');
 	}
@@ -87,11 +87,11 @@ class Pod_type extends CI_Controller {
 	{
 		$room_types = $this->room_m->get_room_types();
 
-		$viewdata = array('room_types' => $room_types);
+		$viewdata = array('pod_types' => $room_types);
 
-		$data = array('title' => 'Rooms - DB Hotel Management System', 'page' => 'room_type');
+		$data = array('title' => 'sleepover - Pods', 'page' => 'room_type');
 		$this->load->view('header', $data);
-		$this->load->view('room-type/list',$viewdata);
+		$this->load->view('pod-type/list',$viewdata);
 		$this->load->view('footer');
 	}
 }

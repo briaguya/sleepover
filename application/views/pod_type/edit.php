@@ -4,12 +4,12 @@
 		
 		<form action="/sleepover/room-type/edit/<?=$room_type->room_type?>" method="post">
 		
-			<h1>Update Room Type</h1>		
+			<h1>Update Pod Type</h1>
 			
 			<div class="add-fields">
 
 				<div class="field">
-					<label for="room_type">Room Type:</label>
+					<label for="room_type">Pod Type:</label>
 					<input type="text" id="type" name="type" required value="<?=$room_type->room_type?>" placeholder="Room Type" readonly/>
 				</div> <!-- /field -->
 				

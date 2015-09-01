@@ -2,9 +2,9 @@
 	
 	<div class="content clearfix">
 		
-		<form action="/sleepover/room-type/add" method="post">
+		<form action="/sleepover/pod-type/add" method="post">
 		
-			<h1>Add Room Type</h1>		
+			<h1>Add Pod Type</h1>
 <? if(isset($error)) {?>
 			<div class="alert alert-danger">
               <button type="button" class="close" data-dismiss="alert">×</button>
@@ -14,8 +14,8 @@
 			<div class="add-fields">
 
 				<div class="field">
-					<label for="room_type">Room Type:</label>
-					<input type="text" id="type" name="type" required value="" placeholder="Room Type"/>
+					<label for="pod_type">Pod Type:</label>
+					<input type="text" id="type" name="type" required value="" placeholder="Pod Type"/>
 				</div> <!-- /field -->
 				
 				<div class="field">

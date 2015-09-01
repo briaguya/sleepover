@@ -8,7 +8,7 @@
 <div class="main">
 	<div class="main-inner">
 		<div class="container">
-			<form action="/reservation/make" method="post">
+			<form action="/sleepover/reservation/make" method="post">
 			<div class="add-fields">
 
 				<!--div class="field">

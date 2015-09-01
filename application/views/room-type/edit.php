@@ -2,7 +2,7 @@
 	
 	<div class="content clearfix">
 		
-		<form action="/room-type/edit/<?=$room_type->room_type?>" method="post">
+		<form action="/sleepover/room-type/edit/<?=$room_type->room_type?>" method="post">
 		
 			<h1>Update Room Type</h1>		
 			

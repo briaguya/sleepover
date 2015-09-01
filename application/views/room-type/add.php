@@ -2,7 +2,7 @@
 	
 	<div class="content clearfix">
 		
-		<form action="/room-type/add" method="post">
+		<form action="/sleepover/room-type/add" method="post">
 		
 			<h1>Add Room Type</h1>		
 <? if(isset($error)) {?>

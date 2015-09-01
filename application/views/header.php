@@ -51,7 +51,7 @@
   <!-- /navbar-inner --> 
 </div>
 <!-- /navbar -->
-<?php
+<?
   if(UID)
 {?>
       <div class="subnavbar">

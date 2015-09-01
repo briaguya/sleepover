@@ -1,1 +1,1 @@
-<? if(isset($employees)) {echo "WE HAVE A VARIABLE";} else {echo "NOPE";} ?>
+<?php if(isset($employees)) {echo "WE HAVE A VARIABLE";} else {echo "NOPE";}

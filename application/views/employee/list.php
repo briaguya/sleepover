@@ -18,6 +18,7 @@
 						</thead>
 						<tbody>
 						<?
+                        $emp = null;
 						foreach ($employees as $emp)
 						{?>
 								<tr>

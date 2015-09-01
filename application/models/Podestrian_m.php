@@ -1,6 +1,6 @@
 <?php
 
-class Team_member_m extends CI_Model {
+class Podestrian_m extends CI_Model {
 
     function __construct()
     {
@@ -8,9 +8,9 @@ class Team_member_m extends CI_Model {
         parent::__construct();
     }
     
-    function get_team_members()
+    function get_podestrians()
     {
-        $query = $this->db->from('team_member')->get();
+        $query = $this->db->from('podestrian')->get();
         $data = array();
 
         foreach (@$query->result() as $row)

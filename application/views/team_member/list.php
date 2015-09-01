@@ -35,11 +35,11 @@
                         echo $emp->employee_email;
                         echo "</td>";
                         echo "<td class=\"td-actions\">";
-                        echo "<a href=\"/sleepover/employee/edit/";
+                        echo "<a href=\"/sleepover/team_member/edit/";
                         echo $emp->employee_id;
                         echo "\"";
                         echo "class=\"btn btn-small btn-primary\"><i class=\"btn-icon-only icon-edit\"></i></a>";
-                        echo "<a href=\"/employee/delete/";
+                        echo "<a href=\"/team_member/delete/";
                         echo $emp->employee_id;
                         echo "\"onclick=\"return confirm('Are you sure ?')\" class=\"btn btn-danger btn-small\"><i class=\"btn-icon-only icon-remove\"></i></a></td>";
                         echo "</tr>";

@@ -64,7 +64,7 @@
               <li class="dropdown <? if($page == "room" || $page == "room_type"){ echo 'active'; } ?>"><a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"> <i class="icon-home"></i><span>Pods</span> <b class="caret"></b></a>
                 <ul class="dropdown-menu">
                   <li><a href="/sleepover/pod">Pods</a></li>
-                  <li><a href="/sleepover/pod-type">Pod Types</a></li>
+                  <li><a href="/sleepover/pod_type">Pod Types</a></li>
                 </ul>
               </li>
               <li <? if($page == "departments"){ echo 'class="active"'; } ?>><a href="/sleepover/departments"><i class="icon-file"></i><span>Depatments</span> </a> </li>

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Sep 01, 2015 at 11:04 AM
+-- Generation Time: Sep 01, 2015 at 02:20 PM
 -- Server version: 5.5.44-0ubuntu0.14.04.1
 -- PHP Version: 5.5.9-1ubuntu4.11
 
@@ -19,6 +19,22 @@ SET time_zone = "+00:00";
 --
 -- Database: `sleepover`
 --
+
+DELIMITER $$
+--
+-- Procedures
+--
+CREATE DEFINER=`sleepover`@`localhost` PROCEDURE `get_all_podestrians`()
+    READS SQL DATA
+    COMMENT 'gets all podestrians'
+SELECT p.podestrian_id, p.pic, p.first_name, p.last_name, p.email, pt.podestrian_type, a.city, a.country, p.sex, p.facebook, p.twitter, p.instagram, p.birthday, p.how_found
+FROM podestrian AS p
+	JOIN podestrian_type AS pt
+		ON p.podestrian_type_id = pt.podestrian_type_id
+	JOIN address AS a
+		ON p.address_id = a.address_id$$
+
+DELIMITER ;
 
 -- --------------------------------------------------------
 

@@ -10,8 +10,7 @@ class User_m extends CI_Model {
     
     function check_login($username, $password)
     {
-        //$query = $this->db->from('employee')->join('department','employee.department_id=department.department_id')->where('employee_username', $username)->where('employee_password', $password)->get();
-        $query = $this->db->from('employee')->get();
+        $query = $this->db->from('employee')->join('department','employee.department_id=department.department_id')->where('employee_username', $username)->where('employee_password', $password)->get();
         $data = array();
 
         foreach (@$query->result() as $row)

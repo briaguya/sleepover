@@ -1,6 +1,6 @@
 <?php
 
-class Employee_m extends CI_Model {
+class Team_member_m extends CI_Model {
 
     function __construct()
     {
@@ -8,7 +8,7 @@ class Employee_m extends CI_Model {
         parent::__construct();
     }
     
-    function get_employees()
+    function get_team_members()
     {
         $query = $this->db->from('employee')->join('department', 'department.department_id=employee.department_id')->get();
         $data = array();

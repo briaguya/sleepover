@@ -2,7 +2,7 @@
 	
 	<div class="content clearfix">
 		
-		<form action="/employee/edit/<?=$employee->employee_id?>" method="post">
+		<form action="/sleepover/employee/edit/<?=$employee->employee_id?>" method="post">
 		
 			<h1>Update Employee's Information</h1>		
 			

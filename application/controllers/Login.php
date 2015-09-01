@@ -27,7 +27,7 @@ class Login extends CI_Controller {
 				$viewdata["error"] = true;
 			}
 		}
-		$data = array('title' => 'Login - DB Hotel Management System', 'page' => 'login');
+		$data = array('title' => 'sleepover - login', 'page' => 'login');
 		$this->load->view('header', $data);
 		$this->load->view('login', $viewdata);
 		$this->load->view('footer');

@@ -91,7 +91,7 @@ class Team_member extends CI_Controller {
 
 	public function index()
 	{
-		$employees = $this->team_member_m->get_employees();
+		$employees = $this->team_member_m->get_team_members();
 
 		$data = array('title' => 'sleepover - Team Members', 'page' => 'employee');
 		$this->load->view('header', $data);

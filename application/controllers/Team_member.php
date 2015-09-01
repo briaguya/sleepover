@@ -40,13 +40,13 @@ class Team_member extends CI_Controller {
 			$salary = $this->input->post("salary");
 			$hiring_date = $this->input->post("hiring_date");
 			
-			$this->employee_m->addEmployee($username, $password, $firstname, $lastname, $telephone, $email, $department_id, $type, $salary, $hiring_date);
+			$this->team_member_m->addEmployee($username, $password, $firstname, $lastname, $telephone, $email, $department_id, $type, $salary, $hiring_date);
 			redirect("/employee");
 		}
 
 		$data = array('title' => 'Add Employee - DB Hotel Management System', 'page' => 'employee');
 		$this->load->view('header', $data);
-		$departments = $this->employee_m->getDepartments();
+		$departments = $this->team_member_m->getDepartments();
 		$viewdata = array('departments' => $departments);
 		$this->load->view('employee/add',$viewdata);
 		$this->load->view('footer');
@@ -54,7 +54,7 @@ class Team_member extends CI_Controller {
 
 	function delete($employee_id)
 	{
-		$this->employee_m->deleteEmployee($employee_id);
+		$this->team_member_m->deleteEmployee($employee_id);
 		redirect("/employee");
 	}
 
@@ -73,15 +73,15 @@ class Team_member extends CI_Controller {
 			$salary = $this->input->post("salary");
 			$hiring_date = $this->input->post("hiring_date");
 			
-			$this->employee_m->editEmployee($employee_id, $username, $password, $firstname, $lastname, $telephone, $email, $department_id, $type, $salary, $hiring_date);
+			$this->team_member_m->editEmployee($employee_id, $username, $password, $firstname, $lastname, $telephone, $email, $department_id, $type, $salary, $hiring_date);
 			redirect("/employee");
 		}
 		
 		$data = array('title' => 'Edit Employee - DB Hotel Management System', 'page' => 'employee');
 		$this->load->view('header', $data);
 
-		$departments = $this->employee_m->getDepartments();
-		$employee = $this->employee_m->getEmployee($employee_id);
+		$departments = $this->team_member_m->getDepartments();
+		$employee = $this->team_member_m->getEmployee($employee_id);
 		
 		$viewdata = array('departments' => $departments, 'employee'  => $employee[0]);
 		$this->load->view('employee/edit',$viewdata);
@@ -91,9 +91,9 @@ class Team_member extends CI_Controller {
 
 	public function index()
 	{
-		$employees = $this->employee_m->get_employees();
+		$employees = $this->team_member_m->get_employees();
 
-		$data = array('title' => 'Employees - DB Hotel Management System', 'page' => 'employee');
+		$data = array('title' => 'sleepover - Team Members', 'page' => 'employee');
 		$this->load->view('header', $data);
 		$this->load->view('employee/list', array('employees' => $employees));
 		$this->load->view('footer');

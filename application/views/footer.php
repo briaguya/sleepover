@@ -2,7 +2,7 @@
   <div class="footer-inner">
     <div class="container">
       <div class="row">
-        <div class="span12"> &copy; 2013 <a href="http://hotel.cihadoge.com/">DB Hotel Management System</a>. <span class="pull-right">Fadime Tugba DOGAN - Cihad OGE - Furkan Mustafa AKDEMIR</span> </div>
+        <div class="span12">. sleepover version todo:version </div>
         <!-- /span12 --> 
       </div>
       <!-- /row --> 

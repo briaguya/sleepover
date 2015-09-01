@@ -27,26 +27,27 @@ class Podestrian extends CI_Controller {
 	public function add()
 	{
 		
-		if($this->input->post("username") && $this->input->post("password") && $this->input->post("email"))
+		if($this->input->post("first_name") && $this->input->post("last_name") && $this->input->post("email"))
 		{
-			$username = $this->input->post("username");
-			$password = $this->input->post("password");
-			$firstname = $this->input->post("firstname");
-			$lastname = $this->input->post("lastname");
-			$telephone = $this->input->post("telephone");
+			$first_name = $this->input->post("first_name");
+			$last_name = $this->input->post("last_name");
 			$email = $this->input->post("email");
-			$department_id = $this->input->post("department_id");
-			$type = $this->input->post("type");
-			$salary = $this->input->post("salary");
-			$hiring_date = $this->input->post("hiring_date");
+			$podestrian_type_id = $this->input->post("podestrian_type_id");
+			$address_id = $this->input->post("address_id");
+			$sex = $this->input->post("sex");
+			$facebook = $this->input->post("facebook");
+            $twitter = $this->input->post("twitter");
+            $instagram = $this->input->post("instagram");
+            $birthday = $this->input->post("birthday");
+            $how_found = $this->input->post("how_found");
 			
-			$this->team_member_m->addEmployee($username, $password, $firstname, $lastname, $telephone, $email, $department_id, $type, $salary, $hiring_date);
-			redirect("/team_member");
+			$this->podestrian_m->addPodestrian($first_name, $last_name, $email, $podestrian_type_id, $address_id, $sex, $facebook, $twitter, $instagram, $birthday, $how_found);
+			redirect("/podestrian");
 		}
 
-		$data = array('title' => 'Add Employee - DB Hotel Management System', 'page' => 'team_member');
+		$data = array('title' => 'sleepover - Add Podestrian', 'page' => 'podestrian');
 		$this->load->view('header', $data);
-		$departments = $this->team_member_m->getDepartments();
+		$departments = $this->podestrian_m->getDepartments();
 		$viewdata = array('departments' => $departments);
 		$this->load->view('team_member/add',$viewdata);
 		$this->load->view('footer');

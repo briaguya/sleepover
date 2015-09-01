@@ -20,12 +20,13 @@ class Podestrian_m extends CI_Model {
         if(count($data))
             return $data;
         return false;
-    } 
+    }
 
-    function addEmployee($username, $password, $firstname, $lastname, $telephone, $email, $departmentid, $employee_type, $employee_salary, $employee_hiring_date)
+    function addPodestrian($first_name, $last_name, $email, $podestrian_type_id, $address_id, $sex, $facebook, $twitter, $instagram, $birthday, $how_found)
     {
-        $data = array('employee_username' => $username, 'employee_password' => $password, 'employee_firstname' => $firstname, 'employee_lastname' => $lastname, 'employee_telephone' => $telephone, 'employee_email' => $email, 'department_id' => $departmentid, 'employee_type' => $employee_type, 'employee_salary' => $employee_salary, 'employee_hiring_date' => $employee_hiring_date);
-        $this->db->insert('team_member', $data);
+        //todo move this to a stored procedure
+        $data = array('first_name' => $first_name, 'last_name' => $last_name, 'email' => $email, 'podestrian_type_id' => $podestrian_type_id, 'address_id' => $address_id, 'sex' => $sex, 'facebook' => $facebook, 'twitter' => $twitter, 'instagram' => $instagram, 'birthday' => $birthday, 'how_found' => $how_found);
+        $this->db->insert('podestrian', $data);
         return $this->db->affected_rows();
     } 
 

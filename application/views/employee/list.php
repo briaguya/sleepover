@@ -3,7 +3,7 @@
     <div class="container">
       <div class="row">
         <div class="span12">
-			<a href="/employee/add" class="btn btn-small btn-primary"><i class="btn-icon-only icon-ok"></i>Add Employee</a>
+			<a href="/sleepover/employee/add" class="btn btn-small btn-primary"><i class="btn-icon-only icon-ok"></i>Add Employee</a>
 			<br><br>
 			<table class="table table-striped table-bordered">
 				<thead>
@@ -28,7 +28,7 @@
 				    		<td> <?=$emp->department_name ?> </td>
 				    		<td> <?=$emp->employee_type ?> </td>
 				    		<td> <?=$emp->employee_email ?> </td>
-				    		<td class="td-actions"><a href="/employee/edit/<?=$emp->employee_id?>" class="btn btn-small btn-primary"><i class="btn-icon-only icon-edit"> </i></a><a href="/employee/delete/<?=$emp->employee_id?>" onclick="return confirm('Are you sure ?')" class="btn btn-danger btn-small"><i class="btn-icon-only icon-remove"> </i></a></td>
+				    		<td class="td-actions"><a href="/sleepover/employee/edit/<?=$emp->employee_id?>" class="btn btn-small btn-primary"><i class="btn-icon-only icon-edit"> </i></a><a href="/employee/delete/<?=$emp->employee_id?>" onclick="return confirm('Are you sure ?')" class="btn btn-danger btn-small"><i class="btn-icon-only icon-remove"> </i></a></td>
 						</tr><? }
                     }
                 ?>

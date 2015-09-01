@@ -29,7 +29,7 @@
 					<label for="podestrian_type_id">Podestrian Type:</label>
 					<select id="podestrian_type_id" name="podestrian_type_id">
 						<? foreach ($podestrian_types as $type) { ?>
-							<option value="<?=$type->podestrian_type_id?>"><?=$type->podestrian_type_id?></option>
+							<option value="<?=$type->podestrian_type_id?>"><?=$type->podestrian_type?></option>
 						<? } ?>
 					</select>
 				</div>

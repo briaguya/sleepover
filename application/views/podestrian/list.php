@@ -8,42 +8,40 @@
 					<table class="table table-striped table-bordered">
 						<thead>
 						<tr>
-							<th> Fullname </th>
-							<th> Username </th>
-							<th> Department </th>
-							<th> Job </th>
+							<th> todo: Pic </th>
+							<th> Name </th>
 							<th> Email </th>
+							<th> Podestrian Type </th>
+							<th> Address </th>
+							<th> Sex </th>
+							<th> Facebook </th>
+							<th> Twitter </th>
+							<th> Instagram </th>
+							<th> Birthday </th>
+							<th> How they found Podshare </th>
 							<th class="td-actions"> Actions </th>
 						</tr>
 						</thead>
 						<tbody>
-						<?php
-						foreach ($employees as $emp)
-						{
-						echo "<tr>";
-                        echo "<td>";
-                        echo $emp->employee_firstname;
-                        echo " ";
-                        echo $emp->employee_lastname;
-                        echo "</td><td>";
-                        echo $emp->employee_username;
-                        echo "</td><td>";
-                        echo $emp->department_name;
-                        echo "</td><td>";
-                        echo $emp->employee_type;
-                        echo "</td><td>";
-                        echo $emp->employee_email;
-                        echo "</td>";
-                        echo "<td class=\"td-actions\">";
-                        echo "<a href=\"/sleepover/team_member/edit/";
-                        echo $emp->employee_id;
-                        echo "\"";
-                        echo "class=\"btn btn-small btn-primary\"><i class=\"btn-icon-only icon-edit\"></i></a>";
-                        echo "<a href=\"/team_member/delete/";
-                        echo $emp->employee_id;
-                        echo "\"onclick=\"return confirm('Are you sure ?')\" class=\"btn btn-danger btn-small\"><i class=\"btn-icon-only icon-remove\"></i></a></td>";
-                        echo "</tr>";
-						} ?>
+						<?
+						foreach ($podestrians as $podestrian) {
+							// $emp->username
+							?>
+							<tr>
+								<td> Pic Here? </td>
+								<td> <?=$podestrian->firstname ." ".$podestrian->lastname?> </td>
+								<td> <?=$podestrian->email ?> </td>
+								<td> todo: Type </td>
+								<td> todo: Address </td>
+								<td> <?=$podestrian->sex ?> </td>
+								<td> <?=$podestrian->facebook ?> </td>
+								<td> <?=$podestrian->twitter ?> </td>
+								<td> <?=$podestrian->instagram ?> </td>
+								<td> todo: Birthday </td>
+								<td> <?=$podestrian->how_found ?> </td>
+								<td class="td-actions"><a href="/podestrian/edit/<?=$podestrian->podestrian_id?>" class="btn btn-small btn-primary"><i class="btn-icon-only icon-edit"> </i></a><a href="/podestrian/delete/<?=$podestrian->podestrian_id?>" onclick="return confirm('Are you sure ?')" class="btn btn-danger btn-small"><i class="btn-icon-only icon-remove"> </i></a></td>
+							</tr>
+						<? } ?>
 						</tbody>
 					</table>
 				</div>

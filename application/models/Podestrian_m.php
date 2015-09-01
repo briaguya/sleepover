@@ -16,9 +16,6 @@ class Podestrian_m extends CI_Model {
         foreach (@$query->result() as $row)
         {
             $data[] = $row;
-            // $row->customer_id
-            // $row->customer_username
-            // $data[0]->customer_id
         }
         if(count($data))
             return $data;

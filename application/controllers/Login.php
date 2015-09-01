@@ -35,7 +35,7 @@ class Login extends CI_Controller {
 
 	public function logout()
 	{
-		$this->team_member_l->logout();
+		$this->user_l->logout();
 		redirect("/");
 	}
 }

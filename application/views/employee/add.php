@@ -46,12 +46,11 @@
 						{
 							echo "<option value=";
 							echo $dept->department_id;
-							if($dept->department_id==$employee->department_id) { echo "selected"; }
 							echo ">";
 							echo $dept->department_name;
 							echo "</option>";
 						}
-						?>
+					?>
 					</select>
 				</div> <!-- /field -->
 

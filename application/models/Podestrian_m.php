@@ -30,9 +30,9 @@ class Podestrian_m extends CI_Model {
         return $this->db->affected_rows();
     } 
 
-    function deleteEmployee($employee_id)
+    function deletePodestrian($podestrian_id)
     {
-        $this->db->delete('team_member', array('employee_id' => $employee_id));
+        $this->db->delete('podestrian', array('podestrian_id' => $podestrian_id));
         return $this->db->affected_rows();
     }
 

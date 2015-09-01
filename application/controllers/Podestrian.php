@@ -53,10 +53,10 @@ class Podestrian extends CI_Controller {
 		$this->load->view('footer');
 	}
 
-	function delete($employee_id)
+	function delete($podestrian_id)
 	{
-		$this->team_member_m->deleteEmployee($employee_id);
-		redirect("/team_member");
+		$this->podestrian_m->deletePodestrian($podestrian_id);
+		redirect("/podestrian");
 	}
 
 	public function edit($employee_id)

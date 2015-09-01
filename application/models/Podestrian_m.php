@@ -10,7 +10,7 @@ class Podestrian_m extends CI_Model {
     
     function get_podestrians()
     {
-        $query = $this->db->from('podestrian')->get();
+        $query = $this->db->query('get_all_podestrians()')->get();
         $data = array();
 
         foreach (@$query->result() as $row)

@@ -66,27 +66,27 @@
 
                 <div class="field">
                     <label for="facebook">Facebook:</label>
-                    <input type="text" id="facebook" name="facebook" value=""/>
+                    <input type="text" id="facebook" name="facebook" value="<?=$podestrian->facebook?>"/>
                 </div>
 
                 <div class="field">
                     <label for="twitter">Twitter:</label>
-                    <input type="text" id="twitter" name="twitter" value=""/>
+                    <input type="text" id="twitter" name="twitter" value="<?=$podestrian->twitter?>"/>
                 </div>
 
                 <div class="field">
                     <label for="instagram">Instagram:</label>
-                    <input type="text" id="instagram" name="instagram" value=""/>
+                    <input type="text" id="instagram" name="instagram" value="<?=$podestrian->instagram?>"/>
                 </div>
 
                 <div class="field">
                     <label for="birthday">Birthday:</label>
-                    <input type="date" id="birthday" name="birthday" value=""/>
+                    <input type="date" id="birthday" name="birthday" value="<?=$podestrian->birthday?>"/>
                 </div>
 
                 <div class="field">
                     <label for="how_found">How they found us:</label>
-                    <input type="text" id="how_found" name="how_found" value=""/>
+                    <input type="text" id="how_found" name="how_found" value="<?=$podestrian->how_found?>"/>
                 </div>
 
 			</div>

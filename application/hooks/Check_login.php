@@ -10,8 +10,7 @@ class Check_login{
 		
 		define('UID', $CI->session->userdata('uid'));
 		define('USERNAME', $CI->session->userdata('username'));
-		define('FULLNAME', $CI->session->userdata('fullname'));
-		define('DEPARTMENT_NAME', $CI->session->userdata('department_name'));
+		define('FULL_NAME', $CI->session->userdata('full_name'));
 
 		define("SHOW_GUIDE", !$CI->session->userdata('show_guide'));
 	}

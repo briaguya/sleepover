@@ -80,11 +80,11 @@ class Team_member extends CI_Controller {
 
     public function index()
     {
-        $podestrians = $this->podestrian_m->get_podestrians();
+        $team_members = $this->team_member_m->get_team_members();
 
-        $data = array('title' => 'sleepover - Podestrians', 'page' => 'podestrian');
+        $data = array('title' => 'sleepover - Team Members', 'page' => 'team_member');
         $this->load->view('header', $data);
-        $this->load->view('podestrian/list', array('podestrians' => $podestrians));
+        $this->load->view('team_member/list', array('team_members' => $team_members));
         $this->load->view('footer');
     }
 }

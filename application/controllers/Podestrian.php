@@ -30,7 +30,7 @@ class Podestrian extends CI_Controller {
 		redirect("/podestrian");
 	}
 
-    private function modify($podestrian_id)
+    public function modify($podestrian_id)
     {
         if($this->input->post("first_name") && $this->input->post("last_name") && $this->input->post("email"))
         {
@@ -58,16 +58,6 @@ class Podestrian extends CI_Controller {
         $this->load->view('podestrian/add',$viewdata);
         $this->load->view('footer');
     }
-
-    public function add()
-    {
-        $this->modify(null);
-    }
-
-	public function edit($podestrian_id)
-	{
-        $this->modify($podestrian_id);
-	}
 
 	public function index()
 	{

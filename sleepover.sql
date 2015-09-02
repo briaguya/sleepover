@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Sep 01, 2015 at 06:11 PM
+-- Generation Time: Sep 01, 2015 at 06:27 PM
 -- Server version: 5.5.44-0ubuntu0.14.04.1
 -- PHP Version: 5.5.9-1ubuntu4.11
 
@@ -26,7 +26,7 @@ DELIMITER $$
 --
 CREATE DEFINER=`sleepover`@`localhost` PROCEDURE `check_login`(IN `username` VARCHAR(100), IN `password` VARCHAR(100))
     READS SQL DATA
-SELECT username, p.first_name, p.last_name
+SELECT t.team_id as uid, username, p.first_name, p.last_name
 FROM podestrian p
 JOIN team_member t ON t.podestrian = p.podestrian_id
 WHERE t.username = username AND t.password = password$$

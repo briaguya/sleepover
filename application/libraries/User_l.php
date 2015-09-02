@@ -9,7 +9,7 @@ class User_l{
 	{
 		// var_dump($user);
 		$data = array(
-			'uid' => $user[0]->team_id,
+			'uid' => $user[0]->uid,
 			'username' => $user[0]->username,
 			'full_name' => $user[0]->first_name." ".$user[0]->last_name
 		);

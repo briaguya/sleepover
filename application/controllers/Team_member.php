@@ -18,86 +18,75 @@ class Team_member extends CI_Controller {
 	 * @see http://codeigniter.com/user_guide/general/urls.html
 	 */
 
-	public function check_login()
-	{
-		if(!UID)
-			redirect("login");
-	} 
+    public function check_login()
+    {
+        if(!UID)
+            redirect("login");
+    }
 
-	public function add()
-	{
-		
-		if($this->input->post("username") && $this->input->post("password") && $this->input->post("email"))
-		{
-			$username = $this->input->post("username");
-			$password = $this->input->post("password");
-			$firstname = $this->input->post("firstname");
-			$lastname = $this->input->post("lastname");
-			$telephone = $this->input->post("telephone");
-			$email = $this->input->post("email");
-			$department_id = $this->input->post("department_id");
-			$type = $this->input->post("type");
-			$salary = $this->input->post("salary");
-			$hiring_date = $this->input->post("hiring_date");
-			
-			$this->team_member_m->addEmployee($username, $password, $firstname, $lastname, $telephone, $email, $department_id, $type, $salary, $hiring_date);
-			redirect("/team_member");
-		}
+    function delete($podestrian_id)
+    {
+        $this->podestrian_m->deletePodestrian($podestrian_id);
+        redirect("/podestrian");
+    }
 
-		$data = array('title' => 'Add Employee - DB Hotel Management System', 'page' => 'team_member');
-		$this->load->view('header', $data);
-		$departments = $this->team_member_m->getDepartments();
-		$viewdata = array('departments' => $departments);
-		$this->load->view('team_member/add',$viewdata);
-		$this->load->view('footer');
-	}
+    public function modify($podestrian_id = null)
+    {
+        if($podestrian_id == null)
+        {
+            // We're adding
+            if($this->input->post("first_name") && $this->input->post("last_name") && $this->input->post("email"))
+            {
+                //We're submitting a new podestrian
+                $podestrian = array(
+                    'first_name' => $this->input->post("first_name"),
+                    'last_name' => $this->input->post("last_name"),
+                    'email' => $this->input->post("email"),
+                    'podestrian_type_id' => $this->input->post("podestrian_type_id"),
+                    'address_id' => $this->input->post("address_id"),
+                    'sex' => $this->input->post("sex"),
+                    'facebook' => $this->input->post("facebook"),
+                    'twitter' => $this->input->post("twitter"),
+                    'instagram' => $this->input->post("instagram"),
+                    'birthday' => $this->input->post("birthday"),
+                    'how_found' => $this->input->post("how_found"));
 
-	function delete($employee_id)
-	{
-		$this->team_member_m->deleteEmployee($employee_id);
-		redirect("/team_member");
-	}
+                $this->podestrian_m->modify($podestrian);
+                redirect("/podestrian");
+            }
 
-	public function edit($employee_id)
-	{
-		if($this->input->post("username") && $this->input->post("password") && $this->input->post("email"))
-		{
-			$username = $this->input->post("username");
-			$password = $this->input->post("password");
-			$firstname = $this->input->post("firstname");
-			$lastname = $this->input->post("lastname");
-			$telephone = $this->input->post("telephone");
-			$email = $this->input->post("email");
-			$department_id = $this->input->post("department_id");
-			$type = $this->input->post("type");
-			$salary = $this->input->post("salary");
-			$hiring_date = $this->input->post("hiring_date");
-			
-			$this->team_member_m->editEmployee($employee_id, $username, $password, $firstname, $lastname, $telephone, $email, $department_id, $type, $salary, $hiring_date);
-			redirect("/team_member");
-		}
-		
-		$data = array('title' => 'Edit Employee - DB Hotel Management System', 'page' => 'team_member');
-		$this->load->view('header', $data);
+            // We're filling out the podestrian form, we need a null podestrian
+            $podestrian = null;
+            $data = array('title' => 'sleepover - Add Podestrian', 'page' => 'podestrian');
+        }
+        else
+        {
+            // We're editing, we want to get the podestrian
+            $podestrian = $this->podestrian_m->getPodestrian($podestrian_id);
+            $data = array('title' => 'sleepover - Edit Podestrian', 'page' => 'podestrian');
+        }
 
-		$departments = $this->team_member_m->getDepartments();
-		$employee = $this->team_member_m->getEmployee($employee_id);
-		
-		$viewdata = array('departments' => $departments, 'team_member'  => $employee[0]);
-		$this->load->view('team_member/edit',$viewdata);
+        $this->load->view('header', $data);
+        $podestrian_types = $this->podestrian_m->getPodestrianTypes();
+        $addresses = $this->podestrian_m->getAddresses();
+        $viewdata = array(
+            'podestrian_types' => $podestrian_types,
+            'addresses' => $addresses,
+            'podestrian_id' => $podestrian_id,
+            'podestrian' => $podestrian[0]);
+        $this->load->view('podestrian/modify',$viewdata);
+        $this->load->view('footer');
+    }
 
-		$this->load->view('footer');
-	}
+    public function index()
+    {
+        $podestrians = $this->podestrian_m->get_podestrians();
 
-	public function index()
-	{
-		$employees = $this->team_member_m->get_team_members();
-
-		$data = array('title' => 'sleepover - Team Members', 'page' => 'team_member');
-		$this->load->view('header', $data);
-		$this->load->view('team_member/list', array('employees' => $employees));
-		$this->load->view('footer');
-	}
+        $data = array('title' => 'sleepover - Podestrians', 'page' => 'podestrian');
+        $this->load->view('header', $data);
+        $this->load->view('podestrian/list', array('podestrians' => $podestrians));
+        $this->load->view('footer');
+    }
 }
 
 /* End of file welcome.php */

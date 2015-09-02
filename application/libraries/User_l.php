@@ -7,7 +7,6 @@ class User_l{
 	}
 	public function login($user)
 	{
-		// var_dump($user);
 		$data = array(
 			'uid' => $user[0]->uid,
 			'username' => $user[0]->username,
@@ -15,11 +14,6 @@ class User_l{
 		);
 		$CI = &get_instance();
 		$CI->session->set_userdata($data);
-		// $_SESSION["uid"] = $user[0]->employee_id
-
-		// if($_SESSION["uid"]) giris yapmistir
-
-		// $this->session->userdata("uid")  
 	}
 	public function logout()
 	{

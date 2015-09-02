@@ -12,7 +12,7 @@
             </h1>
             <? if($team_id != null) {?>
                 <?= "<h3>" ?>
-                <?=$podestrian->first_name ." ".$podestrian->last_name?>
+                <?=$team_member->first_name ." ".$team_member->last_name?>
                 <?= "</h3>" ?>
                 <?= "<h3>" ?>
                 <?=$team_member->username?>

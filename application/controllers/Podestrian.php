@@ -32,31 +32,47 @@ class Podestrian extends CI_Controller {
 
     public function modify($podestrian_id = null)
     {
-        if($this->input->post("first_name") && $this->input->post("last_name") && $this->input->post("email"))
+        if($podestrian_id == null)
         {
-            $first_name = $this->input->post("first_name");
-            $last_name = $this->input->post("last_name");
-            $email = $this->input->post("email");
-            $podestrian_type_id = $this->input->post("podestrian_type_id");
-            $address_id = $this->input->post("address_id");
-            $sex = $this->input->post("sex");
-            $facebook = $this->input->post("facebook");
-            $twitter = $this->input->post("twitter");
-            $instagram = $this->input->post("instagram");
-            $birthday = $this->input->post("birthday");
-            $how_found = $this->input->post("how_found");
+            // We're adding
+            if($this->input->post("first_name") && $this->input->post("last_name") && $this->input->post("email"))
+            {
+                //We're submitting a new podestrian
+                $podestrian = array(
+                    'first_name' => $this->input->post("first_name"),
+                    'last_name' => $this->input->post("last_name"),
+                    'email' => $this->input->post("email"),
+                    'podestrian_type_id' => $this->input->post("podestrian_type_id"),
+                    'address_id' => $this->input->post("address_id"),
+                    'sex' => $this->input->post("sex"),
+                    'facebook' => $this->input->post("facebook"),
+                    'twitter' => $this->input->post("twitter"),
+                    'instagram' => $this->input->post("instagram"),
+                    'birthday' => $this->input->post("birthday"),
+                    'how_found' => $this->input->post("how_found"));
 
-            $this->podestrian_m->modify($podestrian_id, $first_name, $last_name, $email, $podestrian_type_id, $address_id, $sex, $facebook, $twitter, $instagram, $birthday, $how_found);
-            redirect("/podestrian");
+                $this->podestrian_m->modify($podestrian);
+                redirect("/podestrian");
+            }
+
+            // We're filling out the podestrian form
+            $data = array('title' => 'sleepover - Add Podestrian', 'page' => 'podestrian');
         }
-
-        if($podestrian_id == null) $data = array('title' => 'sleepover - Add Podestrian', 'page' => 'podestrian');
-        else $data = array('title' => 'sleepover - Edit Podestrian', 'page' => 'podestrian');
+        else
+        {
+            // We're editing, we want to get the podestrian
+            $podestrian = $this->podestrian_m->getPodestrian($podestrian_id);
+            $data = array('title' => 'sleepover - Edit Podestrian', 'page' => 'podestrian');
+        }
 
         $this->load->view('header', $data);
         $podestrian_types = $this->podestrian_m->getPodestrianTypes();
         $addresses = $this->podestrian_m->getAddresses();
-        $viewdata = array('podestrian_types' => $podestrian_types, 'addresses' => $addresses, 'podestrian_id' => $podestrian_id);
+        $viewdata = array(
+            'podestrian_types' => $podestrian_types,
+            'addresses' => $addresses,
+            'podestrian_id' => $podestrian_id,
+            'podestrian' => $podestrian);
         $this->load->view('podestrian/modify',$viewdata);
         $this->load->view('footer');
     }

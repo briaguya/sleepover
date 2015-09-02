@@ -22,20 +22,18 @@ class Podestrian_m extends CI_Model {
         return false;
     }
 
-    function modify($podestrian_id, $first_name, $last_name, $email, $podestrian_type_id, $address_id, $sex, $facebook, $twitter, $instagram, $birthday, $how_found)
+    function modify($podestrian)
     {
-        $data = array('first_name' => $first_name, 'last_name' => $last_name, 'email' => $email, 'podestrian_type_id' => $podestrian_type_id, 'address_id' => $address_id, 'sex' => $sex, 'facebook' => $facebook, 'twitter' => $twitter, 'instagram' => $instagram, 'birthday' => $birthday, 'how_found' => $how_found);
-
         //todo move this to a stored procedure
-        if($podestrian_id == null)
+        if($podestrian->podestrian_id == null)
         {
             // we don't have a podestrian id, we're adding
-            $this->db->insert('podestrian', $data);
+            $this->db->insert('podestrian', $podestrian);
             return $this->db->affected_rows();
         }
 
-        $this->db->where('podestrian_id', $podestrian_id);
-        $this->db->update('podestrian', $data);
+        $this->db->where('podestrian_id', $podestrian->podestrian_id);
+        $this->db->update('podestrian', $podestrian);
     } 
 
     function deletePodestrian($podestrian_id)
@@ -44,9 +42,9 @@ class Podestrian_m extends CI_Model {
         return $this->db->affected_rows();
     }
 
-    function getEmployee($employee_id)
+    function getPodestrian($podestrian_id)
     {
-        $query = $this->db->get_where('team_member', array('employee_id' => $employee_id));
+        $query = $this->db->get_where('podestrian', array('podestrian_id' => $podestrian_id));
         return $query->result();
     }
 

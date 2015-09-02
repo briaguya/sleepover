@@ -41,4 +41,18 @@ class Team_member_m extends CI_Model {
         $query = $this->db->get_where('team_member', array('team_id' => $team_id));
         return $query->result();
     }
+
+    function getRoles()
+    {
+        $query = $this->db->from('team_member_role')->get();
+        $data = array();
+
+        foreach ($query->result() as $row)
+        {
+            $data[] = $row;
+        }
+        if(count($data))
+            return $data;
+        return false;
+    }
 }

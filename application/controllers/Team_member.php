@@ -60,11 +60,13 @@ class Team_member extends CI_Controller {
         }
 
         $this->load->view('header', $data);
-        $podestrian_types = $this->podestrian_m->getPodestrianTypes();
-        $addresses = $this->podestrian_m->getAddresses();
+        $podestrians = $this->podestrian_m->get_podestrians();
+        $roles = $this->team_member_m->getRoles();
         $viewdata = array(
-            'podestrian_types' => $podestrian_types,
-            'addresses' => $addresses);
+            'podestrians' => $podestrians,
+            'roles' => $roles,
+            'team_id' => $team_id,
+            'podestrian' => $team_member[0]);
         $this->load->view('team_member/modify',$viewdata);
         $this->load->view('footer');
     }

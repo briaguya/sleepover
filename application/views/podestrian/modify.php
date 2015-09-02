@@ -10,31 +10,31 @@
                 <?} else {?>
                     <?="Edit Podestrian";}?>
             </h1>
+            <? if($podestrian_id != null) {?>
+                <?= "<h3>" ?>
+                <?=$podestrian->first_name ." ".$podestrian->last_name?>
+                <?= "</h3>" ?>
+                <?= "<h3>" ?>
+                <?=$podestrian->email ?>
+                <?= "</h3>" ;}?>
 
-                <? if($podestrian_id != null) {?>
-                    <?= "<h3>" ?>
-                    <?=$podestrian->first_name ." ".$podestrian->last_name?>
-                    <?= "</h3>" ?>
-                    <?= "<h3>" ?>
-                    <?=$podestrian->email ?>
-                    <?= "</h3>" ;}?>
-                <div class="add-fields">
+            <div class="add-fields">
                 <? if($podestrian_id == null) {?>
-				<?= "<div class=\"field\">" ?>
-					<?= "<label for=\"first_name\">First Name:</label>" ?>
-					<?= "<input type=\"text\" id=\"first_name\" name=\"first_name\" required value=\"\"/>" ?>
-				<?= "</div>" ?>
+                    <?= "<div class=\"field\">" ?>
+					    <?= "<label for=\"first_name\">First Name:</label>" ?>
+					    <?= "<input type=\"text\" id=\"first_name\" name=\"first_name\" required value=\"\"/>" ?>
+				    <?= "</div>" ?>
 
-				<?= "<div class=\"field\">" ?>
-					<?= "<label for=\"last_name\">Last Name:</label>" ?>
-					<?= "<input type=\"text\" id=\"last_name\" name=\"last_name\" required value=\"\"/>" ?>
-				<?= "</div>" ?>
+				    <?= "<div class=\"field\">" ?>
+					    <?= "<label for=\"last_name\">Last Name:</label>" ?>
+					    <?= "<input type=\"text\" id=\"last_name\" name=\"last_name\" required value=\"\"/>" ?>
+				    <?= "</div>" ?>
 
-				<?= "<div class=\"field\">" ?>
-					<?= "<label for=\"email\">Email Address:</label>" ?>
-					<?= "<input type=\"text\" id=\"email\" name=\"email\" required value=\"\"/>" ?>
-				<?= "</div>"; ?>
-                    
+				    <?= "<div class=\"field\">" ?>
+					    <?= "<label for=\"email\">Email Address:</label>" ?>
+					    <?= "<input type=\"text\" id=\"email\" name=\"email\" required value=\"\"/>" ?>
+				    <?= "</div>";} ?>
+
                 <div>todo:pic</div>
 
 				<div class="field">
@@ -101,9 +101,7 @@
                 </button>
 				
 			</div>
-			
-			
-			
+
 		</form>
 		
 	</div> <!-- /content -->

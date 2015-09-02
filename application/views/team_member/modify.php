@@ -35,6 +35,15 @@
 					    <?= "<label for=\"password\">Password:</label>" ?>
 					    <?= "<input type=\"text\" id=\"password\" name=\"password\" required value=\"\"/>" ?>
                     <?= "</div>";} ?>
+
+                <div class="field">
+                    <label for="role_id">Role:</label>
+                    <select id="role_id" name="role_id">
+                        <? foreach ($roles as $role) { ?>
+                            <option value="<?=$role->role_id?>"><?=$role->role?></option>
+                        <? } ?>
+                    </select>
+                </div>
 			</div>
 			
 			<div class="login-actions">

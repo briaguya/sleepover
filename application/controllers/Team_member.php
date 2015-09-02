@@ -30,19 +30,19 @@ class Team_member extends CI_Controller {
         redirect("/podestrian");
     }
 
-    public function modify($podestrian_id = null)
+    public function modify($team_id = null)
     {
-        if($podestrian_id == null)
+        if($team_id == null)
         {
             // We're adding
-            if($this->input->post("first_name") && $this->input->post("last_name") && $this->input->post("email"))
+            if($this->input->post("username") && $this->input->post("password") && $this->input->post("podestrian_id"))
             {
-                //We're submitting a new podestrian
-                $podestrian = array(
-                    'first_name' => $this->input->post("first_name"),
-                    'last_name' => $this->input->post("last_name"),
-                    'email' => $this->input->post("email"),
-                    'podestrian_type_id' => $this->input->post("podestrian_type_id"),
+                //We're submitting a new team member
+                $team_member = array(
+                    'username' => $this->input->post("username"),
+                    'password' => $this->input->post("password"),
+                    'podestrian_id' => $this->input->post("podestrian_id"),
+                    'role' => $this->input->post("podestrian_type_id"),
                     'address_id' => $this->input->post("address_id"),
                     'sex' => $this->input->post("sex"),
                     'facebook' => $this->input->post("facebook"),

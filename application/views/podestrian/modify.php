@@ -6,9 +6,9 @@
 		
 			<h1>
                 <? if($podestrian_id == null) {?>
-                <?="Add Podestrian";?>
+                    <?="Add Podestrian";?>
                 <?} else {?>
-                <?="Edit Podestrian";}?>
+                    <?="Edit Podestrian";}?>
             </h1>
 			
 			<div class="add-fields">
@@ -86,7 +86,12 @@
 			
 			<div class="login-actions">
 				
-				<button class="button btn btn-success btn-large">Add</button>
+				<button class="button btn btn-success btn-large">
+                    <? if($podestrian_id == null) {?>
+                        <?="Add";?>
+                    <?} else {?>
+                        <?="Save";}?>
+                </button>
 				
 			</div>
 			

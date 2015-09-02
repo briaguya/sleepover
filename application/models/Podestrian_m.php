@@ -22,7 +22,7 @@ class Podestrian_m extends CI_Model {
         return false;
     }
 
-    function modify($podestrian)
+    function save($podestrian)
     {
         //todo move this to a stored procedure
         if($podestrian->podestrian_id == null)

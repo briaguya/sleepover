@@ -34,28 +34,7 @@ class Podestrian extends CI_Controller {
     {
         if($podestrian_id == null)
         {
-            // We're adding
-            if($this->input->post("first_name") && $this->input->post("last_name") && $this->input->post("email"))
-            {
-                //We're submitting a new podestrian
-                $podestrian = array(
-                    'first_name' => $this->input->post("first_name"),
-                    'last_name' => $this->input->post("last_name"),
-                    'email' => $this->input->post("email"),
-                    'podestrian_type_id' => $this->input->post("podestrian_type_id"),
-                    'address_id' => $this->input->post("address_id"),
-                    'sex' => $this->input->post("sex"),
-                    'facebook' => $this->input->post("facebook"),
-                    'twitter' => $this->input->post("twitter"),
-                    'instagram' => $this->input->post("instagram"),
-                    'birthday' => $this->input->post("birthday"),
-                    'how_found' => $this->input->post("how_found"));
-
-                $this->podestrian_m->modify($podestrian);
-                redirect("/podestrian");
-            }
-
-            // We're filling out the podestrian form, we need a null podestrian
+            //We're adding, we need a null podestrian
             $podestrian = null;
             $data = array('title' => 'sleepover - Add Podestrian', 'page' => 'podestrian');
         }
@@ -76,6 +55,47 @@ class Podestrian extends CI_Controller {
             'podestrian' => $podestrian[0]);
         $this->load->view('podestrian/modify',$viewdata);
         $this->load->view('footer');
+    }
+
+    public function save($podestrian_id = null)
+    {
+        if($podestrian_id == null)
+        {
+            //we need name and email, if we don't have them return
+            if(!($this->input->post("first_name") && $this->input->post("last_name") && $this->input->post("email")))
+                return; //todo error?
+
+            //We're adding, make a new podestrian
+            $podestrian = array(
+                'first_name' => $this->input->post("first_name"),
+                'last_name' => $this->input->post("last_name"),
+                'email' => $this->input->post("email"),
+                'podestrian_type_id' => $this->input->post("podestrian_type_id"),
+                'address_id' => $this->input->post("address_id"),
+                'sex' => $this->input->post("sex"),
+                'facebook' => $this->input->post("facebook"),
+                'twitter' => $this->input->post("twitter"),
+                'instagram' => $this->input->post("instagram"),
+                'birthday' => $this->input->post("birthday"),
+                'how_found' => $this->input->post("how_found"));
+        }
+        else
+        {
+            // We're editing
+            $podestrian = array(
+                'podestrian_id' => $podestrian_id,
+                'podestrian_type_id' => $this->input->post("podestrian_type_id"),
+                'address_id' => $this->input->post("address_id"),
+                'sex' => $this->input->post("sex"),
+                'facebook' => $this->input->post("facebook"),
+                'twitter' => $this->input->post("twitter"),
+                'instagram' => $this->input->post("instagram"),
+                'birthday' => $this->input->post("birthday"),
+                'how_found' => $this->input->post("how_found"));
+        }
+
+        $this->podestrian_m->save($podestrian);
+        redirect("/podestrian");
     }
 
 	public function index()

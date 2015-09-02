@@ -8,7 +8,7 @@
 					<table class="table table-striped table-bordered">
 						<thead>
 						<tr>
-							<th> <img src="/sleepover/img/success-kid-thumb.png"> </th>
+							<th></th>
 							<th> Name </th>
 							<th> Email </th>
 							<th> Podestrian Type </th>
@@ -28,7 +28,7 @@
 							// $emp->username
 							?>
 							<tr>
-								<td> Pic Here? </td>
+								<td> <img src="/sleepover/img/success-kid-thumb.png"> </td>
 								<td> <?=$podestrian->first_name ." ".$podestrian->last_name?> </td>
 								<td> <?=$podestrian->email ?> </td>
 								<td> <?=$podestrian->podestrian_type ?> </td>

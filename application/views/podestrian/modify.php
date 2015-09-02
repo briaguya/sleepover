@@ -4,7 +4,12 @@
 		
 		<form action="/sleepover/podestrian/add" method="post">
 		
-			<h1>Add Podestrian</h1>
+			<h1>
+                <? if($podestrian_id == null) {?>
+                <?="Add Podestrian";?>
+                <?} else ?>
+                <?="Edit Podestrian";?>
+            </h1>
 			
 			<div class="add-fields">
 

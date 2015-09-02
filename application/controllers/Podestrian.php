@@ -50,12 +50,14 @@ class Podestrian extends CI_Controller {
             redirect("/podestrian");
         }
 
-        $data = array('title' => 'sleepover - Add Podestrian', 'page' => 'podestrian');
+        if($podestrian_id == null) $data = array('title' => 'sleepover - Add Podestrian', 'page' => 'podestrian');
+        else $data = array('title' => 'sleepover - Edit Podestrian', 'page' => 'podestrian');
+
         $this->load->view('header', $data);
         $podestrian_types = $this->podestrian_m->getPodestrianTypes();
         $addresses = $this->podestrian_m->getAddresses();
-        $viewdata = array('podestrian_types' => $podestrian_types, 'addresses' => $addresses);
-        $this->load->view('podestrian/add',$viewdata);
+        $viewdata = array('podestrian_types' => $podestrian_types, 'addresses' => $addresses, 'podestrian_id' => $podestrian_id);
+        $this->load->view('podestrian/modify',$viewdata);
         $this->load->view('footer');
     }
 

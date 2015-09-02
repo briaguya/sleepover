@@ -51,7 +51,7 @@
                     <?="<a href=\"/sleepover/team_member/delete/$team_member->team_id\" onclick=\"return confirm('Are you sure ?')\" class=\"button btn btn-danger btn-large\" style=\"float: left\">Delete</i></a></td>" ?>
                 <? ;} ?>
 				<button class="button btn btn-success btn-large">
-                    <? if($podestrian_id == null) {?>
+                    <? if($team_id == null) {?>
                         <?="Add";?>
                     <?} else {?>
                         <?="Save";}?>

@@ -3,7 +3,6 @@
 		<div class="container">
 			<div class="row">
 				<div class="span12">
-					<br><br>
 					<table class="table table-striped table-bordered">
 						<thead>
 						<tr>

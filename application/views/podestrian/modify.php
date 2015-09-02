@@ -50,7 +50,7 @@
 					<label for="address_id">Address:</label>
 					<select id="address_id" name="address_id">
 						<? foreach ($addresses as $address) { ?>
-							<option value="<?=$address->address_id?>"><?=$address->city?>, <?=$address->country?></option>
+							<option value="<?=$address->address_id?>" <? if($address->address_id==$podestrian->address_id) { echo "selected"; } ?>><?=$address->city?>, <?=$address->country?></option>
 						<? } ?>
 					</select>
 				</div>

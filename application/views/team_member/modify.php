@@ -2,16 +2,15 @@
 	
 	<div class="content clearfix">
 		
-		<form action="/sleepover/podestrian/modify" method="post">
+		<form action="/sleepover/team_member/modify" method="post">
 		
 			<h1>
-                <? if($podestrian_id == null) {?>
-                    <?="Add Podestrian";?>
+                <? if($team_id == null) {?>
+                    <?="Add Team Member";?>
                 <?} else {?>
-                    <?="Edit Podestrian";}?>
+                    <?="Edit Team Member";}?>
             </h1>
             <? if($podestrian_id != null) {?>
-                <?= "<img src=\"/sleepover/img/success-kid.png\">" ?>
                 <?= "<h3>" ?>
                 <?=$podestrian->first_name ." ".$podestrian->last_name?>
                 <?= "</h3>" ?>

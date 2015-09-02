@@ -15,9 +15,9 @@
                 <?= "<h3>" ?>
                 <?=$podestrian->first_name ." ".$podestrian->last_name?>
                 <?= "</h3>" ?>
-                <?= "<h3>" ?>
+                <?= "<h4>" ?>
                 <?=$podestrian->email ?>
-                <?= "</h3>" ;}?>
+                <?= "</h4>" ;}?>
 
             <div class="add-fields">
                 <? if($podestrian_id == null) {?>

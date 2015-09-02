@@ -13,7 +13,12 @@ class User_m extends CI_Model {
         $query = $this->db->query("call check_login('{$username}', '{$password}')");
         $data = array();
 
-        foreach (@$query->result() as $row)
+        $result = $query->result();
+
+        $query->next_result(); // Dump the extra resultset.
+        $query->free_result(); // Does what it says.
+
+        foreach (@$result as $row)
         {
             $data[] = $row;
         }

@@ -65,7 +65,7 @@ class Team_member extends CI_Controller {
         $viewdata = array(
             'podestrian_types' => $podestrian_types,
             'addresses' => $addresses);
-        $this->load->view('podestrian/modify',$viewdata);
+        $this->load->view('team_member/modify',$viewdata);
         $this->load->view('footer');
     }
 

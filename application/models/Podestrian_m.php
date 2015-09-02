@@ -25,7 +25,7 @@ class Podestrian_m extends CI_Model {
     function save($podestrian)
     {
         //todo move this to a stored procedure
-        if(isnull($podestrian->podestrian_id))
+        if(is_null($podestrian->podestrian_id))
         {
             // we don't have a podestrian id, we're adding
             $this->db->insert('podestrian', $podestrian);

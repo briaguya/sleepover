@@ -31,17 +31,12 @@
           <div class="nav-collapse">
             <ul class="nav pull-right">
                 <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i
-                                  class="icon-user"></i> <?=FULLNAME?> (<?=USERNAME?>) <b class="caret"></b></a>
+                                  class="icon-user"></i> <?=full_name?> (<?=username?>) <b class="caret"></b></a>
                   <ul class="dropdown-menu">
                     <li><a href="/sleepover/login/logout">Logout</a></li>
                   </ul>
                 </li>
-                <li><a href="#" class="dropdown-toggle" data-toggle="dropdown"><?=DEPARTMENT_NAME?></a>
-                </li>
               </ul>
-              <form class="navbar-search pull-right" action="/sleepover/search" method="POST">
-                <input type="text" name="customer" class="search-query" placeholder="Search Customer">
-              </form>
           </div>
           <!--/.nav-collapse --> 
       <? } ?>

@@ -61,7 +61,7 @@ class Podestrian extends CI_Controller {
 
     public function add()
     {
-        $this->modify();
+        $this->modify(null);
     }
 
 	public function edit($podestrian_id)

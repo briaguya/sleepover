@@ -30,12 +30,7 @@ class Podestrian extends CI_Controller {
 		redirect("/podestrian");
 	}
 
-    public function modify()
-    {
-        modify(null);
-    }
-
-    public function modify($podestrian_id)
+    public function modify($podestrian_id = null)
     {
         if($this->input->post("first_name") && $this->input->post("last_name") && $this->input->post("email"))
         {

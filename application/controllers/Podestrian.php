@@ -73,7 +73,7 @@ class Podestrian extends CI_Controller {
             'podestrian_types' => $podestrian_types,
             'addresses' => $addresses,
             'podestrian_id' => $podestrian_id,
-            'podestrian' => $podestrian);
+            'podestrian' => $podestrian[0]);
         $this->load->view('podestrian/modify',$viewdata);
         $this->load->view('footer');
     }

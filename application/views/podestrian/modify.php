@@ -58,9 +58,9 @@
                 <div class="field">
                     <label for="sex">Sex:</label>
                     <select id="sex" name="sex">
-                        <option value ="Female">Female</option>
-                        <option value ="Male">Male</option>
-                        <option value ="Not Applicable">Not Applicable</option>
+                        <option value ="Female" <? if($podestrian->sex=="Female") { echo "selected"; } ?>>Female</option>
+                        <option value ="Male" <? if($podestrian->sex=="Male") { echo "selected"; } ?>>Male</option>
+                        <option value ="Not Applicable" <? if($podestrian->sex=="Not Applicable") { echo "selected"; } ?>>Not Applicable</option>
                     </select>
                 </div>
 

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Sep 01, 2015 at 06:27 PM
+-- Generation Time: Sep 01, 2015 at 06:40 PM
 -- Server version: 5.5.44-0ubuntu0.14.04.1
 -- PHP Version: 5.5.9-1ubuntu4.11
 
@@ -40,6 +40,13 @@ FROM podestrian AS p
 		ON p.podestrian_type_id = pt.podestrian_type_id
 	JOIN address AS a
 		ON p.address_id = a.address_id$$
+
+CREATE DEFINER=`sleepover`@`localhost` PROCEDURE `get_all_team_members`()
+    READS SQL DATA
+SELECT t.team_id, p.first_name, p.last_name, t.username, r.role
+FROM team_member as t
+JOIN podestrian as p ON t.podestrian = p.podestrian_id
+JOIN team_member_role as r ON t.role = r.role_id$$
 
 DELIMITER ;
 

@@ -7,23 +7,20 @@ class Team_member_m extends CI_Model {
         // Call the Model constructor
         parent::__construct();
     }
-    
+
     function get_team_members()
     {
-        $query = $this->db->from('team_member')->get();
+        $query = $this->db->query('call get_all_team_members()');
         $data = array();
 
         foreach (@$query->result() as $row)
         {
             $data[] = $row;
-            // $row->customer_id
-            // $row->customer_username
-            // $data[0]->customer_id
         }
         if(count($data))
             return $data;
         return false;
-    } 
+    }
 
     function addEmployee($username, $password, $firstname, $lastname, $telephone, $email, $departmentid, $employee_type, $employee_salary, $employee_hiring_date)
     {

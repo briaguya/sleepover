@@ -11,7 +11,7 @@
                     <?="Edit Podestrian";}?>
             </h1>
             <? if($podestrian_id != null) {?>
-                <?= "<img url=\"\"\>" ?>
+                <?= "<img url=\"/sleepover/img/success-kid.png\"\>" ?>
                 <?= "<h3>" ?>
                 <?=$podestrian->first_name ." ".$podestrian->last_name?>
                 <?= "</h3>" ?>

@@ -19,7 +19,7 @@
 							<th> Instagram </th>
 							<th> Birthday </th>
 							<th> How they found us </th>
-							<th class="td-actions"> Actions </th>
+							<th class="td-actions"> </th>
 						</tr>
 						</thead>
 						<tbody>
@@ -28,7 +28,7 @@
 							// $emp->username
 							?>
 							<tr>
-								<td> <img src="/sleepover/img/success-kid-thumb.png"> </td>
+								<td> <a href="/sleepover/podestrian/modify/<?=$podestrian->podestrian_id?>" img src="/sleepover/img/success-kid-thumb.png"> </td>
 								<td> <?=$podestrian->first_name ." ".$podestrian->last_name?> </td>
 								<td> <?=$podestrian->email ?> </td>
 								<td> <?=$podestrian->podestrian_type ?> </td>

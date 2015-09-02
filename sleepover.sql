@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Sep 02, 2015 at 12:12 PM
+-- Generation Time: Sep 02, 2015 at 12:16 PM
 -- Server version: 5.5.44-0ubuntu0.14.04.1
 -- PHP Version: 5.5.9-1ubuntu4.11
 
@@ -176,14 +176,15 @@ CREATE TABLE IF NOT EXISTS `podestrian_type` (
   `podestrian_type` varchar(50) NOT NULL,
   PRIMARY KEY (`podestrian_type_id`),
   UNIQUE KEY `podestrian_type` (`podestrian_type`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
 --
 -- Dumping data for table `podestrian_type`
 --
 
 INSERT INTO `podestrian_type` (`podestrian_type_id`, `podestrian_type`) VALUES
-(1, 'Default');
+(1, 'Default'),
+(2, 'Not Default');
 
 -- --------------------------------------------------------
 

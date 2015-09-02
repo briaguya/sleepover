@@ -97,7 +97,7 @@
                 <? ;} ?>
 
                 <button class="button btn btn-success btn-large">
-                    <? if($team_id == null) {?>
+                    <? if($podestrian_id == null) {?>
                         <?="Add";?>
                     <?} else {?>
                         <?="Save";}?>

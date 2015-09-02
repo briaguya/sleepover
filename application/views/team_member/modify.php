@@ -18,13 +18,12 @@
             <div class="add-fields">
                 <? if($team_id == null) {?>
                     <?= "<div class=\"field\">" ?>
-                        <?= "<label for=\"podestrian\">Login:</label>" ?>
-                        <label for="podestrian_type_id">Podestrian Type:</label>
-                        <select id="podestrian_type_id" name="podestrian_type_id">
-                            <? foreach ($podestrian_types as $type) { ?>
-                                <option value="<?=$type->podestrian_type_id?>"><?=$type->podestrian_type?></option>
+                        <?= "<label for=\"podestrian\">Podestrian:</label>" ?>
+                        <?= "<select id=\"podestrian_id\" name=\"podestrian_id\">" ?>
+                            <? foreach ($podestrians as $podestrian) { ?>
+                                <?= "<option value=\"$podestrian->podestrian_id\"><$podestrian->first_name .\" \".$podestrian->last_name</option>" ?>
                             <? } ?>
-                        </select>
+                        <?= "</select>" ?>
                     <?= "</div>" ?>
 
                     <?= "<div class=\"field\">" ?>

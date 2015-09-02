@@ -3,12 +3,11 @@
 		<div class="container">
 			<div class="row">
 				<div class="span12">
-					<a href="/sleepover/podestrian/modify" class="btn btn-small btn-primary"><i class="btn-icon-only icon-ok"></i>Add Podestrian</a>
 					<br><br>
 					<table class="table table-striped table-bordered">
 						<thead>
 						<tr>
-							<th></th>
+							<th><a href="/sleepover/podestrian/modify" class="btn btn-small btn-primary"><i class="btn-icon-only icon-plus"></a></th>
 							<th> Name </th>
 							<th> Email </th>
 							<th> Podestrian Type </th>

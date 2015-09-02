@@ -7,8 +7,8 @@
 			<h1>
                 <? if($podestrian_id == null) {?>
                 <?="Add Podestrian";?>
-                <?} else ?>
-                <?="Edit Podestrian";?>
+                <?} else {?>
+                <?="Edit Podestrian";}?>
             </h1>
 			
 			<div class="add-fields">

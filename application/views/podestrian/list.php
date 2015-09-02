@@ -8,7 +8,7 @@
 					<table class="table table-striped table-bordered">
 						<thead>
 						<tr>
-							<th> todo: Pic </th>
+							<th> <img src="/sleepover/img/success-kid-thumb.png"> </th>
 							<th> Name </th>
 							<th> Email </th>
 							<th> Podestrian Type </th>

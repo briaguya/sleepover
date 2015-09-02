@@ -2,7 +2,7 @@
 	
 	<div class="content clearfix">
 		
-		<form action="/sleepover/podestrian/add" method="post">
+		<form action="/sleepover/podestrian/modify" method="post">
 		
 			<h1>
                 <? if($podestrian_id == null) {?>

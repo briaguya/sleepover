@@ -10,16 +10,12 @@ class User_m extends CI_Model {
     
     function check_login($username, $password)
     {
-        $query = $this->db->from('team_member')->where('username', $username)->where('password', $password)->get();
+        $query = $this->db->query("call check_login('{$username}', '{$password}')");
         $data = array();
 
         foreach (@$query->result() as $row)
         {
             $data[] = $row;
-            // $row->customer_id
-            // $row->customer_username
-            // $data[0]->customer_id
-            var_dump($row);
         }
         if(count($data))
             return $data;

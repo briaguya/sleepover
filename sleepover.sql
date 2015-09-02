@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Sep 01, 2015 at 03:07 PM
+-- Generation Time: Sep 01, 2015 at 06:11 PM
 -- Server version: 5.5.44-0ubuntu0.14.04.1
 -- PHP Version: 5.5.9-1ubuntu4.11
 
@@ -24,6 +24,13 @@ DELIMITER $$
 --
 -- Procedures
 --
+CREATE DEFINER=`sleepover`@`localhost` PROCEDURE `check_login`(IN `username` VARCHAR(100), IN `password` VARCHAR(100))
+    READS SQL DATA
+SELECT username, p.first_name, p.last_name
+FROM podestrian p
+JOIN team_member t ON t.podestrian = p.podestrian_id
+WHERE t.username = username AND t.password = password$$
+
 CREATE DEFINER=`sleepover`@`localhost` PROCEDURE `get_all_podestrians`()
     READS SQL DATA
     COMMENT 'gets all podestrians'
@@ -135,14 +142,15 @@ CREATE TABLE IF NOT EXISTS `podestrian` (
   UNIQUE KEY `podestrian_number` (`podestrian_number`),
   KEY `address` (`address_id`),
   KEY `podestrian type` (`podestrian_type_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
 
 --
 -- Dumping data for table `podestrian`
 --
 
 INSERT INTO `podestrian` (`podestrian_id`, `podestrian_number`, `first_name`, `last_name`, `email`, `address_id`, `sex`, `facebook`, `twitter`, `instagram`, `podestrian_type_id`, `birthday`, `pic`, `how_found`) VALUES
-(1, NULL, 'Sleepover', 'Admin', 'pod@pod.pod', 1, 'None', '', '', '', 1, '1990-01-01', '', '');
+(1, NULL, 'Sleepover', 'Admin', 'pod@pod.pod', 1, 'None', '', '', '', 1, '1990-01-01', '', ''),
+(5, NULL, 'new', 'new', 'new@new.new', 1, 'Female', '', '', '', 1, '2015-01-01', NULL, '');
 
 -- --------------------------------------------------------
 

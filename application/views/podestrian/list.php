@@ -33,8 +33,9 @@
 								<td> <?=$podestrian->city .", ".$podestrian->country?> </td>
 								<td> <?=$podestrian->sex ?> </td>
 								<td>
-                                    <a href="https://www.facebook.com/"><img src="/sleepover/img/facebook_icon.png"></a>
-                                    
+                                    <a href="https://www.facebook.com/"><img src="/sleepover/img/fb40.png"></a>
+                                    <a href="https://www.twitter.com/"><img src="/sleepover/img/tw40.png"></a>
+                                    <a href="https://www.instagram.com/"><img src="/sleepover/img/ig40.png"></a>
                                 </td>
 								<td> <?=$podestrian->birthday ?> </td>
 								<td> <?=$podestrian->how_found ?> </td>

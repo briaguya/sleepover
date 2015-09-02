@@ -47,7 +47,12 @@ class Team_member_m extends CI_Model {
         $query = $this->db->from('team_member_role')->get();
         $data = array();
 
-        foreach ($query->result() as $row)
+        $result = $query->result();
+
+        $query->next_result(); // Dump the extra resultset.
+        $query->free_result(); // Does what it says.
+
+        foreach (@$result as $row)
         {
             $data[] = $row;
         }

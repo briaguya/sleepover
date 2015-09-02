@@ -38,7 +38,7 @@ class Team_member_m extends CI_Model {
 
     function getTeamMember($team_id)
     {
-        $query = $this->db->query("call get_team_member('{$team_id}')");
+        $query = $this->db->query("call get_team_member({$team_id})");
         $data = array();
 
         $result = $query->result();

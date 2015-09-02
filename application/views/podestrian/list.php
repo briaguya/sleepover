@@ -28,7 +28,7 @@
 							// $emp->username
 							?>
 							<tr>
-								<td> <a href="/sleepover/podestrian/modify/<?=$podestrian->podestrian_id?>" img src="/sleepover/img/success-kid-thumb.png"> </td>
+								<td> <a href="/sleepover/podestrian/modify/<?=$podestrian->podestrian_id?>"><img src="/sleepover/img/success-kid-thumb.png"></a> </td>
 								<td> <?=$podestrian->first_name ." ".$podestrian->last_name?> </td>
 								<td> <?=$podestrian->email ?> </td>
 								<td> <?=$podestrian->podestrian_type ?> </td>

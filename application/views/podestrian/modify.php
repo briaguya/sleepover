@@ -95,14 +95,13 @@
                 <? if($podestrian_id != null) {?>
                     <?="<a href=\"/sleepover/podestrian/delete/$podestrian->podestrian_id\" onclick=\"return confirm('Are you sure ?')\" class=\"button btn btn-danger btn-large\" style=\"float: left\">Delete</i></a></td>" ?>
                 <? ;} ?>
-                <? if($podestrian_id != null) {?>
-                    <?="<a href=\"/sleepover/podestrian/save/$podestrian->podestrian_id\" class=\"button btn btn-success btn-large\">
-                    <? if($podestrian_id == null) ?>
-                        <?=\"Add\";?>
+				<a href="/sleepover/podestrian/delete/"<?=$podestrian?> class="button btn btn-success btn-large">
+                    <? if($podestrian_id == null) {?>
+                        <?="Add";?>
                     <?} else {?>
-                        <?=\"Save\";}?>
-                    </i></a></td>" ?>
-                    <? ;} ?>
+                        <?="Save";}?>
+                </a>
+
 			</div>
 
 		</form>

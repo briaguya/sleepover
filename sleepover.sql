@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Sep 01, 2015 at 06:40 PM
+-- Generation Time: Sep 02, 2015 at 12:09 PM
 -- Server version: 5.5.44-0ubuntu0.14.04.1
 -- PHP Version: 5.5.9-1ubuntu4.11
 
@@ -47,6 +47,12 @@ SELECT t.team_id, p.first_name, p.last_name, t.username, r.role
 FROM team_member as t
 JOIN podestrian as p ON t.podestrian = p.podestrian_id
 JOIN team_member_role as r ON t.role = r.role_id$$
+
+CREATE DEFINER=`sleepover`@`localhost` PROCEDURE `get_team_member`(IN `team_id` INT(11))
+    READS SQL DATA
+SELECT team_id, tm.username, tm.role, p.first_name, p.last_name
+FROM team_member as t
+JOIN podestrian as p ON t.podestrian = p.podestrian_id$$
 
 DELIMITER ;
 
@@ -149,15 +155,14 @@ CREATE TABLE IF NOT EXISTS `podestrian` (
   UNIQUE KEY `podestrian_number` (`podestrian_number`),
   KEY `address` (`address_id`),
   KEY `podestrian type` (`podestrian_type_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
 --
 -- Dumping data for table `podestrian`
 --
 
 INSERT INTO `podestrian` (`podestrian_id`, `podestrian_number`, `first_name`, `last_name`, `email`, `address_id`, `sex`, `facebook`, `twitter`, `instagram`, `podestrian_type_id`, `birthday`, `pic`, `how_found`) VALUES
-(1, NULL, 'Sleepover', 'Admin', 'pod@pod.pod', 1, 'None', '', '', '', 1, '1990-01-01', '', ''),
-(5, NULL, 'new', 'new', 'new@new.new', 1, 'Female', '', '', '', 1, '2015-01-01', NULL, '');
+(1, NULL, 'Sleepover', 'Admin', 'pod@pod.pod', 1, 'None', '', '', '', 1, '1990-01-01', '', '');
 
 -- --------------------------------------------------------
 

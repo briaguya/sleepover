@@ -66,7 +66,7 @@ class Team_member extends CI_Controller {
             'podestrians' => $podestrians,
             'roles' => null,
             'team_id' => $team_id,
-            'podestrian' => $team_member[0]);
+            'team_member' => $team_member[0]);
         $this->load->view('team_member/modify',$viewdata);
         $this->load->view('footer');
     }

@@ -22,47 +22,17 @@ class Team_member_m extends CI_Model {
         return false;
     }
 
-    function addEmployee($username, $password, $firstname, $lastname, $telephone, $email, $departmentid, $employee_type, $employee_salary, $employee_hiring_date)
+    function modify($team_member)
     {
-        $data = array('employee_username' => $username, 'employee_password' => $password, 'employee_firstname' => $firstname, 'employee_lastname' => $lastname, 'employee_telephone' => $telephone, 'employee_email' => $email, 'department_id' => $departmentid, 'employee_type' => $employee_type, 'employee_salary' => $employee_salary, 'employee_hiring_date' => $employee_hiring_date);
-        $this->db->insert('team_member', $data);
-        return $this->db->affected_rows();
-    } 
-
-    function deleteEmployee($employee_id)
-    {
-        $this->db->delete('team_member', array('employee_id' => $employee_id));
-        return $this->db->affected_rows();
-    }
-
-    function editEmployee($employee_id, $username, $password, $firstname, $lastname, $telephone, $email, $department_id, $employee_type, $employee_salary, $employee_hiring_date)
-    {
-        $data = array('employee_username' => $username, 'employee_password' => $password, 'employee_firstname' => $firstname, 'employee_lastname' => $lastname, 'employee_telephone' => $telephone, 'employee_email' => $email, 'department_id' => $department_id, 'employee_type' => $employee_type, 'employee_salary' => $employee_salary, 'employee_hiring_date' => $employee_hiring_date);
-
-        $this->db->where('employee_id', $employee_id);
-        $this->db->update('team_member', $data);
-    }
-
-    function getEmployee($employee_id)
-    {
-        $query = $this->db->get_where('team_member', array('employee_id' => $employee_id));
-        return $query->result();
-    }
-
-    function getDepartments()
-    {
-        $query = $this->db->from('department')->get();
-        $data = array();
-
-        foreach ($query->result() as $row)
+        //todo move this to a stored procedure
+        if($team_member->team_id == null)
         {
-            $data[] = $row;
-            // $row->customer_id
-            // $row->customer_username
-            // $data[0]->customer_id
+            // we don't have a podestrian id, we're adding
+            $this->db->insert('team_member', $team_member);
+            return $this->db->affected_rows();
         }
-        if(count($data))
-            return $data;
-        return false;
-    }   
+
+        $this->db->where('team_id', $team_member->team_id);
+        $this->db->update('team_member', $team_member);
+    }
 }

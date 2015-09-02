@@ -14,9 +14,8 @@
 							<th> Podestrian Type </th>
 							<th> Address </th>
 							<th> Sex </th>
+                            <th> Birthday </th>
 							<th> Social </th>
-							<th> Birthday </th>
-							<th> How they found us </th>
 							<th class="td-actions"> </th>
 						</tr>
 						</thead>
@@ -32,13 +31,12 @@
 								<td> <?=$podestrian->podestrian_type ?> </td>
 								<td> <?=$podestrian->city .", ".$podestrian->country?> </td>
 								<td> <?=$podestrian->sex ?> </td>
+                                <td> <?=$podestrian->birthday ?> </td>
 								<td>
                                     <a href="https://www.facebook.com/"><img src="/sleepover/img/fb40.png"></a>
                                     <a href="https://www.twitter.com/"><img src="/sleepover/img/tw40.png"></a>
                                     <a href="https://www.instagram.com/"><img src="/sleepover/img/ig40.png"></a>
                                 </td>
-								<td> <?=$podestrian->birthday ?> </td>
-								<td> <?=$podestrian->how_found ?> </td>
                                 <td class="td-actions"><a href="/sleepover/podestrian/delete/<?=$podestrian->podestrian_id?>" onclick="return confirm('Are you sure ?')" class="btn btn-danger btn-small"><i class="btn-icon-only icon-remove"> </i></a></td>
 							</tr>
 						<? } ?>

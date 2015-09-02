@@ -11,6 +11,7 @@
                     <?="Edit Podestrian";}?>
             </h1>
             <? if($podestrian_id != null) {?>
+                <?= "<img url=\"\"\>" ?>
                 <?= "<h3>" ?>
                 <?=$podestrian->first_name ." ".$podestrian->last_name?>
                 <?= "</h3>" ?>
@@ -20,6 +21,7 @@
 
             <div class="add-fields">
                 <? if($podestrian_id == null) {?>
+                    <?= "<div>todo:pic</div>" ?>
                     <?= "<div class=\"field\">" ?>
 					    <?= "<label for=\"first_name\">First Name:</label>" ?>
 					    <?= "<input type=\"text\" id=\"first_name\" name=\"first_name\" required value=\"\"/>" ?>
@@ -34,8 +36,6 @@
 					    <?= "<label for=\"email\">Email Address:</label>" ?>
 					    <?= "<input type=\"text\" id=\"email\" name=\"email\" required value=\"\"/>" ?>
 				    <?= "</div>";} ?>
-
-                <div>todo:pic</div>
 
 				<div class="field">
 					<label for="podestrian_type_id">Podestrian Type:</label>

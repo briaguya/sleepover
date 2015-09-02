@@ -55,7 +55,8 @@ class Podestrian extends CI_Controller {
                 redirect("/podestrian");
             }
 
-            // We're filling out the podestrian form
+            // We're filling out the podestrian form, we need a null podestrian
+            $podestrian = null;
             $data = array('title' => 'sleepover - Add Podestrian', 'page' => 'podestrian');
         }
         else

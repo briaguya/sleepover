@@ -92,7 +92,9 @@
 			</div>
 			
 			<div class="login-actions">
-				
+                <? if($podestrian_id != null) {?>
+                    <?="<a href=\"/sleepover/podestrian/delete/$podestrian->podestrian_id\" onclick=\"return confirm('Are you sure ?')\" class=\"button btn btn-danger btn-large\">Delete</i></a></td>" ?>
+                <? ;} ?>
 				<button class="button btn btn-success btn-large">
                     <? if($podestrian_id == null) {?>
                         <?="Add";?>

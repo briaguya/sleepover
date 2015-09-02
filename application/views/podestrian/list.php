@@ -39,7 +39,7 @@
 								<td> <?=$podestrian->instagram ?> </td>
 								<td> <?=$podestrian->birthday ?> </td>
 								<td> <?=$podestrian->how_found ?> </td>
-								<td class="td-actions"><a href="/sleepover/podestrian/edit/<?=$podestrian->podestrian_id?>" class="btn btn-small btn-primary"><i class="btn-icon-only icon-edit"> </i></a><a href="/sleepover/podestrian/delete/<?=$podestrian->podestrian_id?>" onclick="return confirm('Are you sure ?')" class="btn btn-danger btn-small"><i class="btn-icon-only icon-remove"> </i></a></td>
+								<td class="td-actions"><a href="/sleepover/podestrian/modify/<?=$podestrian->podestrian_id?>" class="btn btn-small btn-primary"><i class="btn-icon-only icon-edit"> </i></a><a href="/sleepover/podestrian/delete/<?=$podestrian->podestrian_id?>" onclick="return confirm('Are you sure ?')" class="btn btn-danger btn-small"><i class="btn-icon-only icon-remove"> </i></a></td>
 							</tr>
 						<? } ?>
 						</tbody>

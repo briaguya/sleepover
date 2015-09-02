@@ -22,7 +22,7 @@ class Podestrian_m extends CI_Model {
         return false;
     }
 
-    function modifyPodestrian($podestrian_id, $first_name, $last_name, $email, $podestrian_type_id, $address_id, $sex, $facebook, $twitter, $instagram, $birthday, $how_found)
+    function modify($podestrian_id, $first_name, $last_name, $email, $podestrian_type_id, $address_id, $sex, $facebook, $twitter, $instagram, $birthday, $how_found)
     {
         $data = array('first_name' => $first_name, 'last_name' => $last_name, 'email' => $email, 'podestrian_type_id' => $podestrian_type_id, 'address_id' => $address_id, 'sex' => $sex, 'facebook' => $facebook, 'twitter' => $twitter, 'instagram' => $instagram, 'birthday' => $birthday, 'how_found' => $how_found);
 

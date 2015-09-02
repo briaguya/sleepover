@@ -42,28 +42,21 @@ class Team_member extends CI_Controller {
                     'username' => $this->input->post("username"),
                     'password' => $this->input->post("password"),
                     'podestrian_id' => $this->input->post("podestrian_id"),
-                    'role' => $this->input->post("podestrian_type_id"),
-                    'address_id' => $this->input->post("address_id"),
-                    'sex' => $this->input->post("sex"),
-                    'facebook' => $this->input->post("facebook"),
-                    'twitter' => $this->input->post("twitter"),
-                    'instagram' => $this->input->post("instagram"),
-                    'birthday' => $this->input->post("birthday"),
-                    'how_found' => $this->input->post("how_found"));
+                    'role' => $this->input->post("role_id"));
 
-                $this->podestrian_m->modify($podestrian);
-                redirect("/podestrian");
+                $this->team_member_m->modify($team_member);
+                redirect("/team_member");
             }
 
-            // We're filling out the podestrian form, we need a null podestrian
-            $podestrian = null;
-            $data = array('title' => 'sleepover - Add Podestrian', 'page' => 'podestrian');
+            // We're filling out the team member form, we need a null team member
+            $team_member = null;
+            $data = array('title' => 'sleepover - Add Team Member', 'page' => 'team_member');
         }
         else
         {
             // We're editing, we want to get the podestrian
-            $podestrian = $this->podestrian_m->getPodestrian($podestrian_id);
-            $data = array('title' => 'sleepover - Edit Podestrian', 'page' => 'podestrian');
+            $team_member = $this->team_member_m->getTeamMember($team_id);
+            $data = array('title' => 'sleepover - Edit Team Member', 'page' => 'team_member');
         }
 
         $this->load->view('header', $data);
@@ -71,9 +64,7 @@ class Team_member extends CI_Controller {
         $addresses = $this->podestrian_m->getAddresses();
         $viewdata = array(
             'podestrian_types' => $podestrian_types,
-            'addresses' => $addresses,
-            'podestrian_id' => $podestrian_id,
-            'podestrian' => $podestrian[0]);
+            'addresses' => $addresses);
         $this->load->view('podestrian/modify',$viewdata);
         $this->load->view('footer');
     }

@@ -35,4 +35,10 @@ class Team_member_m extends CI_Model {
         $this->db->where('team_id', $team_member->team_id);
         $this->db->update('team_member', $team_member);
     }
+
+    function getTeamMember($team_id)
+    {
+        $query = $this->db->get_where('team_member', array('team_id' => $team_id));
+        return $query->result();
+    }
 }

@@ -2,7 +2,7 @@
 	
 	<div class="content clearfix">
 		
-		<form action="/sleepover/podestrian/modify" method="post">
+		<form action="/sleepover/podestrian/save/<?=$podestrian_id?>" method="post">
 		
 			<h1>
                 <? if($podestrian_id == null) {?>
@@ -95,12 +95,13 @@
                 <? if($podestrian_id != null) {?>
                     <?="<a href=\"/sleepover/podestrian/delete/$podestrian_id\" onclick=\"return confirm('Are you sure ?')\" class=\"button btn btn-danger btn-large\" style=\"float: left\">Delete</i></a></td>" ?>
                 <? ;} ?>
-				<a href="/sleepover/podestrian/save/<?=$podestrian_id?>" class="button btn btn-success btn-large">
-                    <? if($podestrian_id == null) {?>
+
+                <button class="button btn btn-success btn-large">
+                    <? if($team_id == null) {?>
                         <?="Add";?>
                     <?} else {?>
                         <?="Save";}?>
-                </a>
+                </button>
 
 			</div>
 

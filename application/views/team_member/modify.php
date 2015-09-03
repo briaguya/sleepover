@@ -2,7 +2,7 @@
 	
 	<div class="content clearfix">
 		
-		<form action="/sleepover/team_member/modify" method="post">
+		<form action="/sleepover/team_member/save/<?=$team_id?>" method="post">
 		
 			<h1>
                 <? if($team_id == null) {?>

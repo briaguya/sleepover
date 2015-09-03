@@ -8,26 +8,22 @@
 			<table class="table table-striped table-bordered">
 				<thead>
 				  <tr>
+				    <th> Pod Name </th>
 				    <th> Pod Type </th>
-				    <th> Min ID </th>
-				    <th> Max ID </th>
-				    <th> Quantity </th>
 				    <th class="td-actions"> Actions </th>
 				  </tr>
 				</thead>
 				<tbody>
 				<?
-					foreach ($rooms as $rm) {
+					foreach ($pods as $pod) {
 						// $emp->username
 				?>
 				  <tr>
-				    <td> <?=$rm->room_type ?> </td>
-				    <td> <?=$rm->min_id ?> </td>
-				    <td> <?=$rm->max_id?> </td>
-				    <td> <?=($rm->max_id-$rm->min_id+1) ?> </td>
+				    <td> <?=$pod->pod_name ?> </td>
+				    <td> <?=$pod->pod_type ?> </td>
 				    <td class="td-actions">
-				    	<a href="/pod/edit/<?=$rm->room_type?>/<?=$rm->min_id?>/<?=$rm->max_id?>" class="btn btn-small btn-primary"><i class="btn-icon-only icon-edit"> </i></a>
-				    	<a href="/pod/delete/<?=$rm->min_id?>/<?=$rm->max_id?>" onclick="return confirm('Are you sure ?')" class="btn btn-danger btn-small"><i class="btn-icon-only icon-remove"> </i></a>
+				    	<a href="/pod/modify/<?=$pod->room_type?>" class="btn btn-small btn-primary"><i class="btn-icon-only icon-edit"> </i></a>
+				    	<a href="/pod/delete/<?=$pod->min_id?>" onclick="return confirm('Are you sure ?')" class="btn btn-danger btn-small"><i class="btn-icon-only icon-remove"> </i></a>
 				    </td>
 				  </tr>
 				<? } ?>

@@ -26,7 +26,7 @@
                             <? foreach ($podestrians as $podestrian) { ?>
                                 <?= "<option value=" ?>
                                     <?=$podestrian->podestrian_id?><?="\">"?>
-                                    <?=$podestrian->podestrian_type?>
+                                    <?=$podestrian->first_name?><?= " " ?><?=$podestrian->last_name?>
                                 <?= "</option>" ?>
                             <? } ?>
                         </select>

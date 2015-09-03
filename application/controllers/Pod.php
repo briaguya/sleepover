@@ -41,7 +41,7 @@ class Pod extends CI_Controller {
 				$viewdata['error'] = "Range is not available [$new_min_id, $new_max_id]";
 			} else {
 				$this->room_m->addRoomRange($new_room_type, $new_min_id, $new_max_id);
-				redirect("/room");
+				redirect("/pod");
 			}
 		}
 		$data = array('title' => 'sleepover - Add Pods', 'page' => 'room');
@@ -105,7 +105,7 @@ class Pod extends CI_Controller {
 
 		$data = array('title' => 'sleepover - Pods', 'page' => 'pod');
 		$this->load->view('header', $data);
-		$this->load->view('room/list',$viewdata);
+		$this->load->view('pod/list',$viewdata);
 		$this->load->view('footer');
 	}
 }

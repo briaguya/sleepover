@@ -73,4 +73,10 @@ class Team_member_m extends CI_Model {
             return $data;
         return false;
     }
+
+    function deleteTeamMember($team_id)
+    {
+        $this->db->delete('team_member', array('team_id' => $team_id));
+        return $this->db->affected_rows();
+    }
 }

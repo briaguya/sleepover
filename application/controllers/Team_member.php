@@ -24,10 +24,10 @@ class Team_member extends CI_Controller {
             redirect("login");
     }
 
-    function delete($podestrian_id)
+    function delete($team_id)
     {
-        $this->podestrian_m->deletePodestrian($podestrian_id);
-        redirect("/podestrian");
+        $this->team_member_m->deleteTeamMember($team_id);
+        redirect("/team_member");
     }
 
     public function modify($team_id = null)

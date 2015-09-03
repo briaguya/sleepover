@@ -32,7 +32,7 @@ class Team_member_m extends CI_Model {
             return $this->db->affected_rows();
         }
 
-        $this->db->where('team_id', $team_member->team_id);
+        $this->db->where('team_id', $team_member["team_id"]);
         $this->db->update('team_member', $team_member);
     }
 

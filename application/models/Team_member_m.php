@@ -32,7 +32,7 @@ class Team_member_m extends CI_Model {
             return $this->db->affected_rows();
         }
 
-        $this->db->query("call update_team_member({$team_member['team_id']},{$team_member['role_id']})");
+        $this->db->query("call update_team_member({$team_member['team_id']},{$team_member['role']})");
     }
 
     function getTeamMember($team_id)

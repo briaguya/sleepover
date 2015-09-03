@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Sep 03, 2015 at 01:42 PM
+-- Generation Time: Sep 03, 2015 at 01:50 PM
 -- Server version: 5.5.44-0ubuntu0.14.04.1
 -- PHP Version: 5.5.9-1ubuntu4.11
 
@@ -138,7 +138,17 @@ CREATE TABLE IF NOT EXISTS `booking_status` (
   `booking_status` varchar(50) NOT NULL,
   PRIMARY KEY (`status_id`),
   UNIQUE KEY `booking_status` (`booking_status`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+
+--
+-- Dumping data for table `booking_status`
+--
+
+INSERT INTO `booking_status` (`status_id`, `booking_status`) VALUES
+(2, 'Booked'),
+(3, 'Checked In'),
+(4, 'Checked Out'),
+(1, 'Pending');
 
 -- --------------------------------------------------------
 

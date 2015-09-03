@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Sep 02, 2015 at 02:09 PM
+-- Generation Time: Sep 02, 2015 at 03:25 PM
 -- Server version: 5.5.44-0ubuntu0.14.04.1
 -- PHP Version: 5.5.9-1ubuntu4.11
 
@@ -58,6 +58,12 @@ SELECT team_id, t.username, t.role, p.first_name, p.last_name
 FROM team_member as t
 JOIN podestrian as p ON t.podestrian = p.podestrian_id
 WHERE t.team_id = team_id$$
+
+CREATE DEFINER=`sleepover`@`localhost` PROCEDURE `update_team_member`(IN `id` INT(11), IN `role_id` INT(11))
+    MODIFIES SQL DATA
+UPDATE team_member
+SET role = role_id
+WHERE team_id = id$$
 
 DELIMITER ;
 
@@ -161,14 +167,16 @@ CREATE TABLE IF NOT EXISTS `podestrian` (
   UNIQUE KEY `podestrian_number` (`podestrian_number`),
   KEY `address` (`address_id`),
   KEY `podestrian type` (`podestrian_type_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
 
 --
 -- Dumping data for table `podestrian`
 --
 
 INSERT INTO `podestrian` (`podestrian_id`, `podestrian_number`, `first_name`, `last_name`, `email`, `address_id`, `sex`, `facebook`, `twitter`, `instagram`, `podestrian_type_id`, `birthday`, `pic`, `how_found`) VALUES
-(1, NULL, 'Sleepover', 'Admin', 'pod@pod.pod', 2, 'Not Applicable', 'facebook', 'twitter', 'instagram', 2, '1990-01-01', '', 'internet');
+(1, NULL, 'Sleepover', 'Admin', 'pod@pod.pod', 2, 'Not Applicable', 'facebook', 'twitter', 'instagram', 2, '1990-01-01', '', 'internet'),
+(3, NULL, 'Brian', 'Smith', 'briaguya@gmail.com', 1, 'Male', '', '', '', 1, '2015-01-01', NULL, ''),
+(4, NULL, 'Henry', 'Henry', 'henry@henry@henry', 1, 'Male', '', '', '', 1, '0000-00-00', NULL, '');
 
 -- --------------------------------------------------------
 
@@ -230,14 +238,15 @@ CREATE TABLE IF NOT EXISTS `team_member` (
   PRIMARY KEY (`team_id`),
   UNIQUE KEY `podestrian` (`podestrian`),
   KEY `role` (`role`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
 
 --
 -- Dumping data for table `team_member`
 --
 
 INSERT INTO `team_member` (`team_id`, `podestrian`, `username`, `password`, `role`, `startdate`) VALUES
-(1, 1, 'sleepover', 'pod', 1, '2015-09-01');
+(1, 1, 'sleepover', 'pod', 1, '2015-09-01'),
+(7, 4, 'henry', 'henry', 2, '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -250,14 +259,15 @@ CREATE TABLE IF NOT EXISTS `team_member_role` (
   `role` varchar(50) NOT NULL,
   `description` varchar(200) NOT NULL,
   PRIMARY KEY (`role_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
 --
 -- Dumping data for table `team_member_role`
 --
 
 INSERT INTO `team_member_role` (`role_id`, `role`, `description`) VALUES
-(1, 'DB Admin', 'Superuser');
+(1, 'DB Admin', 'Superuser'),
+(2, 'Front Desk', 'checkin/out');
 
 --
 -- Constraints for dumped tables

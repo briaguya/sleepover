@@ -99,7 +99,7 @@ class Pod extends CI_Controller {
 
 	public function index()
 	{
-		$rooms = $this->room_m->get_rooms();
+		$rooms = $this->pod_m->get_pods();
 
 		$viewdata = array('rooms' => $rooms);
 

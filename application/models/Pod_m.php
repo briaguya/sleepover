@@ -36,4 +36,17 @@ class Pod_m extends CI_Model
             return $data;
         return false;
     }
+
+    function save($pod)
+    {
+        //todo move this to a stored procedure
+        if($pod["pod_id"] == null)
+        {
+            // we don't have a team id, we're adding
+            $this->db->insert('pod', $pod);
+            return $this->db->affected_rows();
+        }
+
+        $this->db->query("call update_pod({$pod['pod_id']},{$pod['pod_name']},{$pod['pod_type']})");
+    }
 }

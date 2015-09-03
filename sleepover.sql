@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Sep 02, 2015 at 03:26 PM
+-- Generation Time: Sep 03, 2015 at 12:43 PM
 -- Server version: 5.5.44-0ubuntu0.14.04.1
 -- PHP Version: 5.5.9-1ubuntu4.11
 
@@ -63,6 +63,12 @@ SELECT team_id, t.username, t.role, p.first_name, p.last_name
 FROM team_member as t
 JOIN podestrian as p ON t.podestrian = p.podestrian_id
 WHERE t.team_id = team_id$$
+
+CREATE DEFINER=`sleepover`@`localhost` PROCEDURE `update_pod`(IN `id` INT(11), IN `name` VARCHAR(50), IN `type` INT(11))
+    MODIFIES SQL DATA
+UPDATE pod
+SET pod_name = name, pod_type = type
+WHERE pod_id = id$$
 
 CREATE DEFINER=`sleepover`@`localhost` PROCEDURE `update_team_member`(IN `id` INT(11), IN `role_id` INT(11))
     MODIFIES SQL DATA

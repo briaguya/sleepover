@@ -3,28 +3,29 @@
         <div class="container">
             <div class="row">
                 <div class="span12">
-                    <a href="/sleepover/pod/modify" class="btn btn-small btn-primary"><i class="btn-icon-only icon-ok"></i>Add Pods</a>
+                    <a href="/sleepover/booking/modify" class="btn btn-small btn-primary"><i class="btn-icon-only icon-ok"></i>Add Booking</a>
                     <br><br>
                     <table class="table table-striped table-bordered">
                         <thead>
                         <tr>
-                            <th> Location </th>
-                            <th> Pod Name </th>
-                            <th> Pod Type </th>
-                            <th class="td-actions"> Actions </th>
+                            <th> Podestrian </th>
+                            <th> Pod </th>
+                            <th> Checkin Date </th>
+                            <th> Checkout Date </th>
+                            <th class="td-actions"> Edit </th>
                         </tr>
                         </thead>
                         <tbody>
                         <?
-                        foreach ($pods as $pod) {
+                        foreach ($bookings as $booking) {
                             ?>
                             <tr>
-                                <td> <?=$pod->location_name ?> </td>
-                                <td> <?=$pod->pod_name ?> </td>
-                                <td> <?=$pod->pod_type ?> </td>
+                                <td> <a href="/sleepover/podestrian/modify/<?=$booking->podestrian_id?>"><img src="/sleepover/img/success-kid-thumb.png"></a> <?=$booking->podestrian_name?></td>
+                                <td> <?=$booking->pod_name ?> - <?=$booking->pod_type ?> </td>
+                                <td> <?=$booking->checkin_date ?> </td>
+                                <td> <?=$booking->checkout_date ?> </td>
                                 <td class="td-actions">
-                                    <a href="/sleepover/pod/modify/<?=$pod->pod_id?>" class="btn btn-small btn-primary"><i class="btn-icon-only icon-edit"> </i></a>
-                                    <a href="/sleepover/pod/delete/<?=$pod->pod_id?>" onclick="return confirm('Are you sure ?')" class="btn btn-danger btn-small"><i class="btn-icon-only icon-remove"> </i></a>
+                                    <a href="/sleepover/booking/modify/<?=$booking->booking_id?>" class="btn btn-small btn-primary"><i class="btn-icon-only icon-edit"> </i></a>
                                 </td>
                             </tr>
                         <? } ?>

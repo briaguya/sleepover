@@ -8,6 +8,7 @@
 			<table class="table table-striped table-bordered">
 				<thead>
 				  <tr>
+					<th> Location </th>
 				    <th> Pod Name </th>
 				    <th> Pod Type </th>
 				    <th class="td-actions"> Actions </th>
@@ -18,6 +19,7 @@
 					foreach ($pods as $pod) {
 				?>
 				  <tr>
+					<td> <?=$pod->location_name ?> </td>
 				    <td> <?=$pod->pod_name ?> </td>
 				    <td> <?=$pod->pod_type ?> </td>
 				    <td class="td-actions">

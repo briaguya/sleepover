@@ -37,6 +37,21 @@ class Pod_m extends CI_Model
         return false;
     }
 
+    function getLocations()
+    {
+        $query = $this->db->get('location');
+        $data = array();
+
+        if($query)
+            foreach ($query->result() as $row)
+            {
+                $data[] = $row;
+            }
+        if(count($data))
+            return $data;
+        return false;
+    }
+
     function save($pod)
     {
         //todo move this to a stored procedure

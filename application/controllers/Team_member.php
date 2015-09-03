@@ -45,6 +45,7 @@ class Team_member extends CI_Controller {
             $data = array('title' => 'sleepover - Edit Team Member', 'page' => 'team_member');
         }
 
+        $this->load->view('header', $data);
         $podestrians = $this->podestrian_m->get_podestrians();
         //$roles = $this->team_member_m->getRoles();
         $viewdata = array(

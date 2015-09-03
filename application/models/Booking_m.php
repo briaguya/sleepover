@@ -1,6 +1,6 @@
 <?php
 
-class Pod_m extends CI_Model
+class Booking_m extends CI_Model
 {
     function get_bookings()
     {

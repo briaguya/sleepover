@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Sep 03, 2015 at 12:48 PM
+-- Generation Time: Sep 03, 2015 at 01:19 PM
 -- Server version: 5.5.44-0ubuntu0.14.04.1
 -- PHP Version: 5.5.9-1ubuntu4.11
 
@@ -140,6 +140,27 @@ CREATE TABLE IF NOT EXISTS `booking_status` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `location`
+--
+
+CREATE TABLE IF NOT EXISTS `location` (
+  `location_id` int(11) NOT NULL AUTO_INCREMENT,
+  `location_name` varchar(50) NOT NULL,
+  `location_description` varchar(500) NOT NULL,
+  `address_id` int(11) NOT NULL,
+  PRIMARY KEY (`location_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `location`
+--
+
+INSERT INTO `location` (`location_id`, `location_name`, `location_description`, `address_id`) VALUES
+(1, 'Default Location', '', 1);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `pod`
 --
 
@@ -147,18 +168,20 @@ CREATE TABLE IF NOT EXISTS `pod` (
   `pod_id` int(11) NOT NULL AUTO_INCREMENT,
   `pod_name` varchar(50) NOT NULL,
   `pod_type` int(11) NOT NULL,
+  `location_id` int(11) NOT NULL,
   PRIMARY KEY (`pod_id`),
   UNIQUE KEY `pod_name` (`pod_name`),
-  KEY `pod_type` (`pod_type`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+  KEY `pod_type` (`pod_type`),
+  KEY `location` (`location_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
 
 --
 -- Dumping data for table `pod`
 --
 
-INSERT INTO `pod` (`pod_id`, `pod_name`, `pod_type`) VALUES
-(3, 'Pod 1', 1),
-(4, 'Queen', 2);
+INSERT INTO `pod` (`pod_id`, `pod_name`, `pod_type`, `location_id`) VALUES
+(4, 'Queen 1', 2, 1),
+(5, 'Pod 1', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -302,6 +325,7 @@ ALTER TABLE `booking`
 -- Constraints for table `pod`
 --
 ALTER TABLE `pod`
+  ADD CONSTRAINT `pod must have location` FOREIGN KEY (`location_id`) REFERENCES `location` (`location_id`),
   ADD CONSTRAINT `pod must have pod type` FOREIGN KEY (`pod_type`) REFERENCES `pod_type` (`pod_type_id`);
 
 --

@@ -49,4 +49,23 @@ class Pod_m extends CI_Model
 
         $this->db->query("call update_pod({$pod['pod_id']},{$pod['pod_name']},{$pod['pod_type']})");
     }
+
+    function getPod($pod_id)
+    {
+        $query = $this->db->query("call get_pod({$pod_id})");
+        $data = array();
+
+        $result = $query->result();
+
+        $query->next_result(); // Dump the extra resultset.
+        $query->free_result(); // Does what it says.
+
+        foreach (@$result as $row)
+        {
+            $data[] = $row;
+        }
+        if(count($data))
+            return $data;
+        return false;
+    }
 }

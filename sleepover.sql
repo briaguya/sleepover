@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Sep 03, 2015 at 12:43 PM
+-- Generation Time: Sep 03, 2015 at 12:48 PM
 -- Server version: 5.5.44-0ubuntu0.14.04.1
 -- PHP Version: 5.5.9-1ubuntu4.11
 
@@ -56,6 +56,12 @@ JOIN team_member_role as r ON t.role = r.role_id$$
 CREATE DEFINER=`sleepover`@`localhost` PROCEDURE `get_all_team_member_roles`()
     READS SQL DATA
 SELECT * FROM team_member_role$$
+
+CREATE DEFINER=`sleepover`@`localhost` PROCEDURE `get_pod`(IN `id` INT(11))
+    READS SQL DATA
+SELECT id, pod_name, pod_type
+FROM pod
+WHERE pod_id = id$$
 
 CREATE DEFINER=`sleepover`@`localhost` PROCEDURE `get_team_member`(IN `team_id` INT(11))
     READS SQL DATA
@@ -144,14 +150,15 @@ CREATE TABLE IF NOT EXISTS `pod` (
   PRIMARY KEY (`pod_id`),
   UNIQUE KEY `pod_name` (`pod_name`),
   KEY `pod_type` (`pod_type`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
 
 --
 -- Dumping data for table `pod`
 --
 
 INSERT INTO `pod` (`pod_id`, `pod_name`, `pod_type`) VALUES
-(3, 'Pod 1', 1);
+(3, 'Pod 1', 1),
+(4, 'Queen', 2);
 
 -- --------------------------------------------------------
 

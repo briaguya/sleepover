@@ -47,7 +47,7 @@ class Pod_m extends CI_Model
             return $this->db->affected_rows();
         }
 
-        $this->db->query("call update_pod({$pod['pod_id']},{$pod['pod_name']},{$pod['pod_type']})");
+        $this->db->query("call update_pod({$pod['pod_id']},\"{$pod['pod_name']}\",{$pod['pod_type']})");
     }
 
     function getPod($pod_id)

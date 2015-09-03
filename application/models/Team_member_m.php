@@ -32,8 +32,7 @@ class Team_member_m extends CI_Model {
             return $this->db->affected_rows();
         }
 
-        $this->db->where('team_id', $team_member["team_id"]);
-        $this->db->update('team_member', $team_member);
+        $this->db->query("call update_team_member({$team_member['team_id']},{$team_member['role_id']})");
     }
 
     function getTeamMember($team_id)

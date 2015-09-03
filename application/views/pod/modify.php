@@ -11,6 +11,16 @@
                     <?="Edit Pod";}?>
             </h1>
 
+            <div class="field">
+                <label for="location_id">Location:</label>
+                <select id="location_id" name="location_id">
+                    <? foreach ($locations as $loc) { ?>
+                        <option value="<?=$loc->location_id?>"
+                            <? if($pod_id != null) { if($loc->location_id==$pod->location_id) { echo "selected";}}?>><?=$loc->location_name?></option>
+                    <? } ?>
+                </select>
+            </div>
+            
             <div class="add-fields">
                 <div class="field">
                     <label for="pod_name">Name:</label>
@@ -19,7 +29,7 @@
 			</div>
 
             <div class="field">
-                <label for="pod_type">Role:</label>
+                <label for="pod_type">Pod Type:</label>
                 <select id="pod_type" name="pod_type">
                     <? foreach ($pod_types as $type) { ?>
                         <option value="<?=$type->pod_type_id?>"

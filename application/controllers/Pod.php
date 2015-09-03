@@ -99,11 +99,11 @@ class Pod extends CI_Controller {
 
 	public function index()
 	{
-		$rooms = $this->pod_m->get_pods();
+		$pods = $this->pod_m->get_pods();
 
-		$viewdata = array('rooms' => $rooms);
+		$viewdata = array('pods' => $pods);
 
-		$data = array('title' => 'Rooms - DB Hotel Management System', 'page' => 'room');
+		$data = array('title' => 'sleepover - Pods', 'page' => 'pod');
 		$this->load->view('header', $data);
 		$this->load->view('room/list',$viewdata);
 		$this->load->view('footer');

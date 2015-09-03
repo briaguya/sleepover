@@ -2,14 +2,21 @@
 
 class Pod_m extends CI_Model
 {
-
     function get_pods()
     {
-        $query = $this->db->order_by('room_id')->get('room');
+        $query = $this->db->query("call get_all_pods()");
         $data = array();
 
-        $i=-1;
-        
+        $result = $query->result();
+        $query->free_result();
+
+        $query->next_result(); // Dump the extra resultset.
+        // Does what it says.
+
+        foreach (@$result as $row)
+        {
+            $data[] = $row;
+        }
         if(count($data))
             return $data;
         return false;

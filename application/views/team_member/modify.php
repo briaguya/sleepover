@@ -47,7 +47,7 @@
                     <label for="role_id">Role:</label>
                     <select id="role_id" name="role_id">
                         <? foreach ($roles as $role) { ?>
-                            <option value="<? if($team_id != null) { if($role->role_id==$team_member->role) { echo "selected";}}?>><?=$role->role?></option>
+                            <option value="<?=$role->role_id?><? if($team_id != null) { if($role->role_id==$team_member->role) { echo "selected";}}?>"><?=$role->role?></option>
                         <? } ?>
                     </select>
                 </div>

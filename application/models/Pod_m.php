@@ -21,4 +21,19 @@ class Pod_m extends CI_Model
             return $data;
         return false;
     }
+
+    function getPodTypes()
+    {
+        $query = $this->db->get('pod_type');
+        $data = array();
+
+        if($query)
+            foreach ($query->result() as $row)
+            {
+                $data[] = $row;
+            }
+        if(count($data))
+            return $data;
+        return false;
+    }
 }

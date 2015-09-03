@@ -81,7 +81,7 @@ class Team_member extends CI_Controller {
         }
 
         $this->team_member_m->save($team_member);
-        redirect("/team_members");
+        redirect("/team_member");
     }
 
     public function index()

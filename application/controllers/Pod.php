@@ -48,6 +48,7 @@ class Pod extends CI_Controller {
 		$this->load->view('header', $data);
 		$pod_types = $this->pod_m->getPodTypes();
 		$viewdata = array(
+			'pod_id' => $pod_id,
 			'pod_types' => $pod_types,
 			'pod' => $pod[0]);
 		$this->load->view('pod/modify',$viewdata);

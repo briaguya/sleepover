@@ -24,9 +24,9 @@ class Pod extends CI_Controller {
 			redirect("login");
 	} 
 
-	function delete($min_id, $max_id)
+	function delete($pod_id)
 	{
-		$this->room_m->deleteRoomRange($min_id, $max_id);
+		$this->pod_m->deletePod($pod_id);
 		redirect("/pod");
 	}
 

@@ -68,4 +68,10 @@ class Pod_m extends CI_Model
             return $data;
         return false;
     }
+
+    function deletePod($pod_id)
+    {
+        $this->db->delete('pod', array('pod_id' => $pod_id));
+        return $this->db->affected_rows();
+    }
 }

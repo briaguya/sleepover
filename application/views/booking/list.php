@@ -10,7 +10,7 @@
                         <tr>
                             <th> Podestrian </th>
                             <th> Pod </th>
-                            <th> Checkin Date </th>
+                            <th> Checkin Date/Time </th>
                             <th> Checkout Date </th>
                             <th class="td-actions"> Edit </th>
                         </tr>

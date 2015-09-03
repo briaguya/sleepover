@@ -57,7 +57,7 @@ class Team_member_m extends CI_Model {
 
     function getRoles()
     {
-        $query = $this->db->from('team_member_role')->get();
+        $query = $this->db->query("call get_all_team_member_roles()");
         $data = array();
 
         $result = $query->result();

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Sep 02, 2015 at 12:16 PM
+-- Generation Time: Sep 02, 2015 at 02:09 PM
 -- Server version: 5.5.44-0ubuntu0.14.04.1
 -- PHP Version: 5.5.9-1ubuntu4.11
 
@@ -48,6 +48,10 @@ FROM team_member as t
 JOIN podestrian as p ON t.podestrian = p.podestrian_id
 JOIN team_member_role as r ON t.role = r.role_id$$
 
+CREATE DEFINER=`sleepover`@`localhost` PROCEDURE `get_all_team_member_roles`()
+    READS SQL DATA
+SELECT * FROM team_member_role$$
+
 CREATE DEFINER=`sleepover`@`localhost` PROCEDURE `get_team_member`(IN `team_id` INT(11))
     READS SQL DATA
 SELECT team_id, t.username, t.role, p.first_name, p.last_name
@@ -68,14 +72,15 @@ CREATE TABLE IF NOT EXISTS `address` (
   `city` varchar(100) NOT NULL,
   `country` varchar(100) NOT NULL,
   PRIMARY KEY (`address_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
 --
 -- Dumping data for table `address`
 --
 
 INSERT INTO `address` (`address_id`, `city`, `country`) VALUES
-(1, 'Los Angeles', 'United States');
+(1, 'Los Angeles', 'United States'),
+(2, 'Detroit', 'United States');
 
 -- --------------------------------------------------------
 
@@ -156,14 +161,14 @@ CREATE TABLE IF NOT EXISTS `podestrian` (
   UNIQUE KEY `podestrian_number` (`podestrian_number`),
   KEY `address` (`address_id`),
   KEY `podestrian type` (`podestrian_type_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
 --
 -- Dumping data for table `podestrian`
 --
 
 INSERT INTO `podestrian` (`podestrian_id`, `podestrian_number`, `first_name`, `last_name`, `email`, `address_id`, `sex`, `facebook`, `twitter`, `instagram`, `podestrian_type_id`, `birthday`, `pic`, `how_found`) VALUES
-(1, NULL, 'Sleepover', 'Admin', 'pod@pod.pod', 1, 'None', '', '', '', 1, '1990-01-01', '', '');
+(1, NULL, 'Sleepover', 'Admin', 'pod@pod.pod', 2, 'Not Applicable', 'facebook', 'twitter', 'instagram', 2, '1990-01-01', '', 'internet');
 
 -- --------------------------------------------------------
 

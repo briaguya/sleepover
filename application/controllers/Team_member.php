@@ -29,7 +29,7 @@ class Team_member extends CI_Controller {
         $this->podestrian_m->deletePodestrian($podestrian_id);
         redirect("/podestrian");
     }
-    
+
     public function modify($team_id = null)
     {
         if($team_id == null)

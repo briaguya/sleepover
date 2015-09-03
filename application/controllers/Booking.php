@@ -26,13 +26,13 @@ class Booking extends CI_Controller {
 
     public function index()
     {
-        $pods = $this->booking_m->get_bookings();
+        $bookings = $this->booking_m->get_bookings();
 
-        $viewdata = array('pods' => $pods);
+        $viewdata = array('bookings' => $bookings);
 
-        $data = array('title' => 'sleepover - Pods', 'page' => 'pod');
+        $data = array('title' => 'sleepover - Bookings', 'page' => 'booking');
         $this->load->view('header', $data);
-        $this->load->view('pod/list',$viewdata);
+        $this->load->view('booking/list',$viewdata);
         $this->load->view('footer');
     }
 }

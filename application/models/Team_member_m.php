@@ -22,7 +22,7 @@ class Team_member_m extends CI_Model {
         return false;
     }
 
-    function modify($team_member)
+    function save($team_member)
     {
         //todo move this to a stored procedure
         if($team_member["team_id"] == null)

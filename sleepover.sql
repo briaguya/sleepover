@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Sep 03, 2015 at 01:25 PM
+-- Generation Time: Sep 03, 2015 at 01:28 PM
 -- Server version: 5.5.44-0ubuntu0.14.04.1
 -- PHP Version: 5.5.9-1ubuntu4.11
 
@@ -46,7 +46,8 @@ CREATE DEFINER=`sleepover`@`localhost` PROCEDURE `get_all_pods`()
 SELECT p.pod_id, p.pod_name, pt.pod_type, l.location_name
 FROM pod as p 
 JOIN pod_type as pt ON p.pod_type = pt.pod_type_id
-JOIN location as l ON p.location_id = l.location_id$$
+JOIN location as l ON p.location_id = l.location_id
+ORDER BY l.location_name, p.pod_type, p.pod_name$$
 
 CREATE DEFINER=`sleepover`@`localhost` PROCEDURE `get_all_team_members`()
     READS SQL DATA
@@ -182,7 +183,7 @@ CREATE TABLE IF NOT EXISTS `pod` (
 --
 
 INSERT INTO `pod` (`pod_id`, `pod_name`, `pod_type`, `location_id`) VALUES
-(4, 'Queen 1', 2, 1),
+(4, 'Pod 2', 1, 1),
 (5, 'Pod 1', 1, 1);
 
 -- --------------------------------------------------------

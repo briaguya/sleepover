@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Sep 03, 2015 at 01:28 PM
+-- Generation Time: Sep 03, 2015 at 01:34 PM
 -- Server version: 5.5.44-0ubuntu0.14.04.1
 -- PHP Version: 5.5.9-1ubuntu4.11
 
@@ -62,7 +62,7 @@ SELECT * FROM team_member_role$$
 
 CREATE DEFINER=`sleepover`@`localhost` PROCEDURE `get_pod`(IN `id` INT(11))
     READS SQL DATA
-SELECT id, pod_name, pod_type
+SELECT id, pod_name, pod_type, location_id
 FROM pod
 WHERE pod_id = id$$
 

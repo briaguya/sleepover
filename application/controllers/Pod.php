@@ -23,78 +23,61 @@ class Pod extends CI_Controller {
 		if(!UID)
 			redirect("login");
 	} 
-
-	public function add()
-	{
-		$viewdata = array();
-		if($this->input->post("room_type") && $this->input->post("min_id") && $this->input->post("max_id"))
-		{
-			$new_room_type = $this->input->post("room_type");
-			$new_min_id = intval($this->input->post("min_id"));
-			$new_max_id = intval($this->input->post("max_id"));
-
-			$rooms_avail = count($this->room_m->getRoomRange($new_room_type, $new_min_id, $new_max_id));
-
-			if($new_min_id>$new_max_id) {
-				$viewdata['error'] = "Range is not valid [$new_min_id, $new_max_id]";
-			} else if($rooms_avail!==0) {
-				$viewdata['error'] = "Range is not available [$new_min_id, $new_max_id]";
-			} else {
-				$this->room_m->addRoomRange($new_room_type, $new_min_id, $new_max_id);
-				redirect("/pod");
-			}
-		}
-		$data = array('title' => 'sleepover - Add Pods', 'page' => 'pod');
-		$this->load->view('header', $data);
-
-		$room_types = $this->room_m->get_room_types();
-		$viewdata['room_types'] = $room_types;
-		$this->load->view('pod/add',$viewdata);
-
-		$this->load->view('footer');
-	}
-
+	
 	function delete($min_id, $max_id)
 	{
 		$this->room_m->deleteRoomRange($min_id, $max_id);
 		redirect("/pod");
 	}
 
-	public function edit($room_type, $min_id, $max_id)
+	public function modify($pod_id = null)
 	{
-		$viewdata = array();
-		if($this->input->post("room_type") && $this->input->post("min_id") && $this->input->post("max_id"))
+		if($pod_id == null)
 		{
-			$new_room_type = $this->input->post("room_type");
-			$new_min_id = intval($this->input->post("min_id"));
-			$new_max_id = intval($this->input->post("max_id"));
-
-			$rooms_avail = count($this->room_m->isAvailRange($room_type, $new_min_id, $new_max_id));
-
-			if($new_min_id>$new_max_id) {
-				$viewdata['error'] = "Range is not valid [$new_min_id, $new_max_id]";
-			} else if($rooms_avail!==0) {
-				$viewdata['error'] = "Range is not available [$new_min_id, $new_max_id]";
-			} else {
-				$this->room_m->deleteRoomRange($min_id, $max_id);
-				$this->room_m->addRoomRange($new_room_type, $new_min_id, $new_max_id);
-				redirect("/pod");
-			}
+			//We're adding, we need a null pod
+			$pod = null;
+			$data = array('title' => 'sleepover - Add Pod', 'page' => 'pod');
 		}
-		$data = array('title' => 'Edit Rooms - DB Hotel Management System', 'page' => 'pod');
+		else
+		{
+			// We're editing, we want to get the pod
+			$pod = $this->pod_m->getPod($pod_id);
+			$data = array('title' => 'sleepover - Edit Pod', 'page' => 'pod');
+		}
+
 		$this->load->view('header', $data);
-
-		$room_types = $this->room_m->get_room_types();
-
-		$room_range = new stdClass();
-		$room_range->room_type = $room_type;
-		$room_range->min_id = $min_id;
-		$room_range->max_id = $max_id;
-		$viewdata['room_range'] = $room_range;
-		$viewdata['room_types'] = $room_types;
-		$this->load->view('pod/edit',$viewdata);
-
+		$pod_types = $this->pod_m->getPodTypes();
+		$viewdata = array(
+			'pod_types' => $pod_types,
+			'pod' => $pod[0]);
+		$this->load->view('pod/modify',$viewdata);
 		$this->load->view('footer');
+	}
+
+	public function save($pod_id = null)
+	{
+		if($pod_id == null)
+		{
+			//we need pod name and pod type
+			if(!($this->input->post("pod_name") && $this->input->post("pod_type")))
+				return; //todo error?
+
+			//We're adding, make a new team member
+			$pod = array(
+				'pod_name' => $this->input->post("pod_name"),
+				'pod_type' => $this->input->post("pod_type"));
+		}
+		else
+		{
+			// We're editing
+			$pod = array(
+				'pod_id' => $pod_id,
+				'pod_name' => $this->input->post("pod_name"),
+				'pod_type' => $this->input->post("pod_type"));
+		}
+
+		$this->pod_m->save($pod);
+		redirect("/pod");
 	}
 
 	public function index()

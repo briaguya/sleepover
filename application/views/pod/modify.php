@@ -18,11 +18,14 @@
                 </div>
 			</div>
 
-            <div class="add-fields">
-                <div class="field">
-                    <label for="pod_type">Type:</label>
-                    <input type="text" id="pod_type" name="pod_type" value="<? if($pod_id != null) { echo $pod->pod_type;}?>"/>
-                </div>
+            <div class="field">
+                <label for="pod_type">Role:</label>
+                <select id="pod_type" name="pod_type">
+                    <? foreach ($pod_types as $type) { ?>
+                        <option value="<?=$type->pod_type_id?>"
+                            <? if($pod_id != null) { if($type->pod_type_id==$pod->pod_type) { echo "selected";}}?>><?=$type->pod_type?></option>
+                    <? } ?>
+                </select>
             </div>
 
 			<div class="login-actions">

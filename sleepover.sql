@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Sep 02, 2015 at 03:25 PM
+-- Generation Time: Sep 02, 2015 at 03:26 PM
 -- Server version: 5.5.44-0ubuntu0.14.04.1
 -- PHP Version: 5.5.9-1ubuntu4.11
 
@@ -40,6 +40,11 @@ FROM podestrian AS p
 		ON p.podestrian_type_id = pt.podestrian_type_id
 	JOIN address AS a
 		ON p.address_id = a.address_id$$
+
+CREATE DEFINER=`sleepover`@`localhost` PROCEDURE `get_all_pods`()
+    READS SQL DATA
+SELECT p.pod_id, p.pod_name, pt.pod_type
+FROM pod as p JOIN pod_type as pt ON p.pod_type = pt.pod_type_id$$
 
 CREATE DEFINER=`sleepover`@`localhost` PROCEDURE `get_all_team_members`()
     READS SQL DATA

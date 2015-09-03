@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Sep 03, 2015 at 02:06 PM
+-- Generation Time: Sep 03, 2015 at 02:09 PM
 -- Server version: 5.5.44-0ubuntu0.14.04.1
 -- PHP Version: 5.5.9-1ubuntu4.11
 
@@ -66,7 +66,7 @@ SELECT
 b.booking_id,
 ps.podestrian_id,
 pd.pod_id,
-CONCAT(ps.firstname,' ',ps.lastname) podestrian,
+CONCAT(ps.first_name,' ',ps.last_name) podestrian,
 CONCAT(pd.pod_name,' - ',pt.pod_type) pod,
 b.checkin_datetime,
 b.checkout_date
@@ -74,7 +74,7 @@ FROM
 booking b
 JOIN podestrian ps ON b.podestrian = ps.podestrian_id
 JOIN pod pd ON b.pod - pd.pod_id
-JOIN pod_type pt ON pd.pod_type_id = pt.pod_type_id$$
+JOIN pod_type pt ON pd.pod_type = pt.pod_type_id$$
 
 CREATE DEFINER=`sleepover`@`localhost` PROCEDURE `get_pod`(IN `id` INT(11))
     READS SQL DATA

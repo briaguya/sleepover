@@ -3,7 +3,7 @@
     <div class="container">
       <div class="row">
         <div class="span12">
-			<a href="/sleepover/pod/add" class="btn btn-small btn-primary"><i class="btn-icon-only icon-ok"></i>Add Pods</a>
+			<a href="/sleepover/pod/modify" class="btn btn-small btn-primary"><i class="btn-icon-only icon-ok"></i>Add Pods</a>
 			<br><br>
 			<table class="table table-striped table-bordered">
 				<thead>

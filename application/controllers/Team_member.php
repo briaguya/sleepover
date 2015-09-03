@@ -47,7 +47,7 @@ class Team_member extends CI_Controller {
 
         $this->load->view('header', $data);
         $podestrians = $this->podestrian_m->get_podestrians();
-        //$roles = $this->team_member_m->getRoles();
+        $roles = $this->team_member_m->getRoles();
         $viewdata = array(
             'podestrians' => $podestrians,
             'roles' => null,

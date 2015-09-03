@@ -25,14 +25,14 @@ class Podestrian_m extends CI_Model {
     function save($podestrian)
     {
         //todo move this to a stored procedure
-        if(is_null($podestrian->podestrian_id))
+        if($podestrian["podestrian_id"] == null)
         {
             // we don't have a podestrian id, we're adding
             $this->db->insert('podestrian', $podestrian);
             return $this->db->affected_rows();
         }
 
-        $this->db->where('podestrian_id', $podestrian->podestrian_id);
+        $this->db->where('podestrian_id', $podestrian["podestrian_id"]);
         $this->db->update('podestrian', $podestrian);
     } 
 

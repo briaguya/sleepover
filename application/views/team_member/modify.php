@@ -40,7 +40,7 @@
 
 				    <?= "<div class=\"field\">" ?>
 					    <?= "<label for=\"password\">Password:</label>" ?>
-					    <?= "<input type=\"text\" id=\"password\" class=\"password-field\" name=\"password\" required value=\"\"/>" ?>
+					    <?= "<input type=\"password\" id=\"password\" class=\"password-field\" name=\"password\" required value=\"\"/>" ?>
                     <?= "</div>";} ?>
 
                 <div class="field">

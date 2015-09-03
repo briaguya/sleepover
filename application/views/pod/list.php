@@ -21,8 +21,8 @@
 				    <td> <?=$pod->pod_name ?> </td>
 				    <td> <?=$pod->pod_type ?> </td>
 				    <td class="td-actions">
-				    	<a href="/pod/modify/<?=$pod->pod_id?>" class="btn btn-small btn-primary"><i class="btn-icon-only icon-edit"> </i></a>
-				    	<a href="/pod/delete/<?=$pod->pod_id?>" onclick="return confirm('Are you sure ?')" class="btn btn-danger btn-small"><i class="btn-icon-only icon-remove"> </i></a>
+				    	<a href="/sleepover/pod/modify/<?=$pod->pod_id?>" class="btn btn-small btn-primary"><i class="btn-icon-only icon-edit"> </i></a>
+				    	<a href="/sleepover/pod/delete/<?=$pod->pod_id?>" onclick="return confirm('Are you sure ?')" class="btn btn-danger btn-small"><i class="btn-icon-only icon-remove"> </i></a>
 				    </td>
 				  </tr>
 				<? } ?>

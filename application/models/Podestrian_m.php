@@ -7,13 +7,19 @@ class Podestrian_m extends CI_Model {
         // Call the Model constructor
         parent::__construct();
     }
-    
+
     function get_podestrians()
     {
-        $query = $this->db->query('call get_all_podestrians()');
+        $query = $this->db->query("call get_all_podestrians()");
         $data = array();
 
-        foreach (@$query->result() as $row)
+        $result = $query->result();
+        $query->free_result();
+
+        $query->next_result(); // Dump the extra resultset.
+        // Does what it says.
+
+        foreach (@$result as $row)
         {
             $data[] = $row;
         }

@@ -61,9 +61,10 @@ class Team_member_m extends CI_Model {
         $data = array();
 
         $result = $query->result();
+        $query->free_result();
 
         $query->next_result(); // Dump the extra resultset.
-        $query->free_result(); // Does what it says.
+         // Does what it says.
 
         foreach (@$result as $row)
         {

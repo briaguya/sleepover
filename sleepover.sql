@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Sep 03, 2015 at 01:50 PM
+-- Generation Time: Sep 03, 2015 at 02:06 PM
 -- Server version: 5.5.44-0ubuntu0.14.04.1
 -- PHP Version: 5.5.9-1ubuntu4.11
 
@@ -59,6 +59,22 @@ JOIN team_member_role as r ON t.role = r.role_id$$
 CREATE DEFINER=`sleepover`@`localhost` PROCEDURE `get_all_team_member_roles`()
     READS SQL DATA
 SELECT * FROM team_member_role$$
+
+CREATE DEFINER=`sleepover`@`localhost` PROCEDURE `get_bookings`()
+    READS SQL DATA
+SELECT 
+b.booking_id,
+ps.podestrian_id,
+pd.pod_id,
+CONCAT(ps.firstname,' ',ps.lastname) podestrian,
+CONCAT(pd.pod_name,' - ',pt.pod_type) pod,
+b.checkin_datetime,
+b.checkout_date
+FROM
+booking b
+JOIN podestrian ps ON b.podestrian = ps.podestrian_id
+JOIN pod pd ON b.pod - pd.pod_id
+JOIN pod_type pt ON pd.pod_type_id = pt.pod_type_id$$
 
 CREATE DEFINER=`sleepover`@`localhost` PROCEDURE `get_pod`(IN `id` INT(11))
     READS SQL DATA
@@ -124,8 +140,16 @@ CREATE TABLE IF NOT EXISTS `booking` (
   `booking_status` int(11) NOT NULL,
   PRIMARY KEY (`booking_id`),
   UNIQUE KEY `pod` (`pod`),
-  KEY `podestrian` (`podestrian`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+  KEY `podestrian` (`podestrian`),
+  KEY `booking_status` (`booking_status`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `booking`
+--
+
+INSERT INTO `booking` (`booking_id`, `podestrian`, `pod`, `checkin_datetime`, `checkout_date`, `price`, `booking_status`) VALUES
+(1, 5, 5, '2015-09-03 11:00:00', '2015-09-05', 0.00, 1);
 
 -- --------------------------------------------------------
 
@@ -221,14 +245,15 @@ CREATE TABLE IF NOT EXISTS `podestrian` (
   UNIQUE KEY `podestrian_number` (`podestrian_number`),
   KEY `address` (`address_id`),
   KEY `podestrian type` (`podestrian_type_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
 
 --
 -- Dumping data for table `podestrian`
 --
 
 INSERT INTO `podestrian` (`podestrian_id`, `podestrian_number`, `first_name`, `last_name`, `email`, `address_id`, `sex`, `facebook`, `twitter`, `instagram`, `podestrian_type_id`, `birthday`, `pic`, `how_found`) VALUES
-(1, NULL, 'Sleepover', 'Admin', 'pod@pod.pod', 2, 'Not Applicable', 'facebook', 'twitter', 'instagram', 2, '1990-01-01', '', 'internet');
+(1, NULL, 'Sleepover', 'Admin', 'pod@pod.pod', 2, 'Not Applicable', 'facebook', 'twitter', 'instagram', 2, '1990-01-01', '', 'internet'),
+(5, NULL, 'First', 'Customer', 'first@cust.omer', 1, 'Female', '', '', '', 1, '1995-01-01', NULL, '');
 
 -- --------------------------------------------------------
 
@@ -328,6 +353,7 @@ INSERT INTO `team_member_role` (`role_id`, `role`, `description`) VALUES
 -- Constraints for table `booking`
 --
 ALTER TABLE `booking`
+  ADD CONSTRAINT `booking must have status` FOREIGN KEY (`booking_status`) REFERENCES `booking_status` (`status_id`),
   ADD CONSTRAINT `booking must have pod` FOREIGN KEY (`pod`) REFERENCES `pod` (`pod_id`),
   ADD CONSTRAINT `booking must have podestrian` FOREIGN KEY (`podestrian`) REFERENCES `podestrian` (`podestrian_id`);
 

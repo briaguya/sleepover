@@ -54,7 +54,7 @@
           <div class="container">
             <ul class="mainnav">
               <li <? if($page == "calendar"){ echo 'class="active"'; } ?>><a href="/sleepover/calendar"><i class="icon-calendar"></i><span>Calendar</span> </a> </li>
-              <li <? if($page == "reservation"){ echo 'class="active"'; } ?>><a href="/sleepover/reservation"><i class="icon-list-alt"></i><span>Booking</span> </a> </li>
+              <li <? if($page == "booking"){ echo 'class="active"'; } ?>><a href="/sleepover/booking"><i class="icon-list-alt"></i><span>Bookings</span> </a> </li>
               <li <? if($page == "podestrian"){ echo 'class="active"'; } ?>><a href="/sleepover/podestrian"><i class="icon-user"></i><span>Podestrians</span> </a> </li>
               <li <? if($page == "pod"){ echo 'class="active"'; } ?>><a href="/sleepover/pod"><i class="icon-home"></i><span>Pods</span> </a> </li>
               <li <? if($page == "team_member"){ echo 'class="active"'; } ?>><a href="/sleepover/team_member"><i class="icon-user"></i><span>Team Members</span> </a> </li>

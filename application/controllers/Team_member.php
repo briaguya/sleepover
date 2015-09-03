@@ -49,7 +49,7 @@ class Team_member extends CI_Controller {
         $roles = $this->team_member_m->getRoles();
         $viewdata = array(
             'podestrians' => $podestrians,
-            'roles' => $roles,
+            'roles' => null,
             'team_id' => $team_id,
             'team_member' => $team_member[0]);
         $this->load->view('team_member/modify',$viewdata);

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Sep 03, 2015 at 01:34 PM
+-- Generation Time: Sep 03, 2015 at 01:42 PM
 -- Server version: 5.5.44-0ubuntu0.14.04.1
 -- PHP Version: 5.5.9-1ubuntu4.11
 
@@ -218,9 +218,7 @@ CREATE TABLE IF NOT EXISTS `podestrian` (
 --
 
 INSERT INTO `podestrian` (`podestrian_id`, `podestrian_number`, `first_name`, `last_name`, `email`, `address_id`, `sex`, `facebook`, `twitter`, `instagram`, `podestrian_type_id`, `birthday`, `pic`, `how_found`) VALUES
-(1, NULL, 'Sleepover', 'Admin', 'pod@pod.pod', 2, 'Not Applicable', 'facebook', 'twitter', 'instagram', 2, '1990-01-01', '', 'internet'),
-(3, NULL, 'Brian', 'Smith', 'briaguya@gmail.com', 1, 'Male', '', '', '', 1, '2015-01-01', NULL, ''),
-(4, NULL, 'Henry', 'Henry', 'henry@henry@henry', 1, 'Male', '', '', '', 1, '0000-00-00', NULL, '');
+(1, NULL, 'Sleepover', 'Admin', 'pod@pod.pod', 2, 'Not Applicable', 'facebook', 'twitter', 'instagram', 2, '1990-01-01', '', 'internet');
 
 -- --------------------------------------------------------
 
@@ -289,8 +287,7 @@ CREATE TABLE IF NOT EXISTS `team_member` (
 --
 
 INSERT INTO `team_member` (`team_id`, `podestrian`, `username`, `password`, `role`, `startdate`) VALUES
-(1, 1, 'sleepover', 'pod', 1, '2015-09-01'),
-(7, 4, 'henry', 'henry', 2, '0000-00-00');
+(1, 1, 'sleepover', 'pod', 1, '2015-09-01');
 
 -- --------------------------------------------------------
 

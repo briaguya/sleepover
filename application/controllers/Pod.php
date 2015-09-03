@@ -44,12 +44,12 @@ class Pod extends CI_Controller {
 				redirect("/pod");
 			}
 		}
-		$data = array('title' => 'sleepover - Add Pods', 'page' => 'room');
+		$data = array('title' => 'sleepover - Add Pods', 'page' => 'pod');
 		$this->load->view('header', $data);
 
 		$room_types = $this->room_m->get_room_types();
 		$viewdata['room_types'] = $room_types;
-		$this->load->view('room/add',$viewdata);
+		$this->load->view('pod/add',$viewdata);
 
 		$this->load->view('footer');
 	}
@@ -81,7 +81,7 @@ class Pod extends CI_Controller {
 				redirect("/pod");
 			}
 		}
-		$data = array('title' => 'Edit Rooms - DB Hotel Management System', 'page' => 'room');
+		$data = array('title' => 'Edit Rooms - DB Hotel Management System', 'page' => 'pod');
 		$this->load->view('header', $data);
 
 		$room_types = $this->room_m->get_room_types();
@@ -92,7 +92,7 @@ class Pod extends CI_Controller {
 		$room_range->max_id = $max_id;
 		$viewdata['room_range'] = $room_range;
 		$viewdata['room_types'] = $room_types;
-		$this->load->view('room/edit',$viewdata);
+		$this->load->view('pod/edit',$viewdata);
 
 		$this->load->view('footer');
 	}

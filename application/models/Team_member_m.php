@@ -27,7 +27,7 @@ class Team_member_m extends CI_Model {
         //todo move this to a stored procedure
         if($team_member["team_id"] == null)
         {
-            // we don't have a podestrian id, we're adding
+            // we don't have a team id, we're adding
             $this->db->insert('team_member', $team_member);
             return $this->db->affected_rows();
         }

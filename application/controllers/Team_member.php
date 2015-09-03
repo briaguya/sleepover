@@ -69,7 +69,7 @@ class Team_member extends CI_Controller {
             $team_member = array(
                 'username' => $this->input->post("username"),
                 'password' => $this->input->post("password"),
-                'podestrian_id' => $this->input->post("podestrian_id"),
+                'podestrian' => $this->input->post("podestrian_id"),
                 'role' => $this->input->post("role_id"));
         }
         else

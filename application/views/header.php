@@ -53,17 +53,16 @@
         <div class="subnavbar-inner">
           <div class="container">
             <ul class="mainnav">
-              <li <? if($page == "dashboard"){ echo 'class="active"'; } ?>><a href="/sleepover/"><i class="icon-dashboard"></i><span>Dashboard</span> </a> </li>
-              <li <? if($page == "podestrian"){ echo 'class="active"'; } ?>><a href="/sleepover/podestrian"><i class="icon-user"></i><span>Podestrians</span> </a> </li>
-              <li <? if($page == "team_member"){ echo 'class="active"'; } ?>><a href="/sleepover/team_member"><i class="icon-user"></i><span>Team Members</span> </a> </li>
+              <li <? if($page == "calendar"){ echo 'class="active"'; } ?>><a href="/sleepover/calendar"><i class="icon-calendar"></i><span>Calendar</span> </a> </li>
               <li <? if($page == "reservation"){ echo 'class="active"'; } ?>><a href="/sleepover/reservation"><i class="icon-list-alt"></i><span>Reservation</span> </a> </li>
+              <li <? if($page == "podestrian"){ echo 'class="active"'; } ?>><a href="/sleepover/podestrian"><i class="icon-user"></i><span>Podestrians</span> </a> </li>
               <li class="dropdown <? if($page == "pod" || $page == "room_type"){ echo 'active'; } ?>"><a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"> <i class="icon-home"></i><span>Pods</span> <b class="caret"></b></a>
                 <ul class="dropdown-menu">
                   <li><a href="/sleepover/pod">Pods</a></li>
                   <li><a href="/sleepover/pod_type">Pod Types</a></li>
                 </ul>
               </li>
-              <li <? if($page == "calendar"){ echo 'class="active"'; } ?>><a href="/sleepover/calendar"><i class="icon-calendar"></i><span>Calendar</span> </a> </li>
+              <li <? if($page == "team_member"){ echo 'class="active"'; } ?>><a href="/sleepover/team_member"><i class="icon-user"></i><span>Team Members</span> </a> </li>
             </ul>
           </div>
           <!-- /container --> 

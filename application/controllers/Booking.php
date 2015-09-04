@@ -35,6 +35,33 @@ class Booking extends CI_Controller {
         $this->load->view('booking/list',$viewdata);
         $this->load->view('footer');
     }
+
+    public function modify($booking_id = null)
+    {
+        if($booking_id == null)
+        {
+            //We're adding, we need a null booking
+            $booking = null;
+            $data = array('title' => 'sleepover - Add Booking', 'page' => 'pod');
+        }
+        else
+        {
+            // We're editing, we want to get the pod
+            $booking = $this->booking_m->getBooking($booking_id);
+            $data = array('title' => 'sleepover - Edit Booking', 'page' => 'pod');
+        }
+
+        $this->load->view('header', $data);
+        $pods = $this->pod_m->get_pods();
+        $podestrians = $this->podestrian_m->get_podestrians();
+        $viewdata = array(
+            'booking_id' => $booking_id,
+            'pod_types' => $pods,
+            'podestrians' => $podestrians,
+            'booking' => $booking[0]);
+        $this->load->view('pod/modify',$viewdata);
+        $this->load->view('footer');
+    }
 }
 
 /* End of file welcome.php */

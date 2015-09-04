@@ -54,6 +54,7 @@ class Booking extends CI_Controller {
         $this->load->view('header', $data);
         $pods = $this->pod_m->get_pods();
         $podestrians = $this->podestrian_m->get_podestrians();
+        $statuses = $this->booking_m->get_statuses();
         $viewdata = array(
             'booking_id' => $booking_id,
             'pods' => $pods,

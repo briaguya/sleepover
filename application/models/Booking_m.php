@@ -53,4 +53,24 @@ class Booking_m extends CI_Model
 
         $this->db->query("call update_booking({$booking['booking_id']},{$booking['pod_id']},\"{$booking['checkout_date']}\")");
     }
+
+    function get_statuses()
+    {
+        $query = $this->db->query("call get_all_status()");
+        $data = array();
+
+        $result = $query->result();
+        $query->free_result();
+
+        $query->next_result(); // Dump the extra resultset.
+        // Does what it says.
+
+        foreach (@$result as $row)
+        {
+            $data[] = $row;
+        }
+        if(count($data))
+            return $data;
+        return false;
+    }
 }

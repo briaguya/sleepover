@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Sep 03, 2015 at 03:19 PM
+-- Generation Time: Sep 03, 2015 at 04:45 PM
 -- Server version: 5.5.44-0ubuntu0.14.04.1
 -- PHP Version: 5.5.9-1ubuntu4.11
 
@@ -53,6 +53,10 @@ FROM pod as p
 JOIN pod_type as pt ON p.pod_type = pt.pod_type_id
 JOIN location as l ON p.location_id = l.location_id
 ORDER BY l.location_name, p.pod_type, p.pod_name$$
+
+CREATE DEFINER=`sleepover`@`localhost` PROCEDURE `get_all_status`()
+    READS SQL DATA
+SELECT * FROM booking_status$$
 
 CREATE DEFINER=`sleepover`@`localhost` PROCEDURE `get_all_team_members`()
     READS SQL DATA
@@ -170,14 +174,14 @@ CREATE TABLE IF NOT EXISTS `booking` (
   UNIQUE KEY `pod` (`pod`),
   KEY `podestrian` (`podestrian`),
   KEY `booking_status` (`booking_status`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
 -- Dumping data for table `booking`
 --
 
 INSERT INTO `booking` (`booking_id`, `podestrian`, `pod`, `checkin_datetime`, `checkout_date`, `price`, `booking_status`) VALUES
-(1, 5, 4, '2015-09-03 11:00:00', '0000-00-00', 0.00, 1);
+(1, 5, 4, '2015-09-03 11:00:00', '2015-09-05', 0.00, 1);
 
 -- --------------------------------------------------------
 

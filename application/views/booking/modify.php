@@ -11,15 +11,11 @@
                     <?="Edit Booking";}?>
             </h1>
 
-            <div class="field">
-                <label for="pod">Pod:</label>
-                <select id="pod" name="pod">
-                    <? foreach ($pods as $pod) { ?>
-                        <option value="<?=$pod->pod_id?>"
-                            <? if($booking_id != null) { if($pod->pod_id==$booking->location_id) { echo "selected";}}?>><?=$pod->comboname?></option>
-                    <? } ?>
-                </select>
-            </div>
+            <? if($booking_id != null) {?>
+                <?= "<img src=\"/sleepover/img/success-kid.png\">" ?>
+                <?= "<h3>" ?>
+                <?=$podestrian->first_name ." ".$podestrian->last_name?>
+                <?= "</h3>" ;}?>
 
             <? if($booking_id == null) {?>
                 <?= "<div class=\"field\">" ?>
@@ -30,8 +26,18 @@
                     <?=$podestrian->podestrian_id?><?="\">"?>
                     <?=$podestrian->first_name?><?= " " ?><?=$podestrian->last_name?>
                     <?= "</option>" ;}?>
-            <?= "</select>" ?>
-            <?= "</div>" ;}?>
+                <?= "</select>" ?>
+                <?= "</div>" ;}?>
+
+            <div class="field">
+                <label for="pod">Pod:</label>
+                <select id="pod" name="pod">
+                    <? foreach ($pods as $pod) { ?>
+                        <option value="<?=$pod->pod_id?>"
+                            <? if($booking_id != null) { if($pod->pod_id==$booking->location_id) { echo "selected";}}?>><?=$pod->comboname?></option>
+                    <? } ?>
+                </select>
+            </div>
 
             <div class="login-actions">
                 <button class="button btn btn-success btn-large">

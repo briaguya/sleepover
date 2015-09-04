@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Sep 03, 2015 at 02:23 PM
+-- Generation Time: Sep 03, 2015 at 02:57 PM
 -- Server version: 5.5.44-0ubuntu0.14.04.1
 -- PHP Version: 5.5.9-1ubuntu4.11
 
@@ -167,7 +167,7 @@ CREATE TABLE IF NOT EXISTS `booking_status` (
   `booking_status` varchar(50) NOT NULL,
   PRIMARY KEY (`status_id`),
   UNIQUE KEY `booking_status` (`booking_status`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
 
 --
 -- Dumping data for table `booking_status`
@@ -175,6 +175,7 @@ CREATE TABLE IF NOT EXISTS `booking_status` (
 
 INSERT INTO `booking_status` (`status_id`, `booking_status`) VALUES
 (2, 'Booked'),
+(5, 'Cancelled'),
 (3, 'Checked In'),
 (4, 'Checked Out'),
 (1, 'Pending');
@@ -199,6 +200,19 @@ CREATE TABLE IF NOT EXISTS `location` (
 
 INSERT INTO `location` (`location_id`, `location_name`, `location_description`, `address_id`) VALUES
 (1, 'Default Location', '', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `payment`
+--
+
+CREATE TABLE IF NOT EXISTS `payment` (
+  `payment_id` int(11) NOT NULL AUTO_INCREMENT,
+  `booking_id` int(11) NOT NULL,
+  `amount` decimal(4,2) NOT NULL,
+  PRIMARY KEY (`payment_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 

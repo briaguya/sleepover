@@ -72,7 +72,7 @@ class Booking extends CI_Controller {
                 return; //todo error?
 
             //We're adding, make a new team member
-            $pod = array(
+            $booking = array(
                 'pod_name' => $this->input->post("pod_name"),
                 'pod_type' => $this->input->post("pod_type"));
         }

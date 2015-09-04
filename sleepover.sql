@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Sep 03, 2015 at 03:12 PM
+-- Generation Time: Sep 03, 2015 at 03:19 PM
 -- Server version: 5.5.44-0ubuntu0.14.04.1
 -- PHP Version: 5.5.9-1ubuntu4.11
 
@@ -110,6 +110,13 @@ FROM team_member as t
 JOIN podestrian as p ON t.podestrian = p.podestrian_id
 WHERE t.team_id = team_id$$
 
+CREATE DEFINER=`sleepover`@`localhost` PROCEDURE `update_booking`(IN `booking_id` INT(11), IN `pod_id` INT(11), IN `checkout_date` DATE)
+    MODIFIES SQL DATA
+UPDATE booking as b
+SET b.pod = pod_id,
+b.checkout_date = checkout_date
+WHERE b.booking_id = booking_id$$
+
 CREATE DEFINER=`sleepover`@`localhost` PROCEDURE `update_pod`(IN `id` INT(11), IN `name` VARCHAR(50), IN `type` INT(11))
     MODIFIES SQL DATA
 UPDATE pod
@@ -170,7 +177,7 @@ CREATE TABLE IF NOT EXISTS `booking` (
 --
 
 INSERT INTO `booking` (`booking_id`, `podestrian`, `pod`, `checkin_datetime`, `checkout_date`, `price`, `booking_status`) VALUES
-(1, 5, 5, '2015-09-03 11:00:00', '2015-09-05', 0.00, 1);
+(1, 5, 4, '2015-09-03 11:00:00', '0000-00-00', 0.00, 1);
 
 -- --------------------------------------------------------
 

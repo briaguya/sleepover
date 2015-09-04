@@ -40,4 +40,17 @@ class Booking_m extends CI_Model
             return $data;
         return false;
     }
+
+    function save($booking)
+    {
+        //todo move this to a stored procedure
+        if($booking["booking_id"] == null)
+        {
+            // we don't have a booking id, we're adding
+            $this->db->insert('booking', $booking);
+            return $this->db->affected_rows();
+        }
+
+        $this->db->query("call update_booking({$booking['booking_id']},\"{$booking['pod_id']}\",{$booking['checkout_date']})");
+    }
 }

@@ -40,6 +40,18 @@ class Booking extends CI_Controller {
     {
         // we want to search for available pods here
         // we need to get podestrian, location, pod_type, checkin, checkout
+        $data = array('title' => 'sleepover - New Booking', 'page' => 'booking');
+
+        $this->load->view('header', $data);
+        $podestrians = $this->podestrian_m->get_podestrians();
+        $pod_types = $this->pod_m->getPodTypes();
+        $locations = $this->pod_m->getLocations();
+        $viewdata = array(
+            'podestrians' => $podestrians,
+            'pod_types' => $pod_types,
+            'locations' => $locations);
+        $this->load->view('booking/start',$viewdata);
+        $this->load->view('footer');
     }
 
     public function modify($booking_id)

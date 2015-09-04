@@ -34,7 +34,7 @@
                 <select id="pod" name="pod">
                     <? foreach ($pods as $pod) { ?>
                         <option value="<?=$pod->pod_id?>"
-                            <? if($booking_id != null) { if($pod->pod_id==$booking->location_id) { echo "selected";}}?>><?=$pod->comboname?></option>
+                            <? if($booking_id != null) { if($pod->pod_id==$booking->pod_id) { echo "selected";}}?>><?=$pod->comboname?></option>
                     <? } ?>
                 </select>
             </div>

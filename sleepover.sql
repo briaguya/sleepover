@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Sep 03, 2015 at 02:57 PM
+-- Generation Time: Sep 03, 2015 at 03:12 PM
 -- Server version: 5.5.44-0ubuntu0.14.04.1
 -- PHP Version: 5.5.9-1ubuntu4.11
 
@@ -64,6 +64,22 @@ JOIN team_member_role as r ON t.role = r.role_id$$
 CREATE DEFINER=`sleepover`@`localhost` PROCEDURE `get_all_team_member_roles`()
     READS SQL DATA
 SELECT * FROM team_member_role$$
+
+CREATE DEFINER=`sleepover`@`localhost` PROCEDURE `get_booking`(IN `booking_id` INT(11))
+    READS SQL DATA
+SELECT 
+booking_id,
+ps.podestrian_id,
+pd.pod_id,
+CONCAT(ps.first_name,' ',ps.last_name) podestrian_name,
+b.checkin_datetime,
+b.checkout_date
+FROM
+booking b
+JOIN podestrian ps ON b.podestrian = ps.podestrian_id
+JOIN pod pd ON b.pod - pd.pod_id
+JOIN pod_type pt ON pd.pod_type = pt.pod_type_id
+WHERE b.booking_id = booking_id$$
 
 CREATE DEFINER=`sleepover`@`localhost` PROCEDURE `get_bookings`()
     READS SQL DATA

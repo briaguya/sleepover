@@ -14,7 +14,7 @@
             <? if($booking_id != null) {?>
                 <?= "<img src=\"/sleepover/img/success-kid.png\">" ?>
                 <?= "<h3>" ?>
-                <?=$podestrian->first_name ." ".$podestrian->last_name?>
+                <?=$booking->podestrian_name?>
                 <?= "</h3>" ;}?>
 
             <? if($booking_id == null) {?>

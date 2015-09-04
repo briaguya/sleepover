@@ -47,7 +47,7 @@ class Booking extends CI_Controller {
         else
         {
             // We're editing, we want to get the pod
-            $booking = $this->booking_m->getBooking($booking_id);
+            $booking = $this->booking_m->get_booking($booking_id);
             $data = array('title' => 'sleepover - Edit Booking', 'page' => 'pod');
         }
 

@@ -2,41 +2,36 @@
 
     <div class="content clearfix">
 
-        <form action="/sleepover/pod/save/<?=$pod_id?>" method="post">
+        <form action="/sleepover/booking/save/<?=$booking_id?>" method="post">
 
             <h1>
-                <? if($pod_id == null) {?>
-                    <?="Add Pod";?>
+                <? if($booking_id == null) {?>
+                    <?="Add Booking";?>
                 <?} else {?>
-                    <?="Edit Pod";}?>
+                    <?="Edit Booking";}?>
             </h1>
 
             <div class="field">
-                <label for="location_id">Location:</label>
-                <select id="location_id" name="location_id">
-                    <? foreach ($locations as $loc) { ?>
-                        <option value="<?=$loc->location_id?>"
-                            <? if($pod_id != null) { if($loc->location_id==$pod->location_id) { echo "selected";}}?>><?=$loc->location_name?></option>
+                <label for="pod">Pod:</label>
+                <select id="pod" name="pod">
+                    <? foreach ($pods as $pod) { ?>
+                        <option value="<?=$pod->pod_id?>"
+                            <? if($booking_id != null) { if($pod->pod_id==$booking->location_id) { echo "selected";}}?>><?=$pod->comboname?></option>
                     <? } ?>
                 </select>
             </div>
 
-            <div class="add-fields">
-                <div class="field">
-                    <label for="pod_name">Name:</label>
-                    <input type="text" id="pod_name" name="pod_name" value="<? if($pod_id != null) { echo $pod->pod_name;}?>"/>
-                </div>
-            </div>
-
-            <div class="field">
-                <label for="pod_type">Pod Type:</label>
-                <select id="pod_type" name="pod_type">
-                    <? foreach ($pod_types as $type) { ?>
-                        <option value="<?=$type->pod_type_id?>"
-                            <? if($pod_id != null) { if($type->pod_type_id==$pod->pod_type) { echo "selected";}}?>><?=$type->pod_type?></option>
-                    <? } ?>
-                </select>
-            </div>
+            <? if($team_id == null) {?>
+                <?= "<div class=\"field\">" ?>
+                <?= "<label for=\"podestrian\">Podestrian:</label>" ?>
+                <?= "<select id=\"podestrian_id\" name=\"podestrian_id\">" ?>
+                <? foreach ($podestrians as $podestrian) { ?>
+                    <?= "<option value=" ?>
+                    <?=$podestrian->podestrian_id?><?="\">"?>
+                    <?=$podestrian->first_name?><?= " " ?><?=$podestrian->last_name?>
+                    <?= "</option>" ;}?>
+            <?= "</select>" ?>
+            <?= "</div>" ;}?>
 
             <div class="login-actions">
                 <? if($pod_id != null) {?>

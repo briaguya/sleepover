@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Sep 03, 2015 at 02:09 PM
+-- Generation Time: Sep 03, 2015 at 02:23 PM
 -- Server version: 5.5.44-0ubuntu0.14.04.1
 -- PHP Version: 5.5.9-1ubuntu4.11
 
@@ -43,7 +43,12 @@ FROM podestrian AS p
 
 CREATE DEFINER=`sleepover`@`localhost` PROCEDURE `get_all_pods`()
     READS SQL DATA
-SELECT p.pod_id, p.pod_name, pt.pod_type, l.location_name
+SELECT 
+p.pod_id,
+p.pod_name,
+pt.pod_type,
+l.location_name,
+CONCAT(l.location_name,' - ',p.pod_name) comboname
 FROM pod as p 
 JOIN pod_type as pt ON p.pod_type = pt.pod_type_id
 JOIN location as l ON p.location_id = l.location_id

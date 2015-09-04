@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Sep 03, 2015 at 04:58 PM
+-- Generation Time: Sep 03, 2015 at 04:59 PM
 -- Server version: 5.5.44-0ubuntu0.14.04.1
 -- PHP Version: 5.5.9-1ubuntu4.11
 
@@ -76,7 +76,7 @@ booking_id,
 ps.podestrian_id,
 pd.pod_id,
 CONCAT(ps.first_name,' ',ps.last_name) podestrian_name,
-b.checkin_datetime,
+b.checkin_date,
 b.checkout_date
 FROM
 booking b
@@ -93,7 +93,7 @@ ps.podestrian_id,
 pd.pod_id,
 CONCAT(ps.first_name,' ',ps.last_name) podestrian,
 CONCAT(pd.pod_name,' - ',pt.pod_type) pod,
-b.checkin_datetime,
+b.checkin_date,
 b.checkout_date
 FROM
 booking b

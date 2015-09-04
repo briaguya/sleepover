@@ -64,7 +64,7 @@
 
             <div class="field">
                 <label for="price">Price:</label>
-                <input type="number" id="price" name="price" value="<? if($booking_id != null) { echo $booking->price; }; ?>"/>
+                <input type="number" step=".01" id="price" name="price" value="<? if($booking_id != null) { echo $booking->price; }; ?>"/>
             </div>
 
             <div class="login-actions">

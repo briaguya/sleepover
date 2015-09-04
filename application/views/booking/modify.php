@@ -30,6 +30,16 @@
                 <?= "</div>";} ?>
 
             <div class="field">
+                <label for="status_id">Status:</label>
+                <select id="status_id" name="status_id">
+                    <? foreach ($statuses as $status) { ?>
+                        <option value="<?=$status->status_id?>"
+                            <? if($booking_id != null) { if($status->status_id==$booking->status_id) { echo "selected";}}?>><?=$status->booking_status?></option>
+                    <? } ?>
+                </select>
+            </div>
+
+            <div class="field">
                 <label for="pod_id">Pod:</label>
                 <select id="pod_id" name="pod_id">
                     <? foreach ($pods as $pod) { ?>

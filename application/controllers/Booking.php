@@ -87,7 +87,7 @@ class Booking extends CI_Controller {
                 'checkout_date' => $this->input->post("checkout_date"));
         }
 
-        $this->booking_m->save($booking);
+c        $this->booking_m->save($booking);
         redirect("/booking");
     }
 }

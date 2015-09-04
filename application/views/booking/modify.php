@@ -51,8 +51,8 @@
 
             <? if($booking_id == null) {?>
             <?="<div class=\"field\">" ?>
-                <?="<label for=\"checkin_datetime\">Checkin Date/Time:</label>"?>
-                <?="<input type=\"datetime\" id=\"checkin_datetime\" name=\"checkin_datetime\" value=\""?><?=unix_to_human(now())?><?="\"/>"?>
+                <?="<label for=\"checkin_date\">Checkin Date:</label>"?>
+                <?="<input type=\"date\" id=\"checkin_date\" name=\"checkin_date\" value=\""?><?=date("Y-m-d")?><?="\"/>"?>
             <?="</div>"?>
 
             <? }?>

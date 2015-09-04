@@ -22,7 +22,7 @@
                             <tr>
                                 <td> <a href="/sleepover/podestrian/modify/<?=$booking->podestrian_id?>"><img src="/sleepover/img/success-kid-thumb.png"></a> <?=$booking->podestrian?></td>
                                 <td> <?=$booking->pod ?> </td>
-                                <td> <?=$booking->checkin_datetime ?> </td>
+                                <td> <?=$booking->checkin_date ?> </td>
                                 <td> <?=$booking->checkout_date ?> </td>
                                 <td class="td-actions">
                                     <a href="/sleepover/booking/modify/<?=$booking->booking_id?>" class="btn btn-small btn-primary"><i class="btn-icon-only icon-edit"> </i></a>

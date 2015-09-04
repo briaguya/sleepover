@@ -51,6 +51,6 @@ class Booking_m extends CI_Model
             return $this->db->affected_rows();
         }
 
-        $this->db->query("call update_booking({$booking['booking_id']},\"{$booking['pod_id']}\",{$booking['checkout_date']})");
+        $this->db->query("call update_booking({$booking['booking_id']},{$booking['pod_id']},{$booking['checkout_date']})");
     }
 }

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Sep 03, 2015 at 04:59 PM
+-- Generation Time: Sep 03, 2015 at 05:01 PM
 -- Server version: 5.5.44-0ubuntu0.14.04.1
 -- PHP Version: 5.5.9-1ubuntu4.11
 
@@ -164,25 +164,24 @@ INSERT INTO `address` (`address_id`, `city`, `country`) VALUES
 
 CREATE TABLE IF NOT EXISTS `booking` (
   `booking_id` int(11) NOT NULL AUTO_INCREMENT,
-  `podestrian` int(11) NOT NULL,
   `pod` int(11) NOT NULL,
+  `podestrian` int(11) NOT NULL,
   `checkin_date` date NOT NULL,
   `checkout_date` date NOT NULL,
   `price` decimal(4,2) NOT NULL,
   `booking_status` int(11) NOT NULL,
   PRIMARY KEY (`booking_id`),
-  UNIQUE KEY `pod` (`pod`),
   KEY `podestrian` (`podestrian`),
   KEY `booking_status` (`booking_status`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
 
 --
 -- Dumping data for table `booking`
 --
 
-INSERT INTO `booking` (`booking_id`, `podestrian`, `pod`, `checkin_date`, `checkout_date`, `price`, `booking_status`) VALUES
-(1, 5, 4, '2015-09-03', '2015-09-05', 0.00, 1),
-(4, 5, 5, '0000-00-00', '2015-09-03', 4.55, 1);
+INSERT INTO `booking` (`booking_id`, `pod`, `podestrian`, `checkin_date`, `checkout_date`, `price`, `booking_status`) VALUES
+(1, 0, 5, '2015-09-03', '2015-09-05', 0.00, 1),
+(4, 0, 5, '0000-00-00', '2015-09-03', 4.55, 1);
 
 -- --------------------------------------------------------
 
@@ -400,7 +399,6 @@ INSERT INTO `team_member_role` (`role_id`, `role`, `description`) VALUES
 -- Constraints for table `booking`
 --
 ALTER TABLE `booking`
-  ADD CONSTRAINT `booking must have pod` FOREIGN KEY (`pod`) REFERENCES `pod` (`pod_id`),
   ADD CONSTRAINT `booking must have podestrian` FOREIGN KEY (`podestrian`) REFERENCES `podestrian` (`podestrian_id`),
   ADD CONSTRAINT `booking must have status` FOREIGN KEY (`booking_status`) REFERENCES `booking_status` (`status_id`);
 

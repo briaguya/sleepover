@@ -23,7 +23,7 @@
                 <?= "<select id=\"podestrian_id\" name=\"podestrian_id\">" ?>
                 <? foreach ($podestrians as $podestrian) { ?>
                     <?= "<option value=" ?>
-                    <?=$podestrian->podestrian_id?><?="\">"?>
+                    <?=$podestrian->podestrian_id?><?=">"?>
                     <?=$podestrian->first_name?><?= " " ?><?=$podestrian->last_name?>
                     <?= "</option>" ;}?>
                 <?= "</select>" ?>

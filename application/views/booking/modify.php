@@ -62,6 +62,11 @@
                 <input type="date" id="checkout_date" name="checkout_date" value="<? if($booking_id != null) { echo $booking->checkout_date; } else {echo date("Y-m-d");;} ?>"/>
             </div>
 
+            <div class="field">
+                <label for="price">Price:</label>
+                <input type="number" id="price" name="price" value="<? if($booking_id != null) { echo $booking->price; }; ?>"/>
+            </div>
+
             <div class="login-actions">
                 <button class="button btn btn-success btn-large">
                     <? if($booking_id == null) {?>

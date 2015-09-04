@@ -59,7 +59,7 @@ class Booking extends CI_Controller {
             'pod_types' => $pods,
             'podestrians' => $podestrians,
             'booking' => $booking[0]);
-        $this->load->view('pod/modify',$viewdata);
+        $this->load->view('booking/modify',$viewdata);
         $this->load->view('footer');
     }
 }

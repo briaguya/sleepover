@@ -54,6 +54,25 @@ class Booking extends CI_Controller {
         $this->load->view('footer');
     }
 
+    public function check_availability()
+    {
+        //we need stuff
+        if(!($this->input->post("podestrian_id") && $this->input->post("pod_id") && $this->input->post("checkin_date") && $this->input->post("checkout_date")))
+            return; //todo error?
+
+        //We're adding, make a new team member
+        $booking = array(
+            'pod' => $this->input->post("pod_id"),
+            'podestrian' => $this->input->post("podestrian_id"),
+            'checkin_date' => $this->input->post("checkin_date"),
+            'checkout_date' => $this->input->post("checkout_date"),
+            'price' => $this->input->post("price"),
+            'booking_status' => $this->input->post("status_id"));
+
+        //$this->booking_m->save($booking);
+        redirect("/booking");
+    }
+
     public function modify($booking_id)
     {
         // get the pod

@@ -78,7 +78,8 @@ class Booking extends CI_Controller {
                 $this->input->post("podestrian_id"),
                 $this->input->post("pod_id"),
                 $this->input->post("checkin_datetime"),
-                $this->input->post("checkout_date"));
+                $this->input->post("checkout_date"),
+                $this->input->post("booking_status"));
         }
         else
         {

@@ -75,8 +75,8 @@ class Booking extends CI_Controller {
 
             //We're adding, make a new team member
             $booking = array(
-                'podestrian' => $this->input->post("podestrian_id"),
                 'pod' => $this->input->post("pod_id"),
+                'podestrian' => $this->input->post("podestrian_id"),
                 'checkin_date' => $this->input->post("checkin_date"),
                 'checkout_date' => $this->input->post("checkout_date"),
                 'price' => $this->input->post("price"),

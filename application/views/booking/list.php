@@ -3,7 +3,7 @@
         <div class="container">
             <div class="row">
                 <div class="span12">
-                    <a href="/sleepover/booking/modify" class="btn btn-small btn-primary"><i class="btn-icon-only icon-ok"></i>Add Booking</a>
+                    <a href="/sleepover/booking/start" class="btn btn-small btn-primary"><i class="btn-icon-only icon-ok"></i>New Booking</a>
                     <br><br>
                     <table class="table table-striped table-bordered">
                         <thead>

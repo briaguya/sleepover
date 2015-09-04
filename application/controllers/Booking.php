@@ -36,20 +36,17 @@ class Booking extends CI_Controller {
         $this->load->view('footer');
     }
 
-    public function modify($booking_id = null)
+    public function start()
     {
-        if($booking_id == null)
-        {
-            //We're adding, we need a null booking
-            $booking = null;
-            $data = array('title' => 'sleepover - Add Booking', 'page' => 'booking');
-        }
-        else
-        {
-            // We're editing, we want to get the pod
-            $booking = $this->booking_m->get_booking($booking_id);
-            $data = array('title' => 'sleepover - Edit Booking', 'page' => 'booking');
-        }
+        // we want to search for available pods here
+        // we need to get podestrian, location, pod_type, checkin, checkout
+    }
+
+    public function modify($booking_id)
+    {
+        // get the pod
+        $booking = $this->booking_m->get_booking($booking_id);
+        $data = array('title' => 'sleepover - Edit Booking', 'page' => 'booking');
 
         $this->load->view('header', $data);
         $pods = $this->pod_m->get_pods();

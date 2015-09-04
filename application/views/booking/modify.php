@@ -21,7 +21,7 @@
                 </select>
             </div>
 
-            <? if($team_id == null) {?>
+            <? if($booking_id == null) {?>
                 <?= "<div class=\"field\">" ?>
                 <?= "<label for=\"podestrian\">Podestrian:</label>" ?>
                 <?= "<select id=\"podestrian_id\" name=\"podestrian_id\">" ?>

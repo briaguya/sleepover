@@ -39,6 +39,11 @@
                 </select>
             </div>
 
+            <div class="field">
+                <label for="checkout_date">Checkout Date:</label>
+                <input type="date" id="checkout_date" name="checkout_date" value="<? if($booking_id != null) { echo $booking->checkout_date;}?>"/>
+            </div>
+
             <div class="login-actions">
                 <button class="button btn btn-success btn-large">
                     <? if($booking_id == null) {?>

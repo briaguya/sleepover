@@ -32,8 +32,8 @@
                 <label for="pod_type">Pod Type:</label>
                 <select id="pod_type" name="pod_type">
                     <? foreach ($pod_types as $type) { ?>
-                        <option value="<?=$type->pod_type_id?>"
-                            <? if($pod_id != null) { if($type->pod_type_id==$pod->pod_type) { echo "selected";}}?>><?=$type->pod_type?></option>
+                        <option value="<?=$type->pod_type_id?>">
+                            <?=$type->pod_type?></option>
                     <? } ?>
                 </select>
             </div>

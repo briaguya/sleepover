@@ -59,6 +59,7 @@ class Booking extends CI_Controller {
             'booking_id' => $booking_id,
             'pods' => $pods,
             'podestrians' => $podestrians,
+            'statuses' => $statuses,
             'booking' => $booking[0]);
         $this->load->view('booking/modify',$viewdata);
         $this->load->view('footer');

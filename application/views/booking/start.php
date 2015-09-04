@@ -22,8 +22,8 @@
                 <label for="location_id">Location:</label>
                 <select id="location_id" name="location_id">
                     <? foreach ($locations as $loc) { ?>
-                        <option value="<?=$loc->location_id?>"
-                            <? if($pod_id != null) { if($loc->location_id==$pod->location_id) { echo "selected";}}?>><?=$loc->location_name?></option>
+                        <option value="<?=$loc->location_id?>">
+                            <?=$loc->location_name?></option>
                     <? } ?>
                 </select>
             </div>

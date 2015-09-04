@@ -42,13 +42,13 @@ class Booking extends CI_Controller {
         {
             //We're adding, we need a null booking
             $booking = null;
-            $data = array('title' => 'sleepover - Add Booking', 'page' => 'pod');
+            $data = array('title' => 'sleepover - Add Booking', 'page' => 'booking');
         }
         else
         {
             // We're editing, we want to get the pod
             $booking = $this->booking_m->get_booking($booking_id);
-            $data = array('title' => 'sleepover - Edit Booking', 'page' => 'pod');
+            $data = array('title' => 'sleepover - Edit Booking', 'page' => 'booking');
         }
 
         $this->load->view('header', $data);

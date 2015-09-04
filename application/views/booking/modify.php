@@ -23,11 +23,11 @@
                 <?= "<select id=\"podestrian_id\" name=\"podestrian_id\">" ?>
                 <? foreach ($podestrians as $podestrian) { ?>
                     <?= "<option value=" ?>
-                        <?=$podestrian->podestrian_id?><?="\">"?>
-                        <?=$podestrian->first_name?><?= " " ?><?=$podestrian->last_name?>
+                    <?=$podestrian->podestrian_id?><?="\">"?>
+                    <?=$podestrian->first_name?><?= " " ?><?=$podestrian->last_name?>
                     <?= "</option>" ;}?>
                 <?= "</select>" ?>
-                <?= "</div>" ;}?>
+                <?= "</div>";} ?>
 
             <div class="field">
                 <label for="pod_id">Pod:</label>

@@ -30,8 +30,8 @@
                 <?= "</div>" ;}?>
 
             <div class="field">
-                <label for="pod">Pod:</label>
-                <select id="pod" name="pod">
+                <label for="pod_id">Pod:</label>
+                <select id="pod_id" name="pod_id">
                     <? foreach ($pods as $pod) { ?>
                         <option value="<?=$pod->pod_id?>"
                             <? if($booking_id != null) { if($pod->pod_id==$booking->pod_id) { echo "selected";}}?>><?=$pod->comboname?></option>

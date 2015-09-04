@@ -62,6 +62,32 @@ class Booking extends CI_Controller {
         $this->load->view('booking/modify',$viewdata);
         $this->load->view('footer');
     }
+
+    public function save($booking_id = null)
+    {
+        if($booking_id == null)
+        {
+            //we need pod name and pod type
+            if(!($this->input->post("pod_name") && $this->input->post("pod_type")))
+                return; //todo error?
+
+            //We're adding, make a new team member
+            $pod = array(
+                'pod_name' => $this->input->post("pod_name"),
+                'pod_type' => $this->input->post("pod_type"));
+        }
+        else
+        {
+            // We're editing
+            $booking = array(
+                'booking_id' => $booking_id,
+                'pod_id' => $this->input->post("pod_id"),
+                'checkout_date' => $this->input->post("checkout_date"));
+        }
+
+        $this->booking_m->save($booking);
+        redirect("/booking");
+    }
 }
 
 /* End of file welcome.php */

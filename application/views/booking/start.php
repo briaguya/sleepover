@@ -7,7 +7,7 @@
             <h1>New Booking</h1>
 
 
-            <div class=\"field\">"
+            <div class=\"field\">
                 <label for=\"podestrian\">Podestrian:</label>
                 <select id=\"podestrian_id\" name=\"podestrian_id\">
                 <? foreach ($podestrians as $podestrian) { ?>

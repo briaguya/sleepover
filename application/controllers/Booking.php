@@ -68,7 +68,7 @@ class Booking extends CI_Controller {
         if($booking_id == null)
         {
             //we need pod name and pod type
-            if(!($this->input->post("pod_name") && $this->input->post("pod_type")))
+            if(!($this->input->post("pod_id") && $this->input->post("pod_type")))
                 return; //todo error?
 
             //We're adding, make a new team member

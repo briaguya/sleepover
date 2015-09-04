@@ -34,11 +34,8 @@
             <?= "</div>" ;}?>
 
             <div class="login-actions">
-                <? if($pod_id != null) {?>
-                    <?="<a href=\"/sleepover/pod/delete/$pod_id\" onclick=\"return confirm('Are you sure ?')\" class=\"button btn btn-danger btn-large\" style=\"float: left\">Delete</i></a></td>" ?>
-                    <? ;} ?>
                 <button class="button btn btn-success btn-large">
-                    <? if($pod_id == null) {?>
+                    <? if($booking_id == null) {?>
                         <?="Add";?>
                     <?} else {?>
                         <?="Save";}?>

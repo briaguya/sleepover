@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Sep 03, 2015 at 04:45 PM
+-- Generation Time: Sep 03, 2015 at 04:47 PM
 -- Server version: 5.5.44-0ubuntu0.14.04.1
 -- PHP Version: 5.5.9-1ubuntu4.11
 
@@ -56,7 +56,7 @@ ORDER BY l.location_name, p.pod_type, p.pod_name$$
 
 CREATE DEFINER=`sleepover`@`localhost` PROCEDURE `get_all_status`()
     READS SQL DATA
-SELECT * FROM booking_status$$
+SELECT * FROM booking_status order by status_id$$
 
 CREATE DEFINER=`sleepover`@`localhost` PROCEDURE `get_all_team_members`()
     READS SQL DATA

@@ -54,6 +54,11 @@ class Booking_m extends CI_Model
         $this->db->query("call update_booking({$booking['booking_id']},{$booking['pod_id']},\"{$booking['checkout_date']}\")");
     }
 
+    function check_availability($booking)
+    {
+        return false;
+    }
+
     function get_statuses()
     {
         $query = $this->db->query("call get_all_status()");

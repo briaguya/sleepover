@@ -62,14 +62,15 @@ class Booking extends CI_Controller {
 
         //We're adding, make a new team member
         $booking = array(
-            'pod' => $this->input->post("pod_id"),
-            'podestrian' => $this->input->post("podestrian_id"),
+            'location_id' => $this->input->post("location_id"),
+            'pod_type' => $this->input->post("pod_type"),
             'checkin_date' => $this->input->post("checkin_date"),
-            'checkout_date' => $this->input->post("checkout_date"),
-            'price' => $this->input->post("price"),
-            'booking_status' => $this->input->post("status_id"));
+            'checkout_date' => $this->input->post("checkout_date"));
 
-        //$this->booking_m->save($booking);
+        if($this->booking_m->check_availability($booking))
+        {
+
+        };
         redirect("/booking");
     }
 

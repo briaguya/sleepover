@@ -1,0 +1,24 @@
+accept, edit, decline
+
+pending
+booked hasn't showed up
+here
+checking out today - not a status but should have it on the view
+checked_out
+
+pending
+booked
+checked_in
+checked_out
+
+start booking - podestrian, pod_type, checkin, checkout
+if available continue booking else start booking
+continue booking - LABEL DATES, pod, status, price
+
+
+for checkin process
+start booking -> pending or booked
+on list screen:
+pending -> book button
+booked -> checkin button
+checked_in -> cancel/checkout button

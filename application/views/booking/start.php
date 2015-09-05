@@ -9,6 +9,7 @@
             <div class="field">
                 <label for="location_id">Location:</label>
                 <select id="location_id" name="location_id">
+                    <option value ="-1">Any</option>
                     <? foreach ($locations as $loc) { ?>
                         <option value="<?=$loc->location_id?>">
                             <?=$loc->location_name?></option>
@@ -19,6 +20,7 @@
             <div class="field">
                 <label for="pod_type">Pod Type:</label>
                 <select id="pod_type" name="pod_type">
+                    <option value ="-1">Any</option>
                     <? foreach ($pod_types as $type) { ?>
                         <option value="<?=$type->pod_type_id?>">
                             <?=$type->pod_type?></option>

@@ -35,7 +35,7 @@
 
             <div class="field">
                 <label for="checkout_date">Checkout Date:</label>
-                <input type="date" id="checkout_date" name="checkout_date" value="<?=date("Y-m-d")?>"/>
+                <input type="date" id="checkout_date" name="checkout_date" value="<?=date("Y-m-d", mktime(0, 0, 0, date("m")  , date("d")+1, date("Y")))?>"/>
             </div>
 
             <div class="login-actions">

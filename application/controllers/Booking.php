@@ -57,7 +57,7 @@ class Booking extends CI_Controller {
     public function check_availability()
     {
         //we need stuff
-        if(!($this->input->post("podestrian_id") && $this->input->post("pod_id") && $this->input->post("checkin_date") && $this->input->post("checkout_date")))
+        if(!($this->input->post("pod_type") && $this->input->post("checkin_date") && $this->input->post("checkout_date")))
             return; //todo error?
 
         //We're adding, make a new team member

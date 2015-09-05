@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Sep 03, 2015 at 05:39 PM
+-- Generation Time: Sep 03, 2015 at 07:31 PM
 -- Server version: 5.5.44-0ubuntu0.14.04.1
 -- PHP Version: 5.5.9-1ubuntu4.11
 
@@ -68,6 +68,25 @@ JOIN team_member_role as r ON t.role = r.role_id$$
 CREATE DEFINER=`sleepover`@`localhost` PROCEDURE `get_all_team_member_roles`()
     READS SQL DATA
 SELECT * FROM team_member_role$$
+
+CREATE DEFINER=`sleepover`@`localhost` PROCEDURE `get_available_pods`(IN `pod_type_id` INT(11), IN `location_id` INT(11), IN `checkin_date` DATE, IN `checkout_date` DATE)
+    READS SQL DATA
+SELECT 
+p.pod_id,
+l.location_name,
+CONCAT(l.location_name,' - ',p.pod_name) comboname
+FROM pod as p 
+JOIN pod_type as pt ON p.pod_type = pt.pod_type_id
+JOIN location as l ON p.location_id = l.location_id
+WHERE p.pod_type = pod_type_id
+AND p.location_id = location_id
+AND NOT EXISTS 
+(SELECT * FROM booking 
+ WHERE pod = p.pod_id
+    AND checkout_date >= checkin_date
+    AND checkin_date <= checkout_date
+)
+ORDER BY l.location_name, p.pod_type, p.pod_name$$
 
 CREATE DEFINER=`sleepover`@`localhost` PROCEDURE `get_booking`(IN `booking_id` INT(11))
     READS SQL DATA
@@ -172,15 +191,17 @@ CREATE TABLE IF NOT EXISTS `booking` (
   `booking_status` int(11) NOT NULL,
   PRIMARY KEY (`booking_id`),
   KEY `podestrian` (`podestrian`),
-  KEY `booking_status` (`booking_status`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=15 ;
+  KEY `booking_status` (`booking_status`),
+  KEY `pod` (`pod`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=17 ;
 
 --
 -- Dumping data for table `booking`
 --
 
 INSERT INTO `booking` (`booking_id`, `pod`, `podestrian`, `checkin_date`, `checkout_date`, `price`, `booking_status`) VALUES
-(14, 5, 5, '2015-09-03', '2015-09-03', 0.00, 1);
+(14, 5, 5, '2015-09-03', '2015-09-03', 0.00, 1),
+(15, 5, 1, '2015-09-04', '2015-09-05', 0.00, 1);
 
 -- --------------------------------------------------------
 
@@ -398,6 +419,7 @@ INSERT INTO `team_member_role` (`role_id`, `role`, `description`) VALUES
 -- Constraints for table `booking`
 --
 ALTER TABLE `booking`
+  ADD CONSTRAINT `booking must have pod` FOREIGN KEY (`pod`) REFERENCES `pod` (`pod_id`),
   ADD CONSTRAINT `booking must have podestrian` FOREIGN KEY (`podestrian`) REFERENCES `podestrian` (`podestrian_id`),
   ADD CONSTRAINT `booking must have status` FOREIGN KEY (`booking_status`) REFERENCES `booking_status` (`status_id`);
 

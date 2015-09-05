@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Sep 03, 2015 at 07:31 PM
+-- Generation Time: Sep 03, 2015 at 08:38 PM
 -- Server version: 5.5.44-0ubuntu0.14.04.1
 -- PHP Version: 5.5.9-1ubuntu4.11
 
@@ -78,13 +78,13 @@ CONCAT(l.location_name,' - ',p.pod_name) comboname
 FROM pod as p 
 JOIN pod_type as pt ON p.pod_type = pt.pod_type_id
 JOIN location as l ON p.location_id = l.location_id
-WHERE p.pod_type = pod_type_id
-AND p.location_id = location_id
+WHERE (pod_type_id = -1 OR p.pod_type = pod_type_id)
+AND (location_id = -1 OR p.location_id = location_id)
 AND NOT EXISTS 
-(SELECT * FROM booking 
+(SELECT * FROM booking b
  WHERE pod = p.pod_id
-    AND checkout_date >= checkin_date
-    AND checkin_date <= checkout_date
+    AND b.checkout_date > checkin_date
+    AND b.checkin_date <= checkout_date
 )
 ORDER BY l.location_name, p.pod_type, p.pod_name$$
 

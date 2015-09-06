@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Sep 03, 2015 at 08:38 PM
+-- Generation Time: Sep 05, 2015 at 04:58 PM
 -- Server version: 5.5.44-0ubuntu0.14.04.1
 -- PHP Version: 5.5.9-1ubuntu4.11
 
@@ -74,6 +74,7 @@ CREATE DEFINER=`sleepover`@`localhost` PROCEDURE `get_available_pods`(IN `pod_ty
 SELECT 
 p.pod_id,
 l.location_name,
+pt.pod_type,
 CONCAT(l.location_name,' - ',p.pod_name) comboname
 FROM pod as p 
 JOIN pod_type as pt ON p.pod_type = pt.pod_type_id

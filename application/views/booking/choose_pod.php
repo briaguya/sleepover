@@ -20,7 +20,7 @@
                             ?>
                             <tr>
                                 <td> <?=$pod->location_name ?> </td>
-                                <td> <?=$pod->pod_name ?> </td>
+                                <td> <?=$pod->comboname ?> </td>
                                 <td> <?=$pod->pod_type ?> </td>
                                 <td class="td-actions">
                                     <a href="/sleepover/pod/confirm/<?=$pod->pod_id?>" class="button btn btn-success btn-large">Book</a>

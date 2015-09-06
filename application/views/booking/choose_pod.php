@@ -4,7 +4,6 @@
             <div class="row">
                 <div class="span12">
                     <h1>Choose a Pod</h1>
-                    <br><br>
                     <table class="table table-striped table-bordered">
                         <thead>
                         <tr>

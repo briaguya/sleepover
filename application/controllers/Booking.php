@@ -18,6 +18,8 @@ class Booking extends CI_Controller {
      * @see http://codeigniter.com/user_guide/general/urls.html
      */
 
+    private $current_booking = null;
+
     public function check_login()
     {
         if(!UID)
@@ -61,7 +63,7 @@ class Booking extends CI_Controller {
             return; //todo error?
 
         //We're adding, make a new team member
-        $booking = array(
+        $this->current_booking = array(
             'location_id' => $this->input->post("location_id"),
             'pod_type' => $this->input->post("pod_type"),
             'checkin_date' => $this->input->post("checkin_date"),
@@ -70,10 +72,14 @@ class Booking extends CI_Controller {
         $data = array('title' => 'sleepover - Continue Booking', 'page' => 'booking');
 
         $this->load->view('header', $data);
-        $pods = $this->booking_m->get_available_pods($booking);
+        $pods = $this->booking_m->get_available_pods($this->current_booking);
         $viewdata = array('pods' => $pods);
         $this->load->view('booking/choose_pod',$viewdata);
         $this->load->view('footer');
+    }
+
+    public function confirm($pod_id)
+    {
 
     }
 

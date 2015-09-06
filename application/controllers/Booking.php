@@ -83,7 +83,7 @@ class Booking extends CI_Controller {
     {
         // get current booking from cookie
         $current_booking = json_decode($_COOKIE["sleepovercurrentbooking"],true);
-        $current_booking->pod_id = $pod_id;
+        $current_booking["pod_id"] = $pod_id;
 
         $data = array('title' => 'sleepover - Confirm Booking', 'page' => 'booking');
 

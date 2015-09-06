@@ -18,8 +18,6 @@ class Booking extends CI_Controller {
      * @see http://codeigniter.com/user_guide/general/urls.html
      */
 
-    private $current_booking = null;
-
     public function check_login()
     {
         if(!UID)
@@ -63,16 +61,19 @@ class Booking extends CI_Controller {
             return; //todo error?
 
         //We're adding, make a new team member
-        $this->current_booking = array(
+        $current_booking = array(
             'location_id' => $this->input->post("location_id"),
             'pod_type' => $this->input->post("pod_type"),
             'checkin_date' => $this->input->post("checkin_date"),
             'checkout_date' => $this->input->post("checkout_date"));
 
+        //Save the current booking to a cookie
+        setcookie("sleepovercurrentbooking", $current_booking);
+
         $data = array('title' => 'sleepover - Choose a Pod', 'page' => 'booking');
 
         $this->load->view('header', $data);
-        $pods = $this->booking_m->get_available_pods($this->current_booking);
+        $pods = $this->booking_m->get_available_pods($current_booking);
         $viewdata = array('pods' => $pods);
         $this->load->view('booking/choose_pod',$viewdata);
         $this->load->view('footer');
@@ -80,13 +81,14 @@ class Booking extends CI_Controller {
 
     public function confirm($pod_id)
     {
-        $booking = $this->current_booking;
-        $booking->pod_id = $pod_id;
+        // get current booking from cookie
+        $current_booking = $_COOKIE["sleepovercurrentbooking"];
+        $current_booking->pod_id = $pod_id;
 
         $data = array('title' => 'sleepover - Confirm Booking', 'page' => 'booking');
 
         $this->load->view('header', $data);
-        $viewdata = array('booking' => $this->current_booking);
+        $viewdata = array('booking' => $current_booking);
         $this->load->view('booking/choose_pod',$viewdata);
         $this->load->view('footer');
     }

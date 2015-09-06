@@ -69,7 +69,7 @@ class Booking extends CI_Controller {
             'checkin_date' => $this->input->post("checkin_date"),
             'checkout_date' => $this->input->post("checkout_date"));
 
-        $data = array('title' => 'sleepover - Continue Booking', 'page' => 'booking');
+        $data = array('title' => 'sleepover - Choose a Pod', 'page' => 'booking');
 
         $this->load->view('header', $data);
         $pods = $this->booking_m->get_available_pods($this->current_booking);
@@ -80,7 +80,14 @@ class Booking extends CI_Controller {
 
     public function confirm($pod_id)
     {
+        $this->current_booking->pod_id = $pod_id;
 
+        $data = array('title' => 'sleepover - Confirm Booking', 'page' => 'booking');
+
+        $this->load->view('header', $data);
+        $viewdata = array('booking' => $this->current_booking);
+        $this->load->view('booking/choose_pod',$viewdata);
+        $this->load->view('footer');
     }
 
     public function modify($booking_id)

@@ -4,7 +4,9 @@
 
         <form action="/sleepover/booking/blarg" method="post">
 
-            <h1>Continue Booking</h1>
+            <h1>Confirm Booking</h1>
+            <h3><?=$pod->comboname?></h3>
+            <h3><?=$booking->checkin_date?> - <?=$booking_checkout_date?></h3>
 
             <div class=\"field\">
                 <label for=\"podestrian\">Podestrian:</label>
@@ -14,15 +16,6 @@
                         <?=$podestrian->podestrian_id?><?=">"?>
                         <?=$podestrian->first_name?><?= " " ?><?=$podestrian->last_name?>
                         <?= "</option>" ;}?>
-                </select>
-            </div>
-
-            <div class="field">
-                <label for="pod_id">Pod:</label>
-                <select id="pod_id" name="pod_id">
-                    <? foreach ($pods as $pod) { ?>
-                        <option value="<?=$pod->pod_id?>"><?=$pod->comboname?></option>
-                    <? } ?>
                 </select>
             </div>
 

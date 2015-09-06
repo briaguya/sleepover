@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Sep 05, 2015 at 04:58 PM
+-- Generation Time: Sep 05, 2015 at 06:48 PM
 -- Server version: 5.5.44-0ubuntu0.14.04.1
 -- PHP Version: 5.5.9-1ubuntu4.11
 
@@ -123,8 +123,9 @@ JOIN pod_type pt ON pd.pod_type = pt.pod_type_id$$
 
 CREATE DEFINER=`sleepover`@`localhost` PROCEDURE `get_pod`(IN `id` INT(11))
     READS SQL DATA
-SELECT id, pod_name, pod_type, location_id
-FROM pod
+SELECT id, p.pod_name, p.pod_type, p.location_id, CONCAT(l.location_name,' - ',p.pod_name) comboname
+FROM pod p
+JOIN location l on p.location_id = l.location_id
 WHERE pod_id = id$$
 
 CREATE DEFINER=`sleepover`@`localhost` PROCEDURE `get_team_member`(IN `team_id` INT(11))

@@ -88,8 +88,13 @@ class Booking extends CI_Controller {
         $data = array('title' => 'sleepover - Confirm Booking', 'page' => 'booking');
 
         $this->load->view('header', $data);
-        $viewdata = array('booking' => $current_booking);
-        $this->load->view('booking/choose_pod',$viewdata);
+        $podestrians = $this->podestrian_m->get_podestrians();
+        $pod = $this->pod_m->getPod($pod_id);
+        $viewdata = array(
+            'booking' => $current_booking,
+            'pod' => $pod,
+            'podestrians' => $podestrians);
+        $this->load->view('booking/confirm',$viewdata);
         $this->load->view('footer');
     }
 

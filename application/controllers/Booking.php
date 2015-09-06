@@ -70,7 +70,7 @@ class Booking extends CI_Controller {
         $data = array('title' => 'sleepover - Continue Booking', 'page' => 'booking');
 
         $this->load->view('header', $data);
-        $pods = $this->podestrian_m->get_available_pods($booking);
+        $pods = $this->booking_m->get_available_pods($booking);
         $podestrians = $this->podestrian_m->get_podestrians();
         $statuses = $this->booking_m->get_statuses();
         $viewdata = array(

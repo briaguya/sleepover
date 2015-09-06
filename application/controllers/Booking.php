@@ -80,7 +80,8 @@ class Booking extends CI_Controller {
 
     public function confirm($pod_id)
     {
-        $this->current_booking->pod_id = $pod_id;
+        $booking = $this->current_booking;
+        $booking->pod_id = $pod_id;
 
         $data = array('title' => 'sleepover - Confirm Booking', 'page' => 'booking');
 

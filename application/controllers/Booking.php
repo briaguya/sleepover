@@ -54,7 +54,7 @@ class Booking extends CI_Controller {
         $this->load->view('footer');
     }
 
-    public function check_availability()
+    public function get_available_pods()
     {
         //we need a checkin and checkout date
         if(!($this->input->post("checkin_date") && $this->input->post("checkout_date")))

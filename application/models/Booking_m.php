@@ -56,7 +56,7 @@ class Booking_m extends CI_Model
 
     function get_available_pods($booking)
     {
-        $query = $this->db->query("call get_available_pods({$booking['pod_type']},{$booking['location_id']},{$booking['checkin_date']},{$booking['checkout_date']})");
+        $query = $this->db->query("call get_available_pods({$booking['pod_type']},{$booking['location_id']},\"{$booking['checkin_date']}\",\"{$booking['checkout_date']}\")");
         $data = array();
 
         $result = $query->result();

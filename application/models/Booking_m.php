@@ -54,8 +54,22 @@ class Booking_m extends CI_Model
         $this->db->query("call update_booking({$booking['booking_id']},{$booking['pod_id']},\"{$booking['checkout_date']}\")");
     }
 
-    function check_availability($booking)
+    function get_available_pods($booking)
     {
+        $query = $this->db->query("call get_available_pods({$booking['pod_type']},{$booking['location_id']},{$booking['checkin_date']},{$booking['checkout_date']})");
+        $data = array();
+
+        $result = $query->result();
+
+        $query->next_result(); // Dump the extra resultset.
+        $query->free_result(); // Does what it says.
+
+        foreach (@$result as $row)
+        {
+            $data[] = $row;
+        }
+        if(count($data))
+            return $data;
         return false;
     }
 

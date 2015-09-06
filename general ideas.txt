@@ -13,7 +13,7 @@ checked_out
 
 start booking - podestrian, pod_type, checkin, checkout
 if available continue booking else start booking
-continue booking - LABEL DATES, pod, status, price
+continue booking - LABEL DATES, podestrian, pod, status, price
 
 
 for checkin process
@@ -22,3 +22,9 @@ on list screen:
 pending -> book button
 booked -> checkin button
 checked_in -> cancel/checkout button
+
+get available pods
+pod type, location, checkin-date, checkout-date
+bookings have pod, checkin-date, checkout-date
+
+select  from pod p

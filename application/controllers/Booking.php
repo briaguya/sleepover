@@ -56,8 +56,8 @@ class Booking extends CI_Controller {
 
     public function check_availability()
     {
-        //we need stuff
-        if(!($this->input->post("pod_type") && $this->input->post("checkin_date") && $this->input->post("checkout_date")))
+        //we need a checkin and checkout date
+        if(!($this->input->post("checkin_date") && $this->input->post("checkout_date")))
             return; //todo error?
 
         //We're adding, make a new team member
@@ -67,11 +67,20 @@ class Booking extends CI_Controller {
             'checkin_date' => $this->input->post("checkin_date"),
             'checkout_date' => $this->input->post("checkout_date"));
 
-        if($this->booking_m->check_availability($booking))
-        {
+        $data = array('title' => 'sleepover - Continue Booking', 'page' => 'booking');
 
-        };
-        redirect("/booking");
+        $this->load->view('header', $data);
+        $pods = $this->podestrian_m->get_available_pods($booking);
+        $podestrians = $this->podestrian_m->get_podestrians();
+        $statuses = $this->booking_m->get_statuses();
+        $viewdata = array(
+            'pods' => $pods,
+            'podestrians' => $podestrians,
+            'statuses' => $statuses,
+            'booking' => $booking[0]);
+        $this->load->view('booking/continue',$viewdata);
+        $this->load->view('footer');
+
     }
 
     public function modify($booking_id)

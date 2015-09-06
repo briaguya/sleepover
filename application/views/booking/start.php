@@ -2,7 +2,7 @@
 
     <div class="content clearfix">
 
-        <form action="/sleepover/booking/check_availability" method="post">
+        <form action="/sleepover/booking/get_available_pods" method="post">
 
             <h1>New Booking</h1>
 

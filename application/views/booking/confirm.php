@@ -6,8 +6,8 @@
 
             <h1>Confirm Booking</h1>
             <h3><?=$pod->comboname?></h3>
-            <h4>Check in: <?=date("l F j, Y",date_create($booking['checkin_date']))?></h4>
-            <h4>Check out: <?=date("l F j, Y",date_create($booking['checkout_date']))?></h4>
+            <h4>Check in: <?=date_format(date_create($booking['checkin_date']),"l F j, Y")?></h4>
+            <h4>Check out: <?=date_format(date_create($booking['checkout_date']),"l F j, Y")?></h4>
 
             <div class=\"field\">
                 <label for=\"podestrian\">Podestrian:</label>

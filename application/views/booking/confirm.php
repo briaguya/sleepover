@@ -6,7 +6,7 @@
 
             <h1>Confirm Booking</h1>
             <h3><?=$pod->comboname?></h3>
-            <h3><?=$booking->checkin_date?> - <?=$booking->checkout_date?></h3>
+            <h3><?=$booking['checkin_date']?> - <?=$booking['checkout_date']?></h3>
 
             <div class=\"field\">
                 <label for=\"podestrian\">Podestrian:</label>

@@ -92,7 +92,7 @@ class Booking extends CI_Controller {
         $pod = $this->pod_m->getPod($pod_id);
         $viewdata = array(
             'booking' => $current_booking,
-            'pod' => $pod,
+            'pod' => $pod[0],
             'podestrians' => $podestrians);
         $this->load->view('booking/confirm',$viewdata);
         $this->load->view('footer');

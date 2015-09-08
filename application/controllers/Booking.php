@@ -84,6 +84,8 @@ class Booking extends CI_Controller {
         // get current booking from cookie
         $current_booking = json_decode($_COOKIE["sleepovercurrentbooking"],true);
         $current_booking["pod_id"] = $pod_id;
+        //Save the current booking to a cookie
+        setcookie("sleepovercurrentbooking", json_encode($current_booking));
 
         $data = array('title' => 'sleepover - Confirm Booking', 'page' => 'booking');
 
@@ -100,24 +102,21 @@ class Booking extends CI_Controller {
         $this->load->view('footer');
     }
 
-    public function modify($booking_id)
+    public function book()
     {
-        // get the pod
-        $booking = $this->booking_m->get_booking($booking_id);
-        $data = array('title' => 'sleepover - Edit Booking', 'page' => 'booking');
+        // get current booking from cookie
+        $current_booking = json_decode($_COOKIE["sleepovercurrentbooking"],true);
 
-        $this->load->view('header', $data);
-        $pods = $this->pod_m->get_pods();
-        $podestrians = $this->podestrian_m->get_podestrians();
-        $statuses = $this->booking_m->get_statuses();
-        $viewdata = array(
-            'booking_id' => $booking_id,
-            'pods' => $pods,
-            'podestrians' => $podestrians,
-            'statuses' => $statuses,
-            'booking' => $booking[0]);
-        $this->load->view('booking/modify',$viewdata);
-        $this->load->view('footer');
+        //we need stuff
+        if(!($this->input->post("podestrian_id") && $this->input->post("status_id") && $this->input->post("price")))
+            return; //todo error?
+
+        $current_booking["podestrian_id"] = $this->input->post("podestrian_id");
+        $current_booking["status_id"] = $this->input->post("status_id");
+        $current_booking["price"] = $this->input->post("price");
+
+        $this->booking_m->save($current_booking);
+        redirect("/booking");
     }
 
     public function save($booking_id = null)

@@ -2,7 +2,7 @@
 
     <div class="content clearfix">
 
-        <form action="/sleepover/booking/blarg" method="post">
+        <form action="/sleepover/booking/book" method="post">
 
             <h1>Confirm Booking</h1>
             <h3><?=$pod->comboname?></h3>

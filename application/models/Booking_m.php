@@ -47,6 +47,7 @@ class Booking_m extends CI_Model
         {
             // we don't have a booking id, we're adding
             $this->db->query("call add_booking({$booking['pod_id']},{$booking['podestrian_id']},\"{$booking['checkin_date']}\"\"{$booking['checkout_date']}\",{$booking['price']},{$booking['status_id']})");
+            return;
         }
 
         $this->db->query("call update_booking({$booking['booking_id']},{$booking['pod_id']},\"{$booking['checkout_date']}\")");

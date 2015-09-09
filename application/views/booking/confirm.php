@@ -10,7 +10,7 @@
             <h4>Check out: <?=date_format(date_create($booking['checkout_date']),"l F j, Y")?></h4>
 
             <div class=\"field\">
-                <label for=\"podestrian\">Podestrian:</label>
+                <label for=\"podestrian_id\">Podestrian:</label>
                 <select id=\"podestrian_id\" name=\"podestrian_id\">
                     <? foreach ($podestrians as $podestrian) { ?>
                         <?= "<option value=" ?>

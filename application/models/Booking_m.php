@@ -46,7 +46,7 @@ class Booking_m extends CI_Model
         if($booking["booking_id"] == null)
         {
             // we don't have a booking id, we're adding
-            $this->db->query("call add_booking({$booking['pod_id']},{$booking['podestrian_id']},\"{$booking['checkin_date']}\"\"{$booking['checkout_date']}\",{$booking['price']},{$booking['status_id']})");
+            $this->db->query("call add_booking({$booking['pod_id']},{$booking['podestrian_id']},\"{$booking['checkin_date']}\",\"{$booking['checkout_date']}\",{$booking['price']},{$booking['status_id']})");
             return;
         }
 

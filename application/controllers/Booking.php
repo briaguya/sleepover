@@ -68,7 +68,7 @@ class Booking extends CI_Controller {
             'checkout_date' => $this->input->post("checkout_date"));
 
         //Save the current booking to a cookie
-        set_cookie('sleepovercurrentbooking', json_encode($current_booking));
+        set_cookie('sleepovercurrentbooking', json_encode($current_booking), 0);
 
         $data = array('title' => 'sleepover - Choose a Pod', 'page' => 'booking');
 

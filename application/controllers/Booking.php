@@ -105,7 +105,7 @@ class Booking extends CI_Controller {
     public function book()
     {
         // get current booking from cookie
-        $current_booking = json_decode(get_cookie("sleepovercurrentbooking",true));
+        $current_booking = json_decode(get_cookie("sleepovercurrentbooking"),true);
 
         //we need stuff
         if(!($this->input->post("podestrian_id") && $this->input->post("status_id") && $this->input->post("price")))

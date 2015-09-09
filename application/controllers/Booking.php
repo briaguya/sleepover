@@ -85,7 +85,7 @@ class Booking extends CI_Controller {
         $current_booking = json_decode(get_cookie('sleepovercurrentbooking'),true);
         $current_booking["pod_id"] = $pod_id;
         //Save the current booking to a cookie
-        set_cookie("sleepovercurrentbooking", json_encode($current_booking));
+        set_cookie("sleepovercurrentbooking", json_encode($current_booking), 0);
 
         $data = array('title' => 'sleepover - Confirm Booking', 'page' => 'booking');
 

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Sep 05, 2015 at 06:48 PM
+-- Generation Time: Sep 05, 2015 at 10:28 PM
 -- Server version: 5.5.44-0ubuntu0.14.04.1
 -- PHP Version: 5.5.9-1ubuntu4.11
 
@@ -24,6 +24,11 @@ DELIMITER $$
 --
 -- Procedures
 --
+CREATE DEFINER=`sleepover`@`localhost` PROCEDURE `add_booking`(IN `pod_id` INT(11), IN `podestrian_id` INT(11), IN `a_checkin_date` DATE, IN `a_checkout_date` DATE, IN `a_price` DECIMAL(4,2), IN `status_id` INT(11))
+    MODIFIES SQL DATA
+INSERT INTO booking(pod, podestrian, checkin_date, checkout_date, price, booking_status)
+values(pod_id, podestrian_id, a_checkin_date, a_checkout_date, a_price, status_id)$$
+
 CREATE DEFINER=`sleepover`@`localhost` PROCEDURE `check_login`(IN `username` VARCHAR(100), IN `password` VARCHAR(100))
     READS SQL DATA
 SELECT t.team_id as uid, username, p.first_name, p.last_name
@@ -195,7 +200,7 @@ CREATE TABLE IF NOT EXISTS `booking` (
   KEY `podestrian` (`podestrian`),
   KEY `booking_status` (`booking_status`),
   KEY `pod` (`pod`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=17 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=18 ;
 
 --
 -- Dumping data for table `booking`
@@ -203,7 +208,8 @@ CREATE TABLE IF NOT EXISTS `booking` (
 
 INSERT INTO `booking` (`booking_id`, `pod`, `podestrian`, `checkin_date`, `checkout_date`, `price`, `booking_status`) VALUES
 (14, 5, 5, '2015-09-03', '2015-09-03', 0.00, 1),
-(15, 5, 1, '2015-09-04', '2015-09-05', 0.00, 1);
+(15, 5, 1, '2015-09-04', '2015-09-05', 0.00, 1),
+(17, 5, 5, '2015-09-08', '2015-09-09', 2.00, 1);
 
 -- --------------------------------------------------------
 

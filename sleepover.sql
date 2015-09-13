@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Sep 05, 2015 at 10:28 PM
+-- Generation Time: Sep 12, 2015 at 02:37 PM
 -- Server version: 5.5.44-0ubuntu0.14.04.1
 -- PHP Version: 5.5.9-1ubuntu4.11
 
@@ -200,16 +200,7 @@ CREATE TABLE IF NOT EXISTS `booking` (
   KEY `podestrian` (`podestrian`),
   KEY `booking_status` (`booking_status`),
   KEY `pod` (`pod`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=18 ;
-
---
--- Dumping data for table `booking`
---
-
-INSERT INTO `booking` (`booking_id`, `pod`, `podestrian`, `checkin_date`, `checkout_date`, `price`, `booking_status`) VALUES
-(14, 5, 5, '2015-09-03', '2015-09-03', 0.00, 1),
-(15, 5, 1, '2015-09-04', '2015-09-05', 0.00, 1),
-(17, 5, 5, '2015-09-08', '2015-09-09', 2.00, 1);
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=21 ;
 
 -- --------------------------------------------------------
 
@@ -247,14 +238,15 @@ CREATE TABLE IF NOT EXISTS `location` (
   `location_description` varchar(500) NOT NULL,
   `address_id` int(11) NOT NULL,
   PRIMARY KEY (`location_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
 -- Dumping data for table `location`
 --
 
 INSERT INTO `location` (`location_id`, `location_name`, `location_description`, `address_id`) VALUES
-(1, 'Default Location', '', 1);
+(2, 'Downtown', 'Downtown (Little Tokyo/Arts District)', 1),
+(3, 'Hollywood', '', 1);
 
 -- --------------------------------------------------------
 
@@ -281,18 +273,42 @@ CREATE TABLE IF NOT EXISTS `pod` (
   `pod_type` int(11) NOT NULL,
   `location_id` int(11) NOT NULL,
   PRIMARY KEY (`pod_id`),
-  UNIQUE KEY `pod_name` (`pod_name`),
   KEY `pod_type` (`pod_type`),
   KEY `location` (`location_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=37 ;
 
 --
 -- Dumping data for table `pod`
 --
 
 INSERT INTO `pod` (`pod_id`, `pod_name`, `pod_type`, `location_id`) VALUES
-(4, 'Pod 2', 1, 1),
-(5, 'Pod 1', 1, 1);
+(8, 'Pod 1', 1, 3),
+(9, 'Pod 2', 1, 3),
+(10, 'Air Pod 1', 3, 3),
+(12, 'Air Pod 2', 3, 3),
+(14, 'Pod 1', 1, 2),
+(15, 'Pod 2', 1, 2),
+(16, 'Pod 3', 1, 2),
+(17, 'Pod 4', 1, 2),
+(18, 'Pod 5', 1, 2),
+(19, 'Pod 6', 1, 2),
+(20, 'Pod 7', 1, 2),
+(21, 'Pod 8', 1, 2),
+(22, 'Pod 9', 1, 2),
+(23, 'Pod 10', 1, 2),
+(24, 'Pod 11', 1, 2),
+(25, 'Pod 12', 1, 2),
+(26, 'Pod 13', 1, 2),
+(27, 'Pod 14', 1, 2),
+(28, 'Pod 15', 1, 2),
+(29, 'Pod 16', 1, 2),
+(30, 'Pod 18', 1, 2),
+(31, 'Pod 19', 2, 2),
+(32, 'Pod 20', 2, 2),
+(33, 'Pod 21', 2, 2),
+(34, 'Pod 22', 2, 2),
+(35, 'Pod 23', 1, 2),
+(36, 'Pod 24', 1, 2);
 
 -- --------------------------------------------------------
 
@@ -389,7 +405,7 @@ CREATE TABLE IF NOT EXISTS `team_member` (
   PRIMARY KEY (`team_id`),
   UNIQUE KEY `podestrian` (`podestrian`),
   KEY `role` (`role`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
 --
 -- Dumping data for table `team_member`

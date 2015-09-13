@@ -68,7 +68,8 @@ class Pod extends CI_Controller {
 			//We're adding, make a new team member
 			$pod = array(
 				'pod_name' => $this->input->post("pod_name"),
-				'pod_type' => $this->input->post("pod_type"));
+				'pod_type' => $this->input->post("pod_type"),
+				'location_id' => $this->input->post("location_id"));
 		}
 		else
 		{

@@ -578,7 +578,30 @@
 							"items_container_class": "",
 							"icon_class": "",
 							"route_params": [],
-							"items": []
+							"items": [
+								{
+									"title": "Settings",
+									"route": "user_settings",
+									"url": "",
+									"target": "",
+									"class": "",
+									"items_container_class": "",
+									"icon_class": "",
+									"route_params": [],
+									"items": []
+								},
+								{
+									"title": "Logout",
+									"route": "logout",
+									"url": "",
+									"target": "",
+									"class": "",
+									"items_container_class": "",
+									"icon_class": "",
+									"route_params": [],
+									"items": []
+								}
+							]
 						}
 					]
 				}

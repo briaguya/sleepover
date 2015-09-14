@@ -1,0 +1,94 @@
+<template name="CustomersDetails">
+	<div class="page-container container" id="content">
+		<div class="row" id="title_row">
+			<div class="col-md-12">
+				<div id="page_menu" class="pull-right">
+				</div>
+			</div>
+		</div>
+		{{> CustomersDetailsDetailsForm}}
+	</div>
+</template>
+
+<template name="CustomersDetailsDetailsForm">
+	<div class="">
+		<h2 id="component-title">
+			<a href="#" id="form-back-button" class="btn btn-default" title="back">
+				<span class="fa fa-chevron-left">
+				</span>
+			</a>
+			Details
+		</h2>
+		<form id="form" role="form" class="form-horizontal">
+			{{#if errorMessage}}
+			<div class="alert alert-warning">
+				{{errorMessage}}
+			</div>
+			{{/if}}		
+		
+			{{#if infoMessage}}
+			<div class="alert alert-success">
+				{{infoMessage}}
+			</div>
+			{{/if}}
+			<div class="form-group  field-name">
+				<label for="name" class="col-sm-3 control-label">
+					Name
+				</label>
+				<div class="input-div col-sm-9">
+					<p class="form-control-static">
+						{{customer.name}}
+					</p>
+				</div>
+			</div>
+			<div class="form-group  field-phone">
+				<label for="phone" class="col-sm-3 control-label">
+					Phone
+				</label>
+				<div class="input-div col-sm-9">
+					<p class="form-control-static">
+						{{customer.phone}}
+					</p>
+				</div>
+			</div>
+			<div class="form-group  field-email">
+				<label for="email" class="col-sm-3 control-label">
+					E-mail
+				</label>
+				<div class="input-div col-sm-9">
+					<p class="form-control-static">
+						{{customer.email}}
+					</p>
+				</div>
+			</div>
+			<div class="form-group  field-note">
+				<label for="note" class="col-sm-3 control-label">
+					Note
+				</label>
+				<div class="input-div col-sm-9">
+					<p class="form-control-static">
+						{{customer.note}}
+					</p>
+				</div>
+			</div>
+			<div class="form-group  field-active">
+				<label for="active" class="col-sm-3 control-label">
+					Active
+				</label>
+				<div class="input-div col-sm-9">
+					<p class="form-control-static">
+						{{booleanToYesNo customer.active}}
+					</p>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="submit-div col-sm-9 col-sm-offset-3">
+					<a href="#" id="form-close-button" class="btn btn-primary">
+						OK
+					</a>
+				</div>
+			</div>
+		</form>
+	</div>
+</template>
+

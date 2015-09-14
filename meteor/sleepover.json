@@ -516,8 +516,8 @@
 					"type": "menu",
 					"items": [
 						{
-							"title": "Home page",
-							"route": "home",
+							"title": "Home",
+							"route": "home_private",
 							"route_params": [],
 							"url": "",
 							"target": "",
@@ -568,7 +568,19 @@
 					"type": "menu",
 					"query_params": [],
 					"components": [],
-					"items": []
+					"items": [
+						{
+							"title": "{{userEmail}}",
+							"route": "",
+							"url": "",
+							"target": "",
+							"class": "",
+							"items_container_class": "",
+							"icon_class": "",
+							"route_params": [],
+							"items": []
+						}
+					]
 				}
 			],
 			"navbar_class": "navbar-default navbar-fixed-top",
